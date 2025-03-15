@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is a personal portfolio website for Nischal Pandey, showcasing projects, skills, and contact information. The website highlights a passion for AI and Data Science, featuring various projects that demonstrate expertise in these fields.
+This is a personal portfolio of me, showcasingmy projects, skills, and contact information. The website highlights a passion for AI and Data Science, featuring various projects that demonstrate expertise in these fields.
 
 ## Features
 
