@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.value = '';
                 return;
             }
-            filePreview.textContent = `Selected: ${file.name}`;
+            filePreview.textContent = `Selected: ${file.name},${file.size}`;
         } else {
             filePreview.textContent = '';
         }
