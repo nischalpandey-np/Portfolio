@@ -200,3 +200,67 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on load
 });
+
+// Add this to your existing script.js file
+
+// Enhanced Form Submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    const submitBtn = form.querySelector('.submit-btn');
+    const successNotification = document.getElementById('formSuccess');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+    
+    // Create a new FormData object each time
+    const formData = new FormData(form);
+    
+    // Submit the form data using fetch
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Show success notification
+            successNotification.hidden = false;
+            successNotification.classList.add('show');
+            
+            // Reset form
+            form.reset();
+            
+            // Hide notification after 5 seconds
+            setTimeout(() => {
+                successNotification.classList.remove('show');
+                setTimeout(() => {
+                    successNotification.hidden = true;
+                }, 300);
+            }, 5000);
+        } else {
+            throw new Error('Network response was not ok');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // You could add error notification here if desired
+    })
+    .finally(() => {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+    });
+});
+
+// Close notification handler
+document.querySelector('.close-notification')?.addEventListener('click', function() {
+    const successNotification = document.getElementById('formSuccess');
+    successNotification.classList.remove('show');
+    setTimeout(() => {
+        successNotification.hidden = true;
+    }, 300);
+});
