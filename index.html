@@ -243,13 +243,19 @@
                 <div class="form-group">
                     <input type="text" name="subject" placeholder="Subject" aria-label="Message Subject">
                 </div>
-                
                 <div class="form-group">
-                    <h4 style="font-size: 16px; color: #888; margin: 15px 0 10px; font-weight: normal; font-style: italic;">
-                        Attach file/image if you are having any trouble! (optional)
-                    </h4>
-                    <input type="file" name="attachment" accept="image/png, image/jpeg, image/jpg">
-                </div>
+                <label class="file-input">
+                    <i class="fas fa-paperclip"></i>
+                    <span>Attach File (optional)</span>
+                    <input type="file" 
+                           id="attachment" 
+                           name="attachment"
+                           accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
+                           data-max-size="5242880">
+                </label>
+                <div class="file-preview"></div>
+                <div class="file-help">Max file size: 5MB</div>
+            </div>
                 
                 <div class="form-group">
                     <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
