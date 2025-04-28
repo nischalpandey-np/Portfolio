@@ -268,15 +268,17 @@ document.addEventListener('DOMContentLoaded', function() {
     fileInput.addEventListener('change', function() {
         const file = this.files[0];
         if (file) {
-            if (file.size > 5242880) {
+            if (file.size > 5242880) { // 5MB = 5 * 1024 * 1024 bytes
                 filePreview.textContent = 'File too large (max 5MB)';
                 this.value = '';
                 return;
             }
-            filePreview.textContent = `Selected: ${file.name},${file.size}`;
+            const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2); // Convert bytes to MB, 2 decimals
+            filePreview.textContent = `Selected: ${file.name} File size: ${fileSizeMB} MB`;
         } else {
             filePreview.textContent = '';
         }
+        
     });
 
     // Form Submission
