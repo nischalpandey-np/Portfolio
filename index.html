@@ -19,7 +19,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#"  onclick="scrollToTop()" class="logo">NP</a>
+            <a href="#" onclick="scrollToTop()" class="logo">NP</a>
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -116,7 +116,7 @@
                 <div class="project-image">
                     <img src="static/img/project1.webp" alt="Full-Stack">
                     <div class="project-links">
-                        <a href="https://github.com/nischalpandey-np/Digi-Bistro"t="_blank" class="project-link">
+                        <a href="https://github.com/nischalpandey-np/Digi-Bistro" target="_blank" class="project-link">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="#" class="project-link">
@@ -127,7 +127,6 @@
                 <div class="project-info">
                     <h3>🍽️ Digi Bistro</h3>
                     <p>Digi Bistro is a web-based prototype restaurant ordering system where users can browse the menu, place orders, and register/login to track their orders which will be safely stored in database.</p>
-
                     <div class="project-tech">
                         <span>Python</span>
                         <span>MySql</span>
@@ -220,8 +219,12 @@
                     <a href="https://github.com/nischalpandey-np" target="_blank" class="contact-link">View Repos</a>
                 </div>
             </div>
-           
-            <form class="contact-form" action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405" method="POST">
+                
+            <form id="contactForm" action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="https://nischalp.com.np">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -239,6 +242,7 @@
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </form>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -265,14 +269,13 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-    // js function to functional logo
-    function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // for smooth scrolling
-    });
-    }
-</script>
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
     <script src="static/js/script.js"></script>
 </body>
