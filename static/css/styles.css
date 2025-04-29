@@ -16,15 +16,7 @@
     --matrix-green: #00ff41;
     --bg-dark: #0d0208;
 }
-body.hacker-mode {
-    background: #000 !important;
-    color: var(--matrix-green) !important;
-    font-family: 'Courier New', monospace !important;
-  }
-  body.hacker-mode a {
-    color: var(--matrix-green) !important;
-    text-shadow: 0 0 5px var(--matrix-green) !important;
-  }
+
   
 [data-theme="light"] {
     --dark-color: #ffffff;
@@ -631,6 +623,7 @@ section {
 }
 
 /* Success Notification */
+
 .form-success {
     position: fixed;
     bottom: 30px;
@@ -639,7 +632,7 @@ section {
     backdrop-filter: blur(10px);
     padding: 15px 25px;
     border-radius: var(--border-radius);
-    display: flex;
+    display: block;
     align-items: center;
     gap: 15px;
     box-shadow: var(--shadow);
@@ -648,11 +641,13 @@ section {
     opacity: 0;
     transition: var(--transition);
     z-index: 1000;
+    visibility: hidden;
 }
 
 .form-success.show {
-    transform: translateY(0);
+
     opacity: 1;
+    visibility: visible;
 }
 
 .form-success span {
@@ -1089,4 +1084,45 @@ section {
     .contact-form {
         padding: 30px 20px;
     }
+}
+/* Add these to your CSS */
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideOut {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(20px); opacity: 0; }
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(108, 99, 255, 0); }
+    50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(108, 99, 255, 0.3); }
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(108, 99, 255, 0); }
+}
+.submitting {
+    opacity: 0.8;
+    filter: blur(1px);
+}
+.submitted {
+    animation: fadeOutIn 1s ease;
+}
+@keyframes fadeOutIn {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+.form-error {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #ff6584;
+    z-index: 1000;
 }
