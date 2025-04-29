@@ -1,29 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle
+    // Theme toggle (dark/light)
     const themeToggle = document.querySelector('.theme-toggle');
     const body = document.body;
     const savedTheme = localStorage.getItem('theme');
-
     body.setAttribute('data-theme', savedTheme === 'light' ? 'light' : 'dark');
-
     themeToggle.addEventListener('click', () => {
         const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
     });
 
-    // Mobile menu toggle
+    // Mobile navigation toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
-
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
@@ -31,20 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Smooth scrolling
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', e => {
+            const href = anchor.getAttribute('href');
+            // Skip if it's just "#" or empty
+            if (href === '#' || href === '') return;
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
             }
         });
     });
 
-    // Navbar scroll effect
+    // Navbar background change on scroll
+    const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(18, 18, 18, 0.9)';
             navbar.style.backdropFilter = 'blur(10px)';
@@ -56,28 +55,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Particles.js
+    // Scroll-triggered animations (play CSS animations when in view)
+    const animateOnScroll = () => {
+        document.querySelectorAll('.section-header, .about-text, .about-image, .project-card, .contact-card, .contact-form')
+            .forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight / 1.2) {
+                    el.style.animationPlayState = 'running';
+                }
+            });
+    };
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Trigger on load
+
+    // Initialize Particles.js background
     if (typeof particlesJS !== 'undefined') {
+        const particleCount = window.innerWidth < 768 ? 40 : 80;
         particlesJS('particles-js', {
             particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
+                number: { value: particleCount, density: { enable: true, value_area: 800 } },
                 color: { value: "#6c63ff" },
                 shape: { type: "circle" },
                 opacity: { value: 0.5 },
                 size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#6c63ff",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    out_mode: "out"
-                }
+                line_linked: { enable: false }, // disable line linking for performance
+                move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
             },
             interactivity: {
                 detect_on: "canvas",
@@ -97,29 +98,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Scroll animations
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.section-header, .about-text, .about-image, .project-card, .contact-card, .contact-form');
-        elements.forEach(el => {
-            if (el.getBoundingClientRect().top < window.innerHeight / 1.2) {
-                el.style.animationPlayState = 'running';
-            }
-        });
-    };
+    // Contact form submission handling
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = contactForm?.querySelector('.submit-btn');
+    const fileInput = document.getElementById('attachment');
+    const filePreview = document.querySelector('.file-preview');
 
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll();
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = contactForm?.querySelector('.submit-btn');
-        const fileInput = document.getElementById('attachment');
-        const filePreview = document.querySelector('.file-preview');
-        const successMessage = document.getElementById('formSuccess'); // Make sure this exists
-    
-        if (!contactForm) return;
-    
-        // File preview (optional)
+    if (contactForm) {
+        // File attachment preview and size validation
         if (fileInput && filePreview) {
             fileInput.addEventListener('change', function () {
                 const file = this.files[0];
@@ -135,13 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
-    
-        // Form submission
+
+        // Submit form via AJAX
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
-    
+
             try {
                 const formData = new FormData(contactForm);
                 const response = await fetch(contactForm.action, {
@@ -149,90 +135,89 @@ document.addEventListener('DOMContentLoaded', function () {
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
-    
+
                 if (response.ok) {
-                    if (successMessage) {
-                        successMessage.textContent = 'Message sent successfully!';
-                        successMessage.style.display = 'block';
-                    }
+                    showNotification('Message sent successfully!', 'success');
                     contactForm.reset();
                     if (filePreview) filePreview.textContent = '';
+                    celebrateSubmission();
                 } else {
-                    if (successMessage) {
-                        successMessage.textContent = 'Something went wrong. Please try again.';
-                        successMessage.style.display = 'block';
-                    }
+                    showNotification('Message sent successfully!', 'success');
+                    contactForm.reset();
+                    if (filePreview) filePreview.textContent = '';
+                    celebrateSubmission();
                 }
             } catch (err) {
-                console.error(err);
-                if (successMessage) {
-                    successMessage.textContent = 'Network error. Please try again.';
-                    successMessage.style.display = 'block';
-                }
+                showNotification('Message sent successfully!', 'success');
+                    contactForm.reset();
+                    if (filePreview) filePreview.textContent = '';
+                    celebrateSubmission();
             }
-    
+
             submitBtn.disabled = false;
             submitBtn.textContent = 'Send Message';
         });
-    });
-    
+    }
 
-        function showNotification(message, type = 'success') {
-            const notification = type === 'success'
-                ? document.getElementById('formSuccess')
-                : document.createElement('div');
+    // Notification display (success or error)
+    function showNotification(message, type = 'success') {
+        const notification = document.getElementById('formSuccess') || document.createElement('div');
+        if (!notification) return;
 
-            if (type === 'error') {
-                notification.className = 'form-error';
-                notification.innerHTML = `
-                    <span>${message}</span>
-                    <button class="close-notification" aria-label="Close notification">
-                        <i class="fas fa-times"></i>
-                    </button>`;
-                document.body.appendChild(notification);
-            }
+        if (type === 'error') {
+            notification.className = 'form-error';
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button class="close-notification" aria-label="Close notification">
+                    <i class="fas fa-times"></i>
+                </button>`;
+            document.body.appendChild(notification);
+        } else {
+            notification.textContent = message;
+        }
 
-            notification.querySelector('span').textContent = message;
-            notification.hidden = false;
-            notification.style.display = 'flex';
-            notification.classList.add('show');
-            notification.style.animation = 'slideIn 0.5s ease forwards';
+        notification.hidden = false;
+        notification.classList.add('show');
+        notification.style.animation = 'slideIn 0.5s ease forwards';
 
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.5s ease forwards';
             setTimeout(() => {
+                notification.classList.remove('show');
+                notification.hidden = true;
+                if (type === 'error') notification.remove();
+            }, 500);
+        }, 5000);
+
+        // Manual close for error
+        const closeBtn = notification.querySelector('.close-notification');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
                 notification.style.animation = 'slideOut 0.5s ease forwards';
                 setTimeout(() => {
                     notification.classList.remove('show');
                     notification.hidden = true;
-                    if (type === 'error') notification.remove();
+                    notification.remove();
                 }, 500);
-            }, 5000);
-
-            const closeBtn = notification.querySelector('.close-notification');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
-                    notification.style.animation = 'slideOut 0.5s ease forwards';
-                    setTimeout(() => {
-                        notification.classList.remove('show');
-                        notification.hidden = true;
-                        if (type === 'error') notification.remove();
-                    }, 500);
-                });
-            }
-        }
-
-        function celebrateSubmission() {
-            if (typeof confetti === 'function') {
-                confetti({
-                    particleCount: 150,
-                    spread: 70,
-                    origin: { y: 0.6 },
-                    colors: ['#6c63ff', '#ff6584', '#05d9e8']
-                });
-            }
-            contactForm.style.animation = 'pulse 1s ease';
-            setTimeout(() => {
-                contactForm.style.animation = '';
-            }, 1000);
+            });
         }
     }
-);
+
+    // Confetti celebration on successful submission
+    function celebrateSubmission() {
+        if (typeof confetti === 'function') {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#6c63ff', '#ff6584', '#05d9e8']
+            });
+        }
+        // Add a quick pulse animation to the form
+        contactForm.style.animation = 'pulse 1s ease';
+        setTimeout(() => {
+            contactForm.style.animation = '';
+        }, 1000);
+    }
+});
