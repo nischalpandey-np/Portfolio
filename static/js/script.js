@@ -1,5 +1,5 @@
 /**
- * Modern Portfolio Website Script - v2
+ * Modern Portfolio Website Script - v3
  *
  * This script handles:
  * 1. Theme (dark/light) toggling and persistence.
@@ -9,6 +9,7 @@
  * 5. Active navigation link highlighting on scroll.
  * 6. Setting the current year in the footer.
  * 7. Fade-in animations for sections on scroll.
+ * 8. File attachment handling for contact form.
  */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -22,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearSpan = document.getElementById('year');
     const sections = document.querySelectorAll('main section');
     const form = document.getElementById('contactForm');
-
+    const fileInput = document.getElementById('attachment');
+    const fileNameSpan = document.getElementById('file-name');
+    const filePreview = document.getElementById('file-preview');
 
     // --- 1. THEME TOGGLE ---
     const currentTheme = localStorage.getItem('theme');
@@ -147,11 +150,72 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(styleSheet);
 
 
-    // --- 6. FOOTER YEAR ---
+    // --- 6. FILE ATTACHMENT HANDLING ---
+    fileInput.addEventListener('change', (e) => {
+        const files = e.target.files;
+        filePreview.innerHTML = '';
+        
+        if (files.length > 0) {
+            const file = files[0];
+            
+            // Validate file size (5MB max)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File size exceeds 5MB limit');
+                fileInput.value = '';
+                fileNameSpan.textContent = 'Attach file (optional)';
+                return;
+            }
+            
+            // Validate file type
+            const validTypes = ['application/pdf', 'application/msword', 
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 
+                'image/jpeg', 'image/png'];
+            
+            if (!validTypes.includes(file.type)) {
+                alert('Only PDF, DOC, JPG, and PNG files are allowed');
+                fileInput.value = '';
+                fileNameSpan.textContent = 'Attach file (optional)';
+                return;
+            }
+            
+            // Update UI
+            fileNameSpan.textContent = file.name;
+            
+            // Create preview item
+            const previewItem = document.createElement('div');
+            previewItem.className = 'file-preview-item';
+            previewItem.innerHTML = `
+                <i class="fas ${getFileIcon(file.type)}"></i>
+                <span>${file.name}</span>
+                <span class="remove-file"><i class="fas fa-times"></i></span>
+            `;
+            
+            // Add remove functionality
+            const removeBtn = previewItem.querySelector('.remove-file');
+            removeBtn.addEventListener('click', () => {
+                fileInput.value = '';
+                fileNameSpan.textContent = 'Attach file (optional)';
+                filePreview.removeChild(previewItem);
+            });
+            
+            filePreview.appendChild(previewItem);
+        } else {
+            fileNameSpan.textContent = 'Attach file (optional)';
+        }
+    });
+    
+    function getFileIcon(fileType) {
+        if (fileType.includes('pdf')) return 'fa-file-pdf';
+        if (fileType.includes('word')) return 'fa-file-word';
+        if (fileType.includes('image')) return 'fa-file-image';
+        return 'fa-file';
+    }
+
+    // --- 7. FOOTER YEAR ---
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // --- 7. Initial call for scroll handlers ---
+    // --- 8. Initial call for scroll handlers ---
     handleScroll();
 });

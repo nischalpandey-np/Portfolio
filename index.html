@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="static/css/styles.css">
@@ -200,7 +200,7 @@
                             <a href="https://www.linkedin.com/in/nischalpandey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <form id="contactForm" action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405" method="POST" class="contact-form">
+                    <form id="contactForm" action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405" method="POST" class="contact-form" enctype="multipart/form-data">
                          <!-- FormSubmit Settings -->
                         <input type="hidden" name="_next" value="index.html">
                         <input type="hidden" name="_captcha" value="false">
@@ -222,6 +222,16 @@
                         <div class="form-group">
                             <label for="message" class="sr-only">Your Message</label>
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <!-- File Attachment -->
+                        <div class="form-group">
+                            <label for="attachment" class="file-label">
+                                <i class="fas fa-paperclip"></i>
+                                <span id="file-name">Attach file (optional)</span>
+                                <input type="file" id="attachment" name="attachment" class="file-input" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                            </label>
+                            <div id="file-preview" class="file-preview"></div>
+                            <p class="file-note">Max file size: 5MB (PDF, DOC, JPG, PNG)</p>
                         </div>
                         <button type="submit" class="cta-btn primary submit-btn">
                             <span>Send Message</span>

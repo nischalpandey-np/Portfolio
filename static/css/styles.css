@@ -1,25 +1,27 @@
 /* ---
-Modern Portfolio CSS - Enhanced v3.0
+Modern Portfolio CSS - Enhanced v4.0
 --- */
 
 /* 1. ROOT VARIABLES & THEMES - Enhanced */
 :root {
     /* Enhanced Color Palette */
-    --primary-color: #5e54ac;
-    --primary-light: #7c73d9;
+    --primary-color: #6c63ff;
+    --primary-light: #8a84ff;
     --secondary-color: #2ab7ca;
     --secondary-dark: #1a8d9c;
-    --accent-color: #fed766;
-    --accent-dark: #f9c126;
+    --accent-color: #ff6b6b;
+    --accent-dark: #ff5252;
     --bg-dark: #12121e;
-    --bg-light: #f4f4f9;
+    --bg-light: #f8f9fa;
     --text-dark: #12121e;
     --text-light: #e0e0e0;
-    --card-dark: #1a1a2e;
-    --card-light: #ffffff;
+    --card-dark: rgba(26, 26, 46, 0.8);
+    --card-light: rgba(255, 255, 255, 0.9);
     --border-dark: rgba(255, 255, 255, 0.1);
     --border-light: rgba(0, 0, 0, 0.1);
     --success-color: #4CAF50;
+    --glass-effect: rgba(18, 18, 30, 0.85);
+    --glass-effect-light: rgba(244, 244, 249, 0.85);
 
     /* Enhanced Typography */
     --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -39,8 +41,8 @@ Modern Portfolio CSS - Enhanced v3.0
     --border-radius: 16px;
     --shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --glass-effect: rgba(18, 18, 30, 0.85);
-    --glass-effect-light: rgba(244, 244, 249, 0.85);
+    --glass-blur: blur(10px);
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
@@ -49,7 +51,7 @@ Modern Portfolio CSS - Enhanced v3.0
     --card-bg: var(--card-dark);
     --border-color: var(--border-dark);
     --header-bg: var(--glass-effect);
-    --shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    --shadow: var(--card-shadow);
 }
 
 [data-theme="light"] {
@@ -58,7 +60,7 @@ Modern Portfolio CSS - Enhanced v3.0
     --card-bg: var(--card-light);
     --border-color: var(--border-light);
     --header-bg: var(--glass-effect-light);
-    --shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+    --shadow: var(--card-shadow);
 }
 
 
@@ -85,6 +87,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(108, 99, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(42, 183, 202, 0.1) 0%, transparent 20%);
 }
 
 h1, h2, h3 {
@@ -165,6 +170,7 @@ img {
     font-size: var(--fs-body);
     gap: 10px;
     cursor: pointer;
+    z-index: 1;
 }
 .cta-btn.primary {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
@@ -200,8 +206,8 @@ img {
 .header.scrolled {
     background-color: var(--header-bg);
     box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
 }
 .navbar {
     display: flex;
@@ -214,6 +220,10 @@ img {
     font-weight: 700;
     color: var(--primary-color);
     z-index: 1002;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
@@ -288,6 +298,10 @@ img {
     cursor: pointer;
     margin-left: clamp(15px, 3vw, 20px);
     z-index: 1002;
+    transition: transform 0.3s ease;
+}
+.theme-toggle:hover {
+    transform: rotate(15deg);
 }
 .theme-toggle .fa-sun { display: none; }
 [data-theme="light"] .theme-toggle .fa-sun { display: inline-block; }
@@ -309,8 +323,8 @@ img {
         align-items: flex-start;
         gap: clamp(25px, 5vw, 30px);
         background-color: var(--card-bg);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
         box-shadow: var(--shadow);
         transition: right 0.4s ease-in-out;
         padding: 100px 30px 50px;
@@ -351,6 +365,7 @@ img {
     align-items: center;
     text-align: center;
     padding: clamp(80px, 12vh, 120px) 0 60px;
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
 }
 .hero-content {
     max-width: min(90%, 800px);
@@ -368,6 +383,11 @@ img {
     font-weight: 700;
     color: var(--text-color);
     font-size: clamp(1.8rem, 10vw, 2.5rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .hero-subtitle {
     font-size: clamp(1rem, 4vw, 1.2rem);
@@ -396,6 +416,11 @@ img {
     height: 40px;
     border: 2px solid var(--text-color);
     border-radius: 12px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.scroll-down:hover {
+    opacity: 1;
 }
 .scroll-down::before {
     content: '';
@@ -449,6 +474,10 @@ section#about {
     object-fit: cover;
     border: 5px solid var(--card-bg);
     box-shadow: 0 0 0 5px var(--primary-color), var(--shadow);
+    transition: transform 0.5s ease;
+}
+.profile-img:hover {
+    transform: scale(1.03);
 }
 .about-text h3 {
     color: var(--primary-color);
@@ -499,9 +528,11 @@ section#about {
 section#projects {
     background-color: var(--card-bg);
     padding: var(--section-padding);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
 }
 [data-theme="light"] section#projects {
-    background-color: #e8e8f2;
+    background-color: rgba(232, 232, 242, 0.8);
 }
 
 .projects-container {
@@ -517,15 +548,22 @@ section#projects {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-color);
 }
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 .project-image img {
     width: 100%;
     height: clamp(180px, 40vw, 220px);
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.project-card:hover .project-image img {
+    transform: scale(1.05);
 }
 .project-info {
     padding: clamp(20px, 3vw, 25px);
@@ -565,6 +603,10 @@ section#projects {
     gap: 8px;
     font-weight: 500;
     font-size: clamp(0.9rem, 3vw, 1rem);
+    transition: transform 0.3s ease;
+}
+.project-link:hover {
+    transform: translateX(5px);
 }
 .project-link i {
     font-size: 1.2rem;
@@ -592,6 +634,10 @@ section#resume {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
+    transition: transform 0.5s ease;
+}
+.resume-preview:hover {
+    transform: scale(1.01);
 }
 .resume-preview iframe {
     width: 100%;
@@ -612,6 +658,10 @@ section#contact {
     background-color: var(--card-bg);
     padding: clamp(30px, 5vw, 50px);
     border-radius: var(--border-radius);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 .contact-info h3 {
     color: var(--primary-color);
@@ -627,6 +677,10 @@ section#contact {
     font-weight: 500;
     color: var(--text-color);
     font-size: clamp(1rem, 3vw, 1.1rem);
+    transition: transform 0.3s ease;
+}
+.contact-link:hover {
+    transform: translateX(5px);
 }
 .contact-link i {
     margin-right: 10px;
@@ -639,13 +693,16 @@ section#contact {
 .contact-social a {
     font-size: clamp(1.3rem, 4vw, 1.5rem);
     color: var(--text-color);
+    transition: transform 0.3s ease;
 }
 .contact-social a:hover {
     color: var(--primary-color);
+    transform: translateY(-5px);
 }
 
 .contact-form .form-group {
     margin-bottom: clamp(15px, 3vw, 20px);
+    position: relative;
 }
 .contact-form input,
 .contact-form textarea {
@@ -674,11 +731,73 @@ section#contact {
     resize: vertical;
     min-height: clamp(100px, 30vw, 120px);
 }
+
+/* File Attachment Styles */
+.file-label {
+    display: block;
+    padding: clamp(12px, 3vw, 15px);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.file-label:hover {
+    border-color: var(--primary-color);
+}
+.file-label i {
+    margin-right: 8px;
+}
+.file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.file-note {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 8px;
+    text-align: center;
+}
+.file-preview {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.file-preview-item {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.file-preview-item .remove-file {
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.file-preview-item .remove-file:hover {
+    transform: scale(1.2);
+}
+
 .submit-btn {
     width: 100%;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
+    margin-top: 10px;
 }
 .submit-btn:active {
     transform: scale(0.97);
@@ -717,6 +836,9 @@ section#contact {
     padding: clamp(40px, 6vw, 60px) 0 30px;
     background-color: var(--card-bg);
     text-align: center;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-top: 1px solid var(--border-color);
 }
 .footer .footer-links {
     display: flex;
@@ -729,6 +851,10 @@ section#contact {
     color: var(--text-color);
     font-weight: 500;
     font-size: clamp(0.95rem, 3vw, 1rem);
+    transition: color 0.3s ease;
+}
+.footer .footer-links a:hover {
+    color: var(--primary-color);
 }
 .footer .footer-social {
     display: flex;
@@ -739,6 +865,11 @@ section#contact {
 .footer .footer-social a {
     font-size: clamp(1.2rem, 4vw, 1.4rem);
     color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+.footer .footer-social a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px);
 }
 .footer .footer-copy {
     opacity: 0.7;
@@ -750,6 +881,11 @@ section#contact {
 /* 11. ANIMATIONS & EFFECTS - Professional */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
