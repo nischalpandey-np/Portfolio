@@ -1052,6 +1052,7 @@ img {
     font-size: var(--fs-body);
     transition: var(--transition);
     box-shadow: var(--shadow-sm);
+    appearance: none;
     -webkit-appearance: none; /* Remove iOS styling */
 }
 
