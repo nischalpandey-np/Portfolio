@@ -1,19 +1,21 @@
 /**
- * Modern Portfolio Website Script - v3
- *
- * This script handles:
- * 1. Theme (dark/light) toggling and persistence.
- * 2. Mobile navigation menu functionality.
- * 3. Header styling changes on scroll.
- * 4. Smooth scrolling for anchor links.
- * 5. Active navigation link highlighting on scroll.
- * 6. Setting the current year in the footer.
- * 7. Fade-in animations for sections on scroll.
- * 8. File attachment handling for contact form.
+ * Modern Portfolio Website Script - Elegant Redesign
+ * 
+ * Features:
+ * 1. Theme toggling with localStorage persistence
+ * 2. Mobile navigation menu
+ * 3. Header scroll effects
+ * 4. Smooth scrolling
+ * 5. Active nav link highlighting
+ * 6. Current year in footer
+ * 7. GSAP animations
+ * 8. Particle.js background
+ * 9. Contact form file handling
+ * 10. Scroll-triggered animations
  */
-document.addEventListener('DOMContentLoaded', () => {
 
-    // --- DOM Element Selectors ---
+document.addEventListener('DOMContentLoaded', () => {
+    // --- DOM Elements ---
     const body = document.body;
     const header = document.querySelector('.header');
     const menuToggle = document.querySelector('.menu-toggle');
@@ -26,25 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileInput = document.getElementById('attachment');
     const fileNameSpan = document.getElementById('file-name');
     const filePreview = document.getElementById('file-preview');
-
+    
     // --- 1. THEME TOGGLE ---
     const currentTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Set initial theme based on local storage or system preference
+    
+    // Set initial theme
     if (currentTheme) {
         body.setAttribute('data-theme', currentTheme);
     } else {
         body.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
     }
-
+    
     themeToggle.addEventListener('click', () => {
         const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
     });
-
-
+    
     // --- 2. MOBILE NAVIGATION ---
     menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -53,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.setAttribute('aria-expanded', !isExpanded);
         body.style.overflow = !isExpanded ? 'hidden' : '';
     });
-
-    // Close mobile menu when a link is clicked
+    
+    // Close mobile menu when link clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navLinksContainer.classList.contains('active')) {
@@ -65,9 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-
-    // --- 3. SCROLL-BASED FUNCTIONALITY ---
+    
+    // --- 3. SCROLL FUNCTIONALITY ---
     const handleScroll = () => {
         // Header background on scroll
         if (window.scrollY > 50) {
@@ -80,11 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentSection = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 150) {
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop - 200 && window.scrollY < sectionTop + sectionHeight - 200) {
                 currentSection = section.getAttribute('id');
             }
         });
-
+    
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href').substring(1) === currentSection) {
@@ -95,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('scroll', handleScroll);
     
-
     // --- 4. SMOOTH SCROLLING ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const headerOffset = header.offsetHeight;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+    
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -115,42 +115,160 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // --- 5. FADE-IN ANIMATIONS ON SCROLL (using Intersection Observer) ---
-    const animatedElements = document.querySelectorAll('.section-header, .about-container, .project-card, .resume-content, .contact-container');
+    // --- 5. GSAP ANIMATIONS ---
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = `fadeInUp 0.8s ease-out forwards`;
-                observer.unobserve(entry.target);
-            }
+    // Animate elements on scroll
+    gsap.utils.toArray('.gsap-fade-in').forEach(element => {
+        gsap.from(element, {
+            scrollTrigger: {
+                trigger: element,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: "power3.out"
         });
-    }, { threshold: 0.1 });
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0'; // Hide elements initially
-        observer.observe(el);
     });
-
-    // Add keyframes for the animation dynamically
-    const styleSheet = document.createElement("style");
-    styleSheet.type = "text/css";
-    styleSheet.innerText = `
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(styleSheet);
-
-
-    // --- 6. FILE ATTACHMENT HANDLING ---
+    
+    // Hero text animation
+    gsap.from('.hero-title', {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power3.out",
+        delay: 0.3
+    });
+    
+    gsap.from('.hero-subtitle', {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power3.out",
+        delay: 0.6
+    });
+    
+    gsap.from('.hero-buttons', {
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        ease: "power3.out",
+        delay: 0.9
+    });
+    
+    // --- 6. PARTICLE.JS BACKGROUND ---
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#6c63ff"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#6c63ff",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: true,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "grab"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 0.5
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    }
+    
+    // --- 7. FILE ATTACHMENT HANDLING ---
     fileInput.addEventListener('change', (e) => {
         const files = e.target.files;
         filePreview.innerHTML = '';
@@ -210,12 +328,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (fileType.includes('image')) return 'fa-file-image';
         return 'fa-file';
     }
-
-    // --- 7. FOOTER YEAR ---
+    
+    // --- 8. FOOTER YEAR ---
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
-
-    // --- 8. Initial call for scroll handlers ---
+    
+    // --- 9. Initial call for scroll handlers ---
     handleScroll();
 });
