@@ -1,21 +1,6 @@
-/**
- * Modern Portfolio Website Script - Elegant Redesign
- * 
- * Features:
- * 1. Theme toggling with localStorage persistence
- * 2. Mobile navigation menu
- * 3. Header scroll effects
- * 4. Smooth scrolling
- * 5. Active nav link highlighting
- * 6. Current year in footer
- * 7. GSAP animations
- * 8. Particle.js background
- * 9. Contact form file handling
- * 10. Scroll-triggered animations
- */
-
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DOM Elements ---
+    // DOM Elements
     const body = document.body;
     const header = document.querySelector('.header');
     const menuToggle = document.querySelector('.menu-toggle');
@@ -29,11 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileNameSpan = document.getElementById('file-name');
     const filePreview = document.getElementById('file-preview');
     
-    // --- 1. THEME TOGGLE ---
+    // Theme Toggle
     const currentTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Set initial theme
     if (currentTheme) {
         body.setAttribute('data-theme', currentTheme);
     } else {
@@ -46,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
     });
     
-    // --- 2. MOBILE NAVIGATION ---
+    // Mobile Navigation
     menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         menuToggle.classList.toggle('active');
@@ -55,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.overflow = !isExpanded ? 'hidden' : '';
     });
     
-    // Close mobile menu when link clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navLinksContainer.classList.contains('active')) {
@@ -67,16 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // --- 3. SCROLL FUNCTIONALITY ---
+    // Scroll Functionality
     const handleScroll = () => {
-        // Header background on scroll
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
         
-        // Active nav link highlighting
         let currentSection = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -96,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.addEventListener('scroll', handleScroll);
     
-    // --- 4. SMOOTH SCROLLING ---
+    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -115,160 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // --- 5. GSAP ANIMATIONS ---
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Animate elements on scroll
-    gsap.utils.toArray('.gsap-fade-in').forEach(element => {
-        gsap.from(element, {
-            scrollTrigger: {
-                trigger: element,
-                start: "top 80%",
-                toggleActions: "play none none none"
-            },
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: "power3.out"
-        });
-    });
-    
-    // Hero text animation
-    gsap.from('.hero-title', {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        ease: "power3.out",
-        delay: 0.3
-    });
-    
-    gsap.from('.hero-subtitle', {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        ease: "power3.out",
-        delay: 0.6
-    });
-    
-    gsap.from('.hero-buttons', {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        ease: "power3.out",
-        delay: 0.9
-    });
-    
-    // --- 6. PARTICLE.JS BACKGROUND ---
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#6c63ff"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 2,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#6c63ff",
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 1,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: true,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "grab"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 0.5
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
-                    repulse: {
-                        distance: 200,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
-                    }
-                }
-            },
-            retina_detect: true
-        });
+    // Footer Year
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
     
-    // --- 7. FILE ATTACHMENT HANDLING ---
+    // File Attachment Handling
     fileInput.addEventListener('change', (e) => {
         const files = e.target.files;
         filePreview.innerHTML = '';
@@ -276,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (files.length > 0) {
             const file = files[0];
             
-            // Validate file size (5MB max)
             if (file.size > 5 * 1024 * 1024) {
                 alert('File size exceeds 5MB limit');
                 fileInput.value = '';
@@ -284,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Validate file type
             const validTypes = ['application/pdf', 'application/msword', 
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 
                 'image/jpeg', 'image/png'];
@@ -296,10 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Update UI
             fileNameSpan.textContent = file.name;
             
-            // Create preview item
             const previewItem = document.createElement('div');
             previewItem.className = 'file-preview-item';
             previewItem.innerHTML = `
@@ -308,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="remove-file"><i class="fas fa-times"></i></span>
             `;
             
-            // Add remove functionality
             const removeBtn = previewItem.querySelector('.remove-file');
             removeBtn.addEventListener('click', () => {
                 fileInput.value = '';
@@ -329,11 +157,25 @@ document.addEventListener('DOMContentLoaded', () => {
         return 'fa-file';
     }
     
-    // --- 8. FOOTER YEAR ---
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-    
-    // --- 9. Initial call for scroll handlers ---
+    // Initial scroll handlers
     handleScroll();
+    
+    // Simple animations
+    document.querySelectorAll('section').forEach((section, index) => {
+        setTimeout(() => {
+            section.style.opacity = '1';
+        }, 300 * index);
+    });
+    
+    // Hero image hover effect
+    const heroImage = document.querySelector('.hero-image');
+    if (heroImage) {
+        heroImage.addEventListener('mouseenter', () => {
+            heroImage.style.transform = 'scale(1.05)';
+        });
+        
+        heroImage.addEventListener('mouseleave', () => {
+            heroImage.style.transform = 'scale(1)';
+        });
+    }
 });
