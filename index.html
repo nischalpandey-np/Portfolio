@@ -5,18 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nischal Pandey | AI & Web Developer</title>
     <meta name="description" content="Personal portfolio of Nischal Pandey, an AI and Web Development enthusiast.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
-    <!-- Animated background elements -->
-    <div class="background-animation">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
-    </div>
-
     <!-- Header & Navigation -->
     <header class="header">
         <nav class="navbar container">
@@ -32,8 +24,9 @@
             <ul class="nav-links">
                 <li><a href="#home"><span>Home</span></a></li>
                 <li><a href="#about"><span>About</span></a></li>
+                <li><a href="#skills"><span>Skills</span></a></li>
                 <li><a href="#projects"><span>Projects</span></a></li>
-                <li><a href="#resume"><span>Resume</span></a></li>
+                <li><a href="#education"><span>Education</span></a></li>
                 <li><a href="#contact"><span>Contact</span></a></li>
             </ul>
             <button class="theme-toggle" aria-label="Toggle light/dark theme">
@@ -66,7 +59,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="hero-image-container">
-                        <img src="static/img/profile.png" alt="Nischal Pandey" class="hero-image">
+                        <img src="static/img/profile-placeholder.jpg" alt="Nischal Pandey" class="hero-image">
                         <div class="hero-image-border"></div>
                     </div>
                     <div class="hero-visual-effect"></div>
@@ -81,34 +74,72 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about">
+        <section id="about" class="section-padding">
             <div class="container">
                 <div class="section-header">
                     <h2><span>About Me</span></h2>
                     <div class="section-decoration"></div>
                 </div>
                 <div class="about-container">
-                    <div class="about-image">
-                        <div class="image-frame">
-                            <img src="static/img/profile-placeholder.jpg" alt="A portrait of Nischal Pandey" class="profile-img">
-                        </div>
-                    </div>
                     <div class="about-text">
                         <h3>Passionate Developer & Innovator</h3>
                         <p>I'm a dedicated and results-oriented high school student with a fervent passion for Artificial Intelligence and Web Development. I thrive on building creative solutions to complex problems and enjoy turning innovative ideas into tangible, high-quality products.</p>
                         <p>My goal is to leverage technology to create impactful and user-centric applications. When I'm not coding, I enjoy exploring new tech trends, contributing to open-source projects, and continuously learning.</p>
-                        <div class="skills">
-                            <h4>My Skills</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">HTML5 & CSS3</span>
-                                <span class="skill-tag">Flask</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">Data Analysis</span>
-                                <span class="skill-tag">Machine Learning</span>
-                                <span class="skill-tag">Git & GitHub</span>
-                            </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <img src="static/img/profile.png" alt="A portrait of Nischal Pandey" class="profile-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-padding bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2><span>Technical Skills</span></h2>
+                    <div class="section-decoration"></div>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> Programming Languages</h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag">Python</div>
+                            <div class="skill-tag">JavaScript</div>
+                            <div class="skill-tag">HTML5 & CSS3</div>
+                            <div class="skill-tag">SQL</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cogs"></i> Frameworks & Libraries</h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag">Flask</div>
+                            <div class="skill-tag">Pandas</div>
+                            <div class="skill-tag">NumPy</div>
+                            <div class="skill-tag">Matplotlib</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> AI & Data Science</h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag">Machine Learning</div>
+                            <div class="skill-tag">Data Analysis</div>
+                            <div class="skill-tag">Natural Language Processing</div>
+                            <div class="skill-tag">Exploratory Data Analysis</div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag">Git & GitHub</div>
+                            <div class="skill-tag">MySQL</div>
+                            <div class="skill-tag">Jupyter Notebook</div>
+                            <div class="skill-tag">Streamlit</div>
                         </div>
                     </div>
                 </div>
@@ -116,10 +147,10 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="projects">
+        <section id="projects" class="section-padding">
             <div class="container">
                 <div class="section-header">
-                    <h2><span>My Projects</span></h2>
+                    <h2><span>Featured Projects</span></h2>
                     <div class="section-decoration"></div>
                 </div>
                 <div class="projects-container">
@@ -144,7 +175,6 @@
                             <div class="project-tech">
                                 <span>Python</span><span>Flask</span><span>MySQL</span><span>JavaScript</span>
                             </div>
-                            <a href="https://nischalpandey07.pythonanywhere.com/" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                     
@@ -158,7 +188,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Jarvis AI Assistant Project Screenshot">
+                            <img src="https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Jarvis AI Assistant Project Screenshot">
                         </div>
                         <div class="project-info">
                             <h3>🤖 Jarvis - AI Assistant</h3>
@@ -166,7 +196,6 @@
                             <div class="project-tech">
                                 <span>Python</span><span>Speech Recognition</span><span>NLP</span>
                             </div>
-                            <a href="https://github.com/nischalpandey-np/Jarvis-VirtualAssistant" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                     
@@ -180,7 +209,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <img src="static/img/project3.jpg" alt="To-Do Manager Project Screenshot">
+                            <img src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="To-Do Manager Project Screenshot">
                         </div>
                         <div class="project-info">
                             <h3>✅ To-Do Manager</h3>
@@ -188,36 +217,70 @@
                             <div class="project-tech">
                                 <span>Python</span><span>MySQL</span><span>CLI</span>
                             </div>
-                            <a href="https://github.com/nischalpandey-np/To-do" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Resume Section -->
-        <section id="resume" class="resume">
+        <!-- Education Section -->
+        <section id="education" class="section-padding bg-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2><span>My Resume</span></h2>
+                    <h2><span>Education & Certifications</span></h2>
                     <div class="section-decoration"></div>
                 </div>
-                <div class="resume-content">
-                    <p class="resume-description">Feel free to view my detailed resume online or download a copy for your reference.</p>
-                    <div class="resume-actions">
-                        <a href="static/Resume.pdf" download="NischalPandey_Resume.pdf" class="btn btn-primary">
-                            <i class="fas fa-download"></i> Download Resume
-                        </a>
+                
+                <div class="education-container">
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>High School Diploma</h3>
+                            <p class="education-sub">Major: Physical Science</p>
+                            <p class="education-desc">Relevant Coursework: Computer Science, Physics, Chemistry, Mathematics</p>
+                        </div>
                     </div>
-                    <div class="resume-preview">
-                        <iframe src="static/Resume.pdf" title="Nischal Pandey's Resume" frameborder="0"></iframe>
+                    
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Harvard University</h3>
+                            <p class="education-sub">CS50's Introduction to Programming with Python</p>
+                            <p class="education-desc">Learned core programming concepts and Python syntax through problem sets and projects.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>IBM (Coursera)</h3>
+                            <p class="education-sub">Developing AI Applications with Flask</p>
+                            <p class="education-desc">Built and deployed AI-powered web applications using Flask framework.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>University of Colorado Boulder</h3>
+                            <p class="education-sub">Everyday Excel: Advanced Data Analysis</p>
+                            <p class="education-desc">Mastered advanced Excel techniques for data manipulation and visualization.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact">
+        <section id="contact" class="section-padding">
             <div class="container">
                 <div class="section-header">
                     <h2><span>Get In Touch</span></h2>
@@ -227,24 +290,40 @@
                     <div class="contact-info">
                         <h3>Let's Connect</h3>
                         <p>I'm currently available for freelance projects and open to discussing new opportunities. Feel free to reach out via email or connect with me on social media.</p>
-                        <a href="mailto:nischalpandey0204@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> nischalpandey0204@gmail.com</a>
+                        <a href="mailto:nischalpandey0204@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>nischalpandey0204@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="tel:+9779766305007" class="contact-link">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+977 976-630-5007</p>
+                            </div>
+                        </a>
+                        <a href="https://goo.gl/maps/your-location" class="contact-link">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <p>Tilottama, Lumbini Province, Nepal</p>
+                            </div>
+                        </a>
                         <div class="contact-social">
                             <a href="https://github.com/nischalpandey-np" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                 <i class="fab fa-github"></i>
-                                <span>GitHub</span>
                             </a>
                             <a href="https://www.linkedin.com/in/nischalpandey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
-                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
                             </a>
                         </div>
                     </div>
-                    <form id="contactForm" action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405" method="POST" class="contact-form" enctype="multipart/form-data">
-                        <input type="hidden" name="_next" value="https://nischalp.com.np">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="text" name="_honey" style="display:none">
-                        
+                    <form id="contactForm" class="contact-form">
                         <div class="form-group">
                             <label for="name" class="sr-only">Your Name</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -260,15 +339,6 @@
                         <div class="form-group">
                             <label for="message" class="sr-only">Your Message</label>
                             <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="attachment" class="file-label">
-                                <i class="fas fa-paperclip"></i>
-                                <span id="file-name">Attach file (optional)</span>
-                                <input type="file" id="attachment" name="attachment" class="file-input" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
-                            </label>
-                            <div id="file-preview" class="file-preview"></div>
-                            <p class="file-note">Max file size: 5MB (PDF, DOC, JPG, PNG)</p>
                         </div>
                         <button type="submit" class="btn btn-primary submit-btn">
                             <span>Send Message</span>
@@ -297,8 +367,8 @@
                         <ul>
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
                             <li><a href="#projects">Projects</a></li>
-                            <li><a href="#resume">Resume</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
@@ -318,8 +388,7 @@
         </div>
     </footer>
     
-    <!-- FontAwesome Icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <script src="static/js/script.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

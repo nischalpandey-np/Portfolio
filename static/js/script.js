@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearSpan = document.getElementById('year');
     const sections = document.querySelectorAll('main section');
     const form = document.getElementById('contactForm');
-    const fileInput = document.getElementById('attachment');
-    const fileNameSpan = document.getElementById('file-name');
-    const filePreview = document.getElementById('file-preview');
     
     // Theme Toggle
     const currentTheme = localStorage.getItem('theme');
@@ -101,60 +98,25 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
     
-    // File Attachment Handling
-    fileInput.addEventListener('change', (e) => {
-        const files = e.target.files;
-        filePreview.innerHTML = '';
-        
-        if (files.length > 0) {
-            const file = files[0];
+    // Form Submission
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
             
-            if (file.size > 5 * 1024 * 1024) {
-                alert('File size exceeds 5MB limit');
-                fileInput.value = '';
-                fileNameSpan.textContent = 'Attach file (optional)';
-                return;
-            }
+            // Show a success message
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnContent = submitBtn.innerHTML;
             
-            const validTypes = ['application/pdf', 'application/msword', 
-                'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 
-                'image/jpeg', 'image/png'];
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            submitBtn.disabled = true;
             
-            if (!validTypes.includes(file.type)) {
-                alert('Only PDF, DOC, JPG, and PNG files are allowed');
-                fileInput.value = '';
-                fileNameSpan.textContent = 'Attach file (optional)';
-                return;
-            }
-            
-            fileNameSpan.textContent = file.name;
-            
-            const previewItem = document.createElement('div');
-            previewItem.className = 'file-preview-item';
-            previewItem.innerHTML = `
-                <i class="fas ${getFileIcon(file.type)}"></i>
-                <span>${file.name}</span>
-                <span class="remove-file"><i class="fas fa-times"></i></span>
-            `;
-            
-            const removeBtn = previewItem.querySelector('.remove-file');
-            removeBtn.addEventListener('click', () => {
-                fileInput.value = '';
-                fileNameSpan.textContent = 'Attach file (optional)';
-                filePreview.removeChild(previewItem);
-            });
-            
-            filePreview.appendChild(previewItem);
-        } else {
-            fileNameSpan.textContent = 'Attach file (optional)';
-        }
-    });
-    
-    function getFileIcon(fileType) {
-        if (fileType.includes('pdf')) return 'fa-file-pdf';
-        if (fileType.includes('word')) return 'fa-file-word';
-        if (fileType.includes('image')) return 'fa-file-image';
-        return 'fa-file';
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnContent;
+                submitBtn.disabled = false;
+                form.reset();
+            }, 3000);
+        });
     }
     
     // Initial scroll handlers
