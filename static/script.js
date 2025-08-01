@@ -130,23 +130,74 @@ backToTopBtn.addEventListener('click', () => {
 });
 
 // Typed.js initialization for hero section
-document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
     const typed = new Typed('#typed-text', {
         strings: [
-            'AI & Web Development Enthusiast',
-            'Building the Future, One Line of Code at a Time',
-            'Passionate About Problem Solving',
-            'Creating Impactful Digital Experiences'
+            'Web Developer^1000',
+            'Data Analyst^1000',
+            'Python Developer^1000',
+            'UI/UX Designer^1000',
+            'Aspiring AI Engineer^1000',
+            'Django Developer^1000'
         ],
-        typeSpeed: 50,
-        backSpeed: 30,
+        typeSpeed: 80,
+        backSpeed: 40,
+        backDelay: 1500,
+        startDelay: 500,
         loop: true,
         showCursor: true,
         cursorChar: '|',
-        smartBackspace: true
+        smartBackspace: true,
+        fadeOut: false,
+        fadeOutClass: 'typed-fade-out',
+        fadeOutDelay: 500,
+        
+        // Enhanced callbacks for better effects
+        onBegin: function(self) {
+            // Add entrance animation
+            document.getElementById('typed-text').style.transform = 'translateY(10px)';
+            document.getElementById('typed-text').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('typed-text').style.transform = 'translateY(0)';
+                document.getElementById('typed-text').style.opacity = '1';
+                document.getElementById('typed-text').style.transition = 'all 0.3s ease';
+            }, 100);
+        },
+        
+        onStringTyped: function(arrayPos, self) {
+            // Add a subtle pulse effect when string is complete
+            const element = document.getElementById('typed-text');
+            element.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                element.style.transform = 'scale(1)';
+                element.style.transition = 'transform 0.2s ease';
+            }, 150);
+        },
+        
+        preStringTyped: function(arrayPos, self) {
+            // Add anticipation effect before typing
+            const element = document.getElementById('typed-text');
+            element.style.filter = 'brightness(1.2)';
+            setTimeout(() => {
+                element.style.filter = 'brightness(1)';
+                element.style.transition = 'filter 0.3s ease';
+            }, 200);
+        }
+    });
+    
+    // Add hover effect to the typed text container
+    const heroDesc = document.querySelector('.hero-description');
+    heroDesc.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+        this.style.transition = 'transform 0.3s ease';
+        document.getElementById('typed-text').style.filter = 'brightness(1.3) saturate(1.2)';
+    });
+    
+    heroDesc.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        document.getElementById('typed-text').style.filter = 'brightness(1) saturate(1)';
     });
 });
-
 // Custom cursor functionality
 const cursor = document.querySelector('.cursor');
 const trails = [];

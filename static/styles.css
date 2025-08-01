@@ -398,44 +398,6 @@ body {
     box-shadow: 0 10px 20px rgba(147, 51, 234, 0.3);
 }
 
-/* Scroll Indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    color: rgba(255, 255, 255, 0.6);
-    text-align: center;
-    font-size: 14px;
-    animation: fadeInUp 1s ease 1s both;
-}
-
-.scroll-mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    margin: 10px auto;
-    position: relative;
-}
-
-.scroll-wheel {
-    width: 4px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scrollWheel 2s infinite;
-}
-
-@keyframes scrollWheel {
-    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
-}
 
 /* Animations */
 @keyframes fadeInUp {
@@ -493,3 +455,59 @@ body {
 .hero * {
     will-change: transform;
 }
+
+/* Thank You Page Specific Styles */
+#thankyou {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkmark-animation {
+    animation: checkmarkBounce 1.5s ease infinite;
+}
+
+@keyframes checkmarkBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* About Page Specific Styles */
+.journey-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    z-index: -1;
+}
+
+.value-timeline {
+    position: relative;
+}
+
+.value-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
+    transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+    .value-timeline::before {
+        display: none;
+    }
+}
+

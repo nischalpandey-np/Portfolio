@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | Nischal Pandey</title>
+    <meta name="description" content="Thank you for contacting Nischal Pandey" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="static/styles.css" as="style">
+    <link rel="preload" href="static/script.js" as="script">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900 transition-opacity duration-500">
+        <div class="relative w-24 h-24">
+            <div class="absolute inset-0 border-4 border-t-primary border-r-secondary border-b-accent border-l-transparent rounded-full animate-spin"></div>
+            <div class="absolute inset-4 border-4 border-t-secondary border-r-accent border-b-primary border-l-transparent rounded-full animate-spin-reverse"></div>
+            <div class="absolute inset-8 border-4 border-t-accent border-r-primary border-b-secondary border-l-transparent rounded-full animate-spin"></div>
+        </div>
+    </div>
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-trail"></div>
+
+    <!-- Thank You Content -->
+    <main class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 bg-[url('static/img/code-bg.jpg')] bg-cover bg-center opacity-10 z-0"></div>
+        <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/20 to-transparent z-0"></div>
+        
+        <!-- Content -->
+        <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center py-20">
+            <div class="max-w-2xl mx-auto glass p-8 sm:p-12 rounded-3xl card-hover">
+                <!-- Animated checkmark -->
+                <div class="w-24 h-24 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-8 animate-bounce">
+                    <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-6">Thank You!</h1>
+                <p class="text-xl text-gray-300 mb-8">Your message has been successfully sent. I'll get back to you as soon as possible.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary px-6 py-3 rounded-full font-semibold text-white hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-home"></i>
+                        <span>Return Home</span>
+                    </a>
+                    
+                    <a href="index.html#projects" class="inline-flex items-center justify-center gap-2 glass px-6 py-3 rounded-full font-semibold text-white hover:bg-white/20 transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>View Projects</span>
+                    </a>
+                </div>
+                
+                <div class="mt-12 pt-6 border-t border-white/10">
+                    <p class="text-gray-400 mb-4">Connect with me on social media:</p>
+                    <div class="flex justify-center gap-4">
+                        <a href="https://github.com/nischalpandey-np" target="_blank" class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" aria-label="GitHub">
+                            <i class="fab fa-github text-xl text-white"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nischalpandey" target="_blank" class="w-12 h-12 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-xl text-white"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black/40">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <p class="text-gray-400 text-xs sm:text-sm">&copy; <span id="year">2024</span> Nischal Pandey. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

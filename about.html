@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nischal Pandey | About Me</title>
-    <meta name="description" content="About Nischal Pandey, an AI and Web Development enthusiast." />
+    <title>About Nischal Pandey | AI & Web Developer</title>
+    <meta name="description" content="Learn more about Nischal Pandey, a passionate AI and Web Development enthusiast." />
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-trail"></div>
 
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900 transition-opacity duration-500">
@@ -70,37 +73,169 @@
         </div>
     </nav>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 sm:py-20 relative">
+    <!-- About Hero Section -->
+    <section class="relative h-96 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 z-0"></div>
+        <div class="absolute inset-0 bg-[url('static/img/code-bg.jpg')] bg-cover bg-center opacity-20 z-0"></div>
+        <div class="container mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-4">About Me</h1>
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">Discover my journey, passions, and what drives me in the world of technology</p>
+        </div>
+    </section>
+
+    <!-- Personal Journey Section -->
+    <section class="py-16 sm:py-20 relative">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">About Me</h2>
-                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
-                <div class="lg:w-1/2 order-2 lg:order-1">
-                    <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
-                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-gradient">Passionate Developer & Innovator</h3>
-                        <p class="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                            I'm a dedicated and results-oriented high school student with a fervent passion for Artificial Intelligence and Web Development. I thrive on building creative solutions to complex problems and enjoy turning innovative ideas into tangible, high-quality products.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
-                            My goal is to leverage technology to create impactful and user-centric applications. When I'm not coding, I enjoy exploring new tech trends, contributing to open-source projects, and continuously learning.
-                        </p>
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="relative group">
+                        <div class="w-full max-w-md mx-auto rounded-2xl sm:rounded-3xl overflow-hidden neon-border transform rotate-3">
+                            <img src="static/img/profile-placeholder.jpg" alt="Nischal Pandey" class="w-full h-auto object-cover" loading="lazy">
+                        </div>
+                        <div class="absolute -z-10 w-full h-full rounded-2xl sm:rounded-3xl bg-gradient-to-r from-primary to-secondary blur-xl sm:blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300 -rotate-3 top-4 left-4"></div>
                     </div>
                 </div>
                 
-                <div class="lg:w-1/2 order-1 lg:order-2">
-                    <div class="relative group">
-                        <div class="w-full max-w-md mx-auto rounded-2xl sm:rounded-3xl overflow-hidden neon-border">
-                            <img src="static/img/profile-placeholder.jpg" alt="Nischal Pandey working" class="w-full h-auto object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gradient mb-6">My Personal Journey</h2>
+                    <div class="space-y-6">
+                        <div class="glass p-6 rounded-2xl card-hover">
+                            <h3 class="text-xl font-bold text-white mb-2">Early Beginnings</h3>
+                            <p class="text-gray-300">My fascination with technology began at a young age when I first discovered the magic of making computers do what I wanted through code. What started as simple HTML pages evolved into a deep passion for creating digital experiences.</p>
                         </div>
-                        <div class="absolute -z-10 w-full h-full rounded-2xl sm:rounded-3xl bg-gradient-to-r from-primary to-secondary blur-xl sm:blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                        
+                        <div class="glass p-6 rounded-2xl card-hover">
+                            <h3 class="text-xl font-bold text-white mb-2">Current Focus</h3>
+                            <p class="text-gray-300">Today, I specialize in building AI-powered web applications that solve real-world problems. I'm particularly interested in the intersection of machine learning and user experience design.</p>
+                        </div>
+                        
+                        <div class="glass p-6 rounded-2xl card-hover">
+                            <h3 class="text-xl font-bold text-white mb-2">Future Aspirations</h3>
+                            <p class="text-gray-300">I aim to contribute to open-source projects that make AI more accessible and continue developing tools that bridge the gap between complex technology and everyday users.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="py-16 sm:py-20 bg-black/20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gradient mb-3 sm:mb-4">Fun Facts About Me</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Beyond coding, here are some things that make me who I am</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="glass p-6 rounded-2xl text-center card-hover transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mug-hot text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Coffee Enthusiast</h3>
+                    <p class="text-gray-300">I believe the perfect coding session starts with a great cup of coffee.</p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl text-center card-hover transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book-open text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Avid Reader</h3>
+                    <p class="text-gray-300">I consume 2-3 books per month, mostly about tech and personal growth.</p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl text-center card-hover transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gamepad text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Gamer at Heart</h3>
+                    <p class="text-gray-300">When not coding, I enjoy strategy games that challenge my problem-solving skills.</p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl text-center card-hover transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe-asia text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Travel Lover</h3>
+                    <p class="text-gray-300">I dream of visiting every tech hub around the world to learn from different cultures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gradient mb-3 sm:mb-4">My Core Values</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Principles that guide my work and life</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-primary to-secondary transform -translate-x-1/2 hidden md:block"></div>
+                    
+                    <!-- Value 1 -->
+                    <div class="relative mb-12 md:mb-16 md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <h3 class="text-2xl font-bold text-gradient">Continuous Learning</h3>
+                            <p class="text-gray-300">Technology evolves rapidly, and so do I. I dedicate time daily to learn new concepts and improve my skills.</p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute left-1/2 -ml-4 w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center transform -translate-x-1/2 md:translate-x-0">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="relative mb-12 md:mb-16 md:flex items-center">
+                        <div class="hidden md:block md:w-1/2 md:pr-12"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <h3 class="text-2xl font-bold text-gradient">User-Centric Design</h3>
+                            <p class="text-gray-300">Technology should serve people. I prioritize creating intuitive experiences that solve real problems.</p>
+                        </div>
+                        <div class="absolute left-1/2 -ml-4 w-8 h-8 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center transform -translate-x-1/2 md:translate-x-0">
+                            <i class="fas fa-users text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 3 -->
+                    <div class="relative mb-12 md:mb-16 md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
+                            <h3 class="text-2xl font-bold text-gradient">Clean Code</h3>
+                            <p class="text-gray-300">I write code that's not just functional but maintainable, scalable, and well-documented.</p>
+                        </div>
+                        <div class="hidden md:block md:w-1/2"></div>
+                        <div class="absolute left-1/2 -ml-4 w-8 h-8 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center transform -translate-x-1/2 md:translate-x-0">
+                            <i class="fas fa-code text-white"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Value 4 -->
+                    <div class="relative md:flex items-center">
+                        <div class="hidden md:block md:w-1/2 md:pr-12"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <h3 class="text-2xl font-bold text-gradient">Community First</h3>
+                            <p class="text-gray-300">I believe in giving back through open-source contributions and mentoring aspiring developers.</p>
+                        </div>
+                        <div class="absolute left-1/2 -ml-4 w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center transform -translate-x-1/2 md:translate-x-0">
+                            <i class="fas fa-hands-helping text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 sm:py-20 bg-black/20">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gradient mb-6">Want to Work Together?</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+            <a href="index.html#contact" class="inline-block bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-semibold text-white hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
+                Get In Touch
+            </a>
         </div>
     </section>
 
@@ -144,7 +279,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="static/script.js"></script>
 </body>
 </html>
