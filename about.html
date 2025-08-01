@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nischal Pandey | About Me</title>
+    <meta name="description" content="About Nischal Pandey, an AI and Web Development enthusiast." />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="static/styles.css" as="style">
+    <link rel="preload" href="static/script.js" as="script">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900 transition-opacity duration-500">
+        <div class="relative w-24 h-24">
+            <div class="absolute inset-0 border-4 border-t-primary border-r-secondary border-b-accent border-l-transparent rounded-full animate-spin"></div>
+            <div class="absolute inset-4 border-4 border-t-secondary border-r-accent border-b-primary border-l-transparent rounded-full animate-spin-reverse"></div>
+            <div class="absolute inset-8 border-4 border-t-accent border-r-primary border-b-secondary border-l-transparent rounded-full animate-spin"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 z-40 w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:scale-110">
+        <i class="fas fa-arrow-up text-white"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 glass transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold text-gradient hover:scale-110 transition-transform duration-300" aria-label="Home">
+                    NP
+                </a>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-4 lg:space-x-6">
+                    <li><a href="index.html" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Home</a></li>
+                    <li><a href="#about" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">About</a></li>
+                    <li><a href="index.html#skills" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Skills</a></li>
+                    <li><a href="index.html#projects" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Projects</a></li>
+                    <li><a href="index.html#education" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Education</a></li>
+                    <li><a href="index.html#contact" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-3 hidden" id="mobile-menu">
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Home</a></li>
+                    <li><a href="#about" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">About</a></li>
+                    <li><a href="index.html#skills" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Skills</a></li>
+                    <li><a href="index.html#projects" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Projects</a></li>
+                    <li><a href="index.html#education" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Education</a></li>
+                    <li><a href="index.html#contact" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20 relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">About Me</h2>
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-8 sm:gap-12">
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6 text-gradient">Passionate Developer & Innovator</h3>
+                        <p class="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                            I'm a dedicated and results-oriented high school student with a fervent passion for Artificial Intelligence and Web Development. I thrive on building creative solutions to complex problems and enjoy turning innovative ideas into tangible, high-quality products.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                            My goal is to leverage technology to create impactful and user-centric applications. When I'm not coding, I enjoy exploring new tech trends, contributing to open-source projects, and continuously learning.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <div class="relative group">
+                        <div class="w-full max-w-md mx-auto rounded-2xl sm:rounded-3xl overflow-hidden neon-border">
+                            <img src="static/img/profile-placeholder.jpg" alt="Nischal Pandey working" class="w-full h-auto object-cover" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div class="absolute -z-10 w-full h-full rounded-2xl sm:rounded-3xl bg-gradient-to-r from-primary to-secondary blur-xl sm:blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 sm:py-16 bg-black/40">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
+                <div class="text-center lg:text-left">
+                    <a href="index.html" class="text-2xl sm:text-3xl font-bold text-gradient hover:scale-110 transition-transform duration-300 inline-block mb-3 sm:mb-4" aria-label="Home">
+                        NP
+                    </a>
+                    <p class="text-gray-400 text-sm sm:text-base">Building digital experiences with passion and precision.</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 sm:gap-8">
+                    <div class="text-center">
+                        <h4 class="font-semibold text-gradient mb-3 sm:mb-4 text-sm sm:text-base">Navigation</h4>
+                        <ul class="space-y-1 sm:space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm">About</a></li>
+                            <li><a href="index.html#skills" class="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm">Skills</a></li>
+                            <li><a href="index.html#projects" class="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm">Projects</a></li>
+                            <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h4 class="font-semibold text-gradient mb-3 sm:mb-4 text-sm sm:text-base">Connect</h4>
+                        <ul class="space-y-1 sm:space-y-2">
+                            <li><a href="mailto:nischalpandey0204@gmail.com" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"><i class="fas fa-envelope text-xs sm:text-sm"></i> Email</a></li>
+                            <li><a href="https://github.com/nischalpandey-np" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"><i class="fab fa-github text-xs sm:text-sm"></i> GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/nischalpandey" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm"><i class="fab fa-linkedin text-xs sm:text-sm"></i> LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
+                <p class="text-gray-400 text-xs sm:text-sm">&copy; <span id="year">2024</span> Nischal Pandey. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="static/script.js"></script>
+</body>
+</html>

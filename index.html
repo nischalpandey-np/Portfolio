@@ -1,205 +1,556 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance Break | We'll Be Back Soon!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nischal Pandey | AI & Web Developer</title>
+    <meta name="description" content="Personal portfolio of Nischal Pandey, an AI and Web Development enthusiast." />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+    <link rel="preload" href="static/styles.css" as="style" />
+    <link rel="preload" href="static/script.js" as="script" />
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
-        
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        
-        .tool-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-        }
-        
-        .gear-1 {
-            animation: spin 8s linear infinite;
-        }
-        
-        .gear-2 {
-            animation: spin-reverse 6s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes spin-reverse {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
-        }
-        
-        .progress-bar {
-            animation: progress 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes progress {
-            0% { width: 10%; }
-            100% { width: 90%; }
-        }
-    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="static/styles.css" />
+
+    <!-- 3D / Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-<body class="gradient-bg min-h-screen flex flex-col items-center justify-center text-white p-4">
-    <div class="max-w-4xl w-full text-center">
-        <!-- Animated Tools Section -->
-        <div class="relative h-48 mb-12">
-            <div class="absolute left-1/4 tool-animation">
-                <i class="fas fa-tools text-6xl text-yellow-300"></i>
+
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900 transition-opacity duration-500">
+        <div class="relative w-24 h-24">
+            <div class="absolute inset-0 border-4 border-t-primary border-r-secondary border-b-accent border-l-transparent rounded-full animate-spin"></div>
+            <div class="absolute inset-4 border-4 border-t-secondary border-r-accent border-b-primary border-l-transparent rounded-full animate-spin-reverse"></div>
+            <div class="absolute inset-8 border-4 border-t-accent border-r-primary border-b-secondary border-l-transparent rounded-full animate-spin"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 z-40 w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:scale-110">
+        <i class="fas fa-arrow-up text-white"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-40 glass transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-2xl font-bold text-gradient hover:scale-110 transition-transform duration-300" aria-label="Home">
+                    NP
+                </a>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-4 lg:space-x-6">
+                    <li><a href="#home" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Home</a></li>
+                    <li><a href="about.html" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">About</a></li>
+                    <li><a href="#skills" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Skills</a></li>
+                    <li><a href="#projects" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Projects</a></li>
+                    <li><a href="#education" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Education</a></li>
+                    <li><a href="#contact" class="nav-link relative px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-300 text-sm lg:text-base">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
-            <div class="absolute right-1/4 tool-animation" style="animation-delay: 1s;">
-                <i class="fas fa-screwdriver-wrench text-5xl text-blue-300"></i>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-3 hidden" id="mobile-menu">
+                <ul class="space-y-2">
+                    <li><a href="#home" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Home</a></li>
+                    <li><a href="about.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">About</a></li>
+                    <li><a href="#skills" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Skills</a></li>
+                    <li><a href="#projects" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Projects</a></li>
+                    <li><a href="#education" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Education</a></li>
+                    <li><a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-300">Contact</a></li>
+                </ul>
             </div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <div class="relative">
-                    <i class="fas fa-gear gear-1 text-8xl text-white opacity-80"></i>
-                    <i class="fas fa-gear gear-2 text-6xl text-white opacity-90 absolute -right-4 -bottom-4"></i>
-                </div>
-            </div>
-            <div class="absolute bottom-0 left-1/3 tool-animation" style="animation-delay: 2s;">
-                <i class="fas fa-hammer text-5xl text-red-300"></i>
-            </div>
-            <div class="absolute bottom-0 right-1/3 tool-animation" style="animation-delay: 1.5s;">
-                <i class="fas fa-wrench text-6xl text-green-300"></i>
-            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- 3D Background -->
+        <canvas id="three-canvas"></canvas>
+        
+        <!-- Gradient Overlay -->
+        <div class="gradient-overlay"></div>
+        
+        <!-- Floating Orbs -->
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
         </div>
         
         <!-- Main Content -->
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-pulse">
-            Scheduled Maintenance
-        </h1>
-        
-        <div class="text-xl md:text-2xl mb-8 leading-relaxed">
-            <p class="mb-4">I'm currently performing scheduled maintenance to improve your experience.</p>
-            <p>I'll be back online shortly. Thank you for your patience!</p>
-        </div>
-        
-        <!-- Progress Bar -->
-        <div class="w-full bg-white bg-opacity-20 rounded-full h-4 mb-8 overflow-hidden">
-            <div class="progress-bar bg-white h-4 rounded-full"></div>
-        </div>
-        
-        <!-- Countdown Timer -->
-        <div class="mb-10">
-            <h2 class="text-2xl font-semibold mb-4">Estimated time remaining:</h2>
-            <div id="countdown" class="flex justify-center space-x-4 text-3xl font-mono">
-                <div class="flex flex-col items-center">
-                    <span id="hours" class="font-bold">02</span>
-                    <span class="text-sm">Hours</span>
-                </div>
-                <span>:</span>
-                <div class="flex flex-col items-center">
-                    <span id="minutes" class="font-bold">30</span>
-                    <span class="text-sm">Minutes</span>
-                </div>
-                <span>:</span>
-                <div class="flex flex-col items-center">
-                    <span id="seconds" class="font-bold">45</span>
-                    <span class="text-sm">Seconds</span>
-                </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Welcome to my digital universe</p>
+            <h1 class="hero-title">
+                <span class="gradient-text">Nischal Pandey</span>
+            </h1>
+            <div class="hero-description">
+                <span id="typed-text"></span>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                <a href="#contact" class="btn btn-secondary">Let's Connect</a>
             </div>
         </div>
         
-        <!-- Contact Info -->
-        <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
-            <h3 class="text-xl font-semibold mb-3">Need immediate assistance?</h3>
-            <p class="mb-4">Contact me at <a href="mailto:support@example.com" class="underline hover:text-yellow-200">nischalpandey0204@gmail.com</
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://github.com/nischalpandey-np" target="_blank" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nischalpandey" target="_blank" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:nischalpandey0204@gmail.com" class="social-link" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
-    </div>
-    
-    <script>
-        // Countdown Timer
-        function updateCountdown() {
-            // Set your maintenance end time (hours, minutes, seconds)
-            const endTime = new Date();
-            endTime.setHours(endTime.getHours() + 2);
-            endTime.setMinutes(endTime.getMinutes() + 30);
-            endTime.setSeconds(endTime.getSeconds() + 45);
-            
-            const now = new Date();
-            const diff = endTime - now;
-            
-            if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = '<div class="text-2xl">Maintenance complete! Refreshing...</div>';
-                setTimeout(() => {
-                    window.location.reload();
-                }, 5000);
-                return;
-            }
-            
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
         
-        // Update countdown every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-        
-        // Add some fun confetti when clicked anywhere
-        document.addEventListener('click', function() {
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <p>Scroll to explore</p>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 bg-black/20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">Technical Skills</h2>
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
             
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.style.position = 'fixed';
-                confetti.style.width = '10px';
-                confetti.style.height = '10px';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.borderRadius = '50%';
-                confetti.style.left = Math.random() * window.innerWidth + 'px';
-                confetti.style.top = '-10px';
-                confetti.style.zIndex = '9999';
-                confetti.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <!-- Programming Languages -->
+                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-laptop-code text-xl sm:text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-gradient">Programming Languages</h3>
+                    </div>
+                    <div class="space-y-2 sm:space-y-3">
+                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">Python</div>
+                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">JavaScript</div>
+                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">HTML5 & CSS3</div>
+                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">SQL</div>
+                    </div>
+                </div>
                 
-                document.body.appendChild(confetti);
+                <!-- Frameworks & Libraries -->
+                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-cogs text-xl sm:text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-gradient">Frameworks & Libraries</h3>
+                    </div>
+                    <div class="space-y-2 sm:space-y-3">
+                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">Flask</div>
+                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">Pandas</div>
+                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">NumPy</div>
+                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">Matplotlib</div>
+                    </div>
+                </div>
                 
-                const animation = confetti.animate([
-                    { top: '-10px', opacity: 1 },
-                    { top: window.innerHeight + 'px', opacity: 0 }
-                ], {
-                    duration: Math.random() * 3000 + 2000,
-                    easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)'
-                });
+                <!-- AI & Data Science -->
+                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-brain text-xl sm:text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-gradient">AI & Data Science</h3>
+                    </div>
+                    <div class="space-y-2 sm:space-y-3">
+                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">Machine Learning</div>
+                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">Data Analysis</div>
+                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">NLP</div>
+                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">EDA</div>
+                    </div>
+                </div>
                 
-                animation.onfinish = () => {
-                    confetti.remove();
-                };
-            }
-        });
-    </script>
+                <!-- Tools & Technologies -->
+                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
+                    <div class="text-center mb-4 sm:mb-6">
+                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                            <i class="fas fa-tools text-xl sm:text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold text-gradient">Tools & Technologies</h3>
+                    </div>
+                    <div class="space-y-2 sm:space-y-3">
+                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">Git & GitHub</div>
+                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">MySQL</div>
+                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">Jupyter Notebook</div>
+                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">Streamlit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">Featured Projects</h2>
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Project 1 -->
+                <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
+                    <div class="relative overflow-hidden h-40 sm:h-48">
+                        <img src="static/img/project1.webp" alt="Digi Bistro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
+                                <a href="https://github.com/nischalpandey-np/Digi-Bistro" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Digi Bistro on GitHub">
+                                    <i class="fab fa-github text-lg sm:text-xl"></i>
+                                </a>
+                                <a href="https://nischalpandey07.pythonanywhere.com/" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Digi Bistro live demo">
+                                    <i class="fas fa-external-link-alt text-lg sm:text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">🍽️ Digi Bistro</h3>
+                        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A full-stack web application for a restaurant ordering system. Features user authentication, menu browsing, and order tracking with a MySQL backend.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
+                            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">Flask</span>
+                            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">MySQL</span>
+                            <span class="bg-purple-500/20 text-purple-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-purple-500/30">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
+                    <div class="relative overflow-hidden h-40 sm:h-48">
+                        <img src="https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Jarvis AI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
+                                <a href="https://github.com/nischalpandey-np/Jarvis-VirtualAssistant" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Jarvis AI on GitHub">
+                                    <i class="fab fa-github text-lg sm:text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">🤖 Jarvis - AI Assistant</h3>
+                        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A voice-activated virtual assistant built with Python. It leverages speech recognition and natural language processing to perform various tasks.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
+                            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">Speech Recognition</span>
+                            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">NLP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
+                    <div class="relative overflow-hidden h-40 sm:h-48">
+                        <img src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="To-Do Manager" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
+                                <a href="https://github.com/nischalpandey-np/To-do" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View To-Do Manager on GitHub">
+                                    <i class="fab fa-github text-lg sm:text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">✅ To-Do Manager</h3>
+                        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A command-line based To-Do list application with full CRUD functionality, integrated with a MySQL database for persistent storage.</p>
+                        <div class="flex flex-wrap gap-1 sm:gap-2">
+                            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
+                            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">MySQL</span>
+                            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">CLI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-16 sm:py-20 bg-black/20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">My Resume</h2>
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl text-center">
+                    <p class="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8">Feel free to view my detailed resume online or download a copy for your reference.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="static/Resume.pdf" download="NischalPandey_Resume.pdf" class="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-primary to-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 text-sm sm:text-base">
+                            <i class="fas fa-download text-lg sm:text-xl"></i>
+                            <span>Download Resume</span>
+                        </a>
+                        <a href="static/Resume.pdf" target="_blank" class="inline-flex items-center gap-2 sm:gap-3 glass px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-white hover:bg-white/20 transition-all duration-300 hover:scale-105 text-sm sm:text-base">
+                            <i class="fas fa-eye text-lg sm:text-xl"></i>
+                            <span>View Online</span>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 sm:mt-12 glass rounded-xl sm:rounded-2xl overflow-hidden">
+                        <iframe src="static/Resume.pdf" class="w-full h-80 sm:h-96 lg:h-[500px]" title="Nischal Pandey's Resume" frameborder="0" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">Education & Certifications</h2>
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+                <!-- Education Timeline -->
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-5 sm:left-7 top-0 h-full w-0.5 bg-gradient-to-b from-primary to-secondary transform -translate-x-1/2"></div>
+                    
+                    <!-- Education Item 1 -->
+                    <div class="glass p-5 sm:p-6 rounded-2xl sm:rounded-3xl card-hover relative mb-6 sm:mb-8 ml-10 sm:ml-14">
+                        <div class="absolute -left-10 sm:-left-12 top-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-lg sm:text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl sm:text-2xl font-bold text-gradient mb-1 sm:mb-2">High School Diploma</h3>
+                            <p class="text-sm sm:text-base text-gray-300 mb-1 sm:mb-2">Major: Physical Science</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Relevant Coursework: Computer Science, Physics, Chemistry, Mathematics</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Item 2 -->
+                    <div class="glass p-5 sm:p-6 rounded-2xl sm:rounded-3xl card-hover relative mb-6 sm:mb-8 ml-10 sm:ml-14">
+                        <div class="absolute -left-10 sm:-left-12 top-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-lg sm:text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl sm:text-2xl font-bold text-gradient mb-1 sm:mb-2">Harvard University</h3>
+                            <p class="text-sm sm:text-base text-gray-300 mb-1 sm:mb-2">CS50's Introduction to Programming with Python</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Learned core programming concepts and Python syntax through problem sets and projects.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Item 3 -->
+                    <div class="glass p-5 sm:p-6 rounded-2xl sm:rounded-3xl card-hover relative mb-6 sm:mb-8 ml-10 sm:ml-14">
+                        <div class="absolute -left-10 sm:-left-12 top-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-lg sm:text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl sm:text-2xl font-bold text-gradient mb-1 sm:mb-2">IBM (Coursera)</h3>
+                            <p class="text-sm sm:text-base text-gray-300 mb-1 sm:mb-2">Developing AI Applications with Flask</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Built and deployed AI-powered web applications using Flask framework.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Item 4 -->
+                    <div class="glass p-5 sm:p-6 rounded-2xl sm:rounded-3xl card-hover relative ml-10 sm:ml-14">
+                        <div class="absolute -left-10 sm:-left-12 top-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-lg sm:text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl sm:text-2xl font-bold text-gradient mb-1 sm:mb-2">University of Colorado Boulder</h3>
+                            <p class="text-sm sm:text-base text-gray-300 mb-1 sm:mb-2">Everyday Excel: Advanced Data Analysis</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Mastered advanced Excel techniques for data manipulation and visualization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 bg-black/20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">Get In Touch</h2>
+                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-6 sm:space-y-8">
+                        <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl">
+                            <h3 class="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-6">Let's Connect</h3>
+                            <p class="text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">I'm currently available for freelance projects and open to discussing new opportunities. Feel free to reach out via email or connect with me on social media.</p>
+                            
+                            <div class="space-y-4 sm:space-y-6">
+                                <a href="mailto:nischalpandey0204@gmail.com" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-white/10 transition-colors duration-300 group">
+                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-white text-lg sm:text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white group-hover:text-gradient text-sm sm:text-base">Email</h4>
+                                        <p class="text-gray-400 text-xs sm:text-sm"></p>
+                                        
+                                    </div>
+                                </a>
+                               
+                                
+                                <a href="tel:+9779766305007" class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-white/10 transition-colors duration-300 group">
+                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-white text-lg sm:text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-white group-hover:text-gradient text-sm sm:text-base">Phone</h4>
+                                        <p class="text-gray-400 text-xs sm:text-sm">+977 976-630-5007</p>
+                                    </div>
+                                </a>
+                                
+                                <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl">
+                                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white text-lg sm:text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gradient text-sm sm:text-base">Location</h4>
+                                        <p class="text-gray-400 text-xs sm:text-sm">Tilottama, Lumbini Province, Nepal</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3 sm:gap-4 mt-6 sm:mt-8">
+                                <a href="https://github.com/nischalpandey-np" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" aria-label="GitHub profile">
+                                    <i class="fab fa-github text-white text-lg sm:text-xl"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/nischalpandey" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" aria-label="LinkedIn profile">
+                                    <i class="fab fa-linkedin-in text-white text-lg sm:text-xl"></i>
+                                </a>
+                                <a href="https://twitter.com/yourprofile" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300" aria-label="Twitter profile">
+                                    <i class="fab fa-twitter text-white text-lg sm:text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                     
+                    <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl">
+                        <form action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405" method="POST" class="contact-form" enctype="multipart/form-data">
+              <input type="hidden" name="_next" value="https://zenora.pythonanywhere.com/">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="text" name="_honey" style="display:none">
+ 
+
+              <div class="grid grid-cols-1 gap-6 mb-6">
+                <div>
+                  <label class="block text-white text-sm font-medium mb-2">Your Name</label>
+                  <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-15 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:bg-opacity-25 focus:border-opacity-50 form-input" placeholder="John Doe" required>
+                </div>
+
+                <div>
+                  <label class="block text-white text-sm font-medium mb-2">Email Address</label>
+                  <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-15 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:bg-opacity-25 focus:border-opacity-50 form-input" placeholder="you@example.com" required>
+                </div>
+
+                <div>
+                  <label class="block text-white text-sm font-medium mb-2">Subject</label>
+                  <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-15 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:bg-opacity-25 focus:border-opacity-50 form-input" placeholder="How can we help?" required>
+                </div>
+
+                <div>
+                  <label class="block text-white text-sm font-medium mb-2">Message</label>
+                  <textarea id="message" name="message" class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-15 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-60 focus:outline-none focus:bg-opacity-25 focus:border-opacity-50 form-input" placeholder="Your message here..." rows="4" required></textarea>
+                </div>
+<div>
+  <label class="block text-white text-sm font-medium mb-2">Attachment</label>
+  <div class="relative">
+    <label class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-15 border border-white border-opacity-30 text-white flex items-center gap-2 cursor-pointer hover:bg-opacity-20 transition">
+      <i class="fas fa-paperclip text-white text-opacity-80"></i>
+      <span id="file-name" class="text-sm text-white text-opacity-80 truncate overflow-hidden whitespace-nowrap flex-1">
+        Attach file (optional)
+      </span>
+      <input type="file" id="attachment" name="attachment" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+    </label>
+    <div id="file-preview" class="mt-2 text-white text-xs"></div>
+    <p class="mt-1 text-white text-opacity-60 text-xs">Supported formats: PDF, DOC, JPG, PNG (Max 5MB)</p>
+  </div>
+</div>
+
+<script>
+  function updateFileName(input) {
+    const fileName = input.files[0]?.name || "Attach file (optional)";
+    document.getElementById("file-name").textContent = fileName;
+  }
+</script>
+
+
+              </div>
+
+              <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-white hover:shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+
+              <p class="text-center mt-4 text-white text-opacity-70 text-xs">
+                We'll respond to your message within 24 hours.
+              </p>
+            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 sm:py-16 bg-black/40">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
+                <div class="text-center lg:text-left">
+                    <a href="#home" class="text-2xl sm:text-3xl font-bold text-gradient hover:scale-110 transition-transform duration-300 inline-block mb-3 sm:mb-4" aria-label="Home">
+                        NP
+                    </a>
+                    <p class="text-gray-400 text-sm sm:text-base">Building digital experiences with passion and precision.</p>
+                </div>
+                
+            </div>
+            
+            <div class="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
+                <p class="text-gray-400 text-xs sm:text-sm">&copy; <span id="year">2024</span> Nischal Pandey. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="static/script.js"></script>
 </body>
 </html>
