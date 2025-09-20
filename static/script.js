@@ -134,11 +134,9 @@ backToTopBtn.addEventListener('click', () => {
     const typed = new Typed('#typed-text', {
         strings: [
             'Web Developer^1000',
-            'Data Analyst^1000',
-            'Python Developer^1000',
-            'UI/UX Designer^1000',
-            'Aspiring AI Engineer^1000',
-            'Django Developer^1000'
+            'Frontend Developer^1000',
+            'Django Developer^1000',
+            'UI/UX Designer^1000'
         ],
         typeSpeed: 80,
         backSpeed: 40,
