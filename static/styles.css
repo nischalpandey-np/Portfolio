@@ -142,6 +142,7 @@ body {
     position: fixed;
     width: 20px;
     height: 20px;
+    
     background: rgba(147, 51, 234, 0.8);
     border-radius: 50%;
     pointer-events: none;
@@ -154,7 +155,7 @@ body {
     position: fixed;
     width: 6px;
     height: 6px;
-    background: rgba(147, 51, 234, 0.3);
+    background: wheat;
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
