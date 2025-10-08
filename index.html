@@ -151,244 +151,258 @@
     
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 sm:py-20 bg-black/20">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">Technical Skills</h2>
-                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+<!-- Skills Section -->
+<section id="skills" class="py-20 sm:py-24 bg-black/30 relative overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/3 rounded-full blur-3xl animate-pulse delay-500"></div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-16 sm:mb-20">
+            <div class="inline-block relative">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mb-4 relative z-10">
+                    Tech Stack
+                </h2>
+                <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 blur-2xl rounded-full opacity-50"></div>
             </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                <!-- Programming Languages -->
-                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
-                    <div class="text-center mb-4 sm:mb-6">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                            <i class="fas fa-laptop-code text-xl sm:text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-gradient">Programming Languages</h3>
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">Technologies I work with to bring ideas to life</p>
+        </div>
+
+        <!-- Main Skills Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
+            <!-- Python -->
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div class="relative glass p-6 rounded-2xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/10 group-hover:border-primary/30 transition-all duration-500">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur group-hover:blur-lg transition-all duration-500 opacity-0 group-hover:opacity-30"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" 
+                             class="w-16 h-16 relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                     </div>
-                    <div class="space-y-2 sm:space-y-3">
-                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">Python</div>
-                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">JavaScript</div>
-                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">HTML5 & CSS3</div>
-                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">SQL</div>
-                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">PHP</div>
-                        <div class="skill-glow bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-primary/30 text-sm sm:text-base">C/C++</div>
-                    </div>
+                    <span class="text-white font-semibold mt-4 text-sm tracking-wide">Python</span>
                 </div>
-                
-                <!-- Frameworks & Libraries -->
-                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
-                    <div class="text-center mb-4 sm:mb-6">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                            <i class="fas fa-cogs text-xl sm:text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-gradient">Frameworks & Libraries</h3>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div class="relative glass p-6 rounded-2xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/10 group-hover:border-yellow-400/30 transition-all duration-500">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur group-hover:blur-lg transition-all duration-500 opacity-0 group-hover:opacity-30"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" 
+                             class="w-16 h-16 relative z-10 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500">
                     </div>
-                    <div class="space-y-2 sm:space-y-3">
-                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">Django</div>
-                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">React</div>
-                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">Pandas</div>
-                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">Matplotlib</div>
-                        <div class="skill-glow bg-gradient-to-r from-accent/20 to-primary/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-accent/30 text-sm sm:text-base">Seaborn</div>
-                    </div>
+                    <span class="text-white font-semibold mt-4 text-sm tracking-wide">JavaScript</span>
                 </div>
-                
-                <!-- AI & Data Science -->
-                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
-                    <div class="text-center mb-4 sm:mb-6">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                            <i class="fas fa-brain text-xl sm:text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-gradient">AI & Data Science</h3>
+            </div>
+
+            <!-- React -->
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div class="relative glass p-6 rounded-2xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/10 group-hover:border-cyan-400/30 transition-all duration-500">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-full blur group-hover:blur-lg transition-all duration-500 opacity-0 group-hover:opacity-30"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" 
+                             class="w-16 h-16 relative z-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     </div>
-                    <div class="space-y-2 sm:space-y-3">
-                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">Machine Learning</div>
-                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">Data Analysis</div>
-                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">NLP</div>
-                        <div class="skill-glow bg-gradient-to-r from-secondary/20 to-accent/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-secondary/30 text-sm sm:text-base">EDA</div>
-                    </div>
+                    <span class="text-white font-semibold mt-4 text-sm tracking-wide">React</span>
                 </div>
-                
-                <!-- Tools & Technologies -->
-                <div class="glass p-6 sm:p-8 rounded-2xl sm:rounded-3xl card-hover">
-                    <div class="text-center mb-4 sm:mb-6">
-                        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                            <i class="fas fa-tools text-xl sm:text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold text-gradient">Tools & Technologies</h3>
+            </div>
+
+            <!-- Node.js -->
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-500 to-green-700 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div class="relative glass p-6 rounded-2xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/10 group-hover:border-green-500/30 transition-all duration-500">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 rounded-full blur group-hover:blur-lg transition-all duration-500 opacity-0 group-hover:opacity-30"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" 
+                             class="w-16 h-16 relative z-10 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
                     </div>
-                    <div class="space-y-2 sm:space-y-3">
-                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">Git & GitHub</div>
-                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">LLM</div>
-                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">NLP</div>
-                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">MySQL</div>
-                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">Jupyter Notebook</div>
-                        <div class="skill-glow bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-center border border-purple-500/30 text-sm sm:text-base">Office 365</div>
+                    <span class="text-white font-semibold mt-4 text-sm tracking-wide">Node.js</span>
+                </div>
+            </div>
+
+            <!-- MongoDB -->
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div class="relative glass p-6 rounded-2xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/10 group-hover:border-green-400/30 transition-all duration-500">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 rounded-full blur group-hover:blur-lg transition-all duration-500 opacity-0 group-hover:opacity-30"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" 
+                             class="w-16 h-16 relative z-10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                     </div>
+                    <span class="text-white font-semibold mt-4 text-sm tracking-wide">MongoDB</span>
+                </div>
+            </div>
+
+            <!-- Express.js -->
+            <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-gray-400 to-gray-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                <div class="relative glass p-6 rounded-2xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/10 group-hover:border-gray-400/30 transition-all duration-500">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full blur group-hover:blur-lg transition-all duration-500 opacity-0 group-hover:opacity-30"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" 
+                             class="w-16 h-16 relative z-10 group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500">
+                    </div>
+                    <span class="text-white font-semibold mt-4 text-sm tracking-wide">Express.js</span>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Secondary Skills Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- HTML5 -->
+            <div class="group relative">
+                <div class="relative glass p-4 rounded-xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/5 group-hover:border-orange-500/30 transition-all duration-500 group-hover:scale-105">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" 
+                         class="w-12 h-12 group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-gray-300 text-xs font-medium mt-2 group-hover:text-white">HTML5</span>
+                </div>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="group relative">
+                <div class="relative glass p-4 rounded-xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/5 group-hover:border-blue-500/30 transition-all duration-500 group-hover:scale-105">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" 
+                         class="w-12 h-12 group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-gray-300 text-xs font-medium mt-2 group-hover:text-white">CSS3</span>
+                </div>
+            </div>
+
+            <!-- Django -->
+            <div class="group relative">
+                <div class="relative glass p-4 rounded-xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/5 group-hover:border-green-500/30 transition-all duration-500 group-hover:scale-105">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" 
+                         class="w-12 h-12 group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-gray-300 text-xs font-medium mt-2 group-hover:text-white">Django</span>
+                </div>
+            </div>
+
+            <!-- Flask -->
+            <div class="group relative">
+                <div class="relative glass p-4 rounded-xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/5 group-hover:border-black/30 transition-all duration-500 group-hover:scale-105">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" 
+                         class="w-12 h-12 group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-gray-300 text-xs font-medium mt-2 group-hover:text-white">Flask</span>
+                </div>
+            </div>
+
+            <!-- MySQL -->
+            <div class="group relative">
+                <div class="relative glass p-4 rounded-xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/5 group-hover:border-blue-500/30 transition-all duration-500 group-hover:scale-105">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" 
+                         class="w-12 h-12 group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-gray-300 text-xs font-medium mt-2 group-hover:text-white">MySQL</span>
+                </div>
+            </div>
+
+            <!-- Git -->
+            <div class="group relative">
+                <div class="relative glass p-4 rounded-xl flex flex-col items-center justify-center backdrop-blur-xl border border-white/5 group-hover:border-orange-500/30 transition-all duration-500 group-hover:scale-105">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" 
+                         class="w-12 h-12 group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-gray-300 text-xs font-medium mt-2 group-hover:text-white">Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 sm:py-20">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">Featured Projects</h2>
-                <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+<section id="projects" class="py-16 sm:py-20">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient mb-3 sm:mb-4">Featured Projects</h2>
+            <div class="w-20 sm:w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Project 1: Digi Bistro (Same as before) -->
+            <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
+                <div class="relative overflow-hidden h-40 sm:h-48">
+                    <img src="static/img/project1.webp" alt="Digi Bistro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
+                            <a href="https://github.com/nischalpandey-np/Digi-Bistro" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Digi Bistro on GitHub">
+                                <i class="fab fa-github text-lg sm:text-xl"></i>
+                            </a>
+                            <a href="https://nischalpandey07.pythonanywhere.com/" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Digi Bistro live demo">
+                                <i class="fas fa-external-link-alt text-lg sm:text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">🍽️ Digi Bistro</h3>
+                    <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A full-stack web application for a restaurant ordering system. Features user authentication, menu browsing, and order tracking with a MySQL backend.</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2">
+                        <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
+                        <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">Flask</span>
+                        <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">MySQL</span>
+                        <span class="bg-purple-500/20 text-purple-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-purple-500/30">JavaScript</span>
+                    </div>
+                </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Project 1 -->
-                <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
-                    <div class="relative overflow-hidden h-40 sm:h-48">
-                        <img src="static/img/project1.webp" alt="Digi Bistro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
-                                <a href="https://github.com/nischalpandey-np/Digi-Bistro" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Digi Bistro on GitHub">
-                                    <i class="fab fa-github text-lg sm:text-xl"></i>
-                                </a>
-                                <a href="https://nischalpandey07.pythonanywhere.com/" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Digi Bistro live demo">
-                                    <i class="fas fa-external-link-alt text-lg sm:text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">🍽️ Digi Bistro</h3>
-                        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A full-stack web application for a restaurant ordering system. Features user authentication, menu browsing, and order tracking with a MySQL backend.</p>
-                        <div class="flex flex-wrap gap-1 sm:gap-2">
-                            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
-                            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">Flask</span>
-                            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">MySQL</span>
-                            <span class="bg-purple-500/20 text-purple-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-purple-500/30">JavaScript</span>
+            <!-- Project 2: GPA Calculator for NEB +2 -->
+            <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
+                <div class="relative overflow-hidden h-40 sm:h-48">
+                    <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="NEB +2 GPA Calculator" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
+                            <a href="https://github.com/nischalpandey-np/neb-gpa-calculator" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View GPA Calculator on GitHub">
+                                <i class="fab fa-github text-lg sm:text-xl"></i>
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View GPA Calculator live demo">
+                                <i class="fas fa-external-link-alt text-lg sm:text-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
-                <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
-                    <div class="relative overflow-hidden h-40 sm:h-48">
-                        <img src="static/img/project2.webp" alt="Jarvis AI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
-                                <a href="https://github.com/nischalpandey-np/Jarvis-VirtualAssistant" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Jarvis AI on GitHub">
-                                    <i class="fab fa-github text-lg sm:text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">📊 NEB +2 GPA Calculator</h3>
+                    <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A specialized GPA calculator for Nepal's National Examination Board +2 curriculum. Accurately calculates GPA based on NEB grading system with subject-wise breakdown.</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2">
+                        <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">JavaScript</span>
+                        <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">HTML/CSS</span>
+                        <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">Education</span>
                     </div>
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">🤖 Jarvis - AI Assistant</h3>
-                        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A voice-activated virtual assistant built with Python. It leverages speech recognition and natural language processing to perform various tasks.</p>
-                        <div class="flex flex-wrap gap-1 sm:gap-2">
-                            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
-                            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">Speech Recognition</span>
-                            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">NLP</span>
+                </div>
+            </div>
+            
+            <!-- Project 3: JavaScript Mini Projects -->
+            <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
+                <div class="relative overflow-hidden h-40 sm:h-48">
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="JavaScript Mini Projects" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
+                            <a href="https://github.com/nischalpandey-np/js-mini-projects" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View JS Mini Projects on GitHub">
+                                <i class="fab fa-github text-lg sm:text-xl"></i>
+                            </a>
+                            <a href="#" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View JS Mini Projects live demo">
+                                <i class="fas fa-external-link-alt text-lg sm:text-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 3 -->
-                <div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
-                    <div class="relative overflow-hidden h-40 sm:h-48">
-                        <img src="https://images.unsplash.com/photo-1506784926709-22f1ec395907?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="To-Do Manager" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
-                                <a href="https://github.com/nischalpandey-np/To-do" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View To-Do Manager on GitHub">
-                                    <i class="fab fa-github text-lg sm:text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 sm:p-6">
-                        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">✅ To-Do Manager</h3>
-                        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A command-line based To-Do list application with full CRUD functionality, integrated with a MySQL database for persistent storage.</p>
-                        <div class="flex flex-wrap gap-1 sm:gap-2">
-                            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
-                            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">MySQL</span>
-                            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">CLI</span>
-                        </div>
+                <div class="p-4 sm:p-6">
+                    <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">⚡ JavaScript Mini Projects</h3>
+                    <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A collection of interactive JavaScript applications including a Todo List, Restaurant Menu, and other utility tools showcasing DOM manipulation and modern JS features.</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2">
+                        <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">JavaScript</span>
+                        <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">HTML5</span>
+                        <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">CSS3</span>
+                        <span class="bg-purple-500/20 text-purple-400 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-purple-500/30">DOM</span>
                     </div>
                 </div>
-
-<!-- Project 4: Automatic Chatbot -->
-<div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
-    <div class="relative overflow-hidden h-40 sm:h-48">
-        <img src="https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Automatic Chatbot Project Screenshot" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
-                <a href="https://github.com/nischalpandey-np/" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Automatic Chatbot on GitHub">
-                    <i class="fab fa-github text-lg sm:text-xl"></i>
-                </a>
             </div>
         </div>
     </div>
-    <div class="p-4 sm:p-6">
-        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">Automatic Chatbot</h3>
-        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A chatbot built using the DeepSeek R1 model that automatically reads and replies to incoming messages with contextual understanding.</p>
-        <div class="flex flex-wrap gap-1 sm:gap-2">
-            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
-            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">DeepSeek R1</span>
-            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">LLM</span>
-        </div>
-    </div>
-</div>
-
-
-<!-- Project 5: Virtual Controller -->
-<div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
-    <div class="relative overflow-hidden h-40 sm:h-48">
-        <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="Virtual Controller using Computer Vision" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
-                <a href="https://github.com/nischalpandey-np/Vitural-Controller" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Virtual Controller on GitHub">
-                    <i class="fab fa-github text-lg sm:text-xl"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="p-4 sm:p-6">
-        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">Virtual Controller</h3>
-        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">Uses hand tracking with MediaPipe to control computer functions via finger gestures and real-time computer vision.</p>
-        <div class="flex flex-wrap gap-1 sm:gap-2">
-            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
-            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">MediaPipe</span>
-            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">OpenCV</span>
-        </div>
-    </div>
-</div>
-
-<!-- Project 6: Expense Tracker -->
-<div class="glass rounded-2xl sm:rounded-3xl overflow-hidden card-hover group transform transition-all duration-500 hover:-translate-y-2">
-    <div class="relative overflow-hidden h-40 sm:h-48">
-        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80" alt="Expense Tracker App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex gap-3 sm:gap-4">
-                <a href="https://github.com/nischalpandey-np/" target="_blank" class="bg-white/20 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/30 transition-colors duration-300" aria-label="View Expense Tracker on GitHub">
-                    <i class="fab fa-github text-lg sm:text-xl"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="p-4 sm:p-6">
-        <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-gradient">Expense Tracker</h3>
-        <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">Tracks and analyzes personal expenses, offering insightful visualizations using Pandas and Matplotlib for better financial decisions.</p>
-        <div class="flex flex-wrap gap-1 sm:gap-2">
-            <span class="bg-primary/20 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-primary/30">Python</span>
-            <span class="bg-secondary/20 text-secondary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-secondary/30">Pandas</span>
-            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">Matplotlib</span>
-            <span class="bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm border border-accent/30">Data Viz</span>
-        </div>
-    </div>
-</div>
-
-                </div>
-            </div>
-        </div>
-    </section>
+</section>    
 
     <!-- Resume Section -->
     <section id="resume" class="py-16 sm:py-20 bg-black/20">
