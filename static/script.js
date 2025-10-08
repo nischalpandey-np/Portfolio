@@ -132,12 +132,13 @@ backToTopBtn.addEventListener('click', () => {
 // Typed.js initialization for hero section
         document.addEventListener('DOMContentLoaded', function() {
     const typed = new Typed('#typed-text', {
-        strings: [
-            'Web Developer^1000',
-            'Frontend Developer^1000',
-            'Django Developer^1000',
-            'UI/UX Designer^1000'
-        ],
+       strings: [
+    'Web Developer^1000',
+    'MERN Stack Developer^1000',
+    'Junior Full Stack Developer^1000',
+    'JavaScript Developer^1000'
+],
+
         typeSpeed: 80,
         backSpeed: 40,
         backDelay: 1500,
