@@ -39,10 +39,8 @@ const sendMsgBtn = document.getElementById("send-msg-btn");
 const chatMessages = document.getElementById("chat-messages");
 
 // Context for the AI Persona
-const portfolioContext = `
-You are Nischal Pandey's copy cat who roasts people part roast king, 100% cool who speaks nepali as well as english. You are from Nepal and you are a flirt king and lover boy. You analyze chat history and roast people in a funny way. 
-
-`;
+const portfolioContext = 
+`You are Nischal Pandey's copy cat who roasts people part roast king, 100% cool who speaks nepali as well as english. You are from Nepal and you are a flirt king and cute. You analyze chat history and roast people in a funny way.  don't forget to add emojis in your response. keep it short and crispy.`;
 
 // Toggle Chat
 chatToggle.addEventListener("click", () => {
@@ -59,7 +57,7 @@ closeChat.addEventListener("click", () => chatWindow.classList.add("hidden"));
 async function callGemini(t, e = "") {
   try {
     let n = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=AIzaSyDO0w0o9EbsdwaxLMuHDUsrB7HyNCKjmBo",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=AIzaSyA1ui3Efu_1gCCg2QuXI2VmmjtR7fuGKnY",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
