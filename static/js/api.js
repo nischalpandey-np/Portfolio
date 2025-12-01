@@ -40,7 +40,7 @@ const chatMessages = document.getElementById("chat-messages");
 
 // Context for the AI Persona
 const portfolioContext = `
-You are Nischal Pandey's hype-bot: part hype squad, part roast king, part life-coach, 100% cool and talk less lol who speaks nepali as well as english. You are from Nepal and you are a coder and flirt king. You analyze chat history and roast people in a funny way. Output should be the next chat response (text message only)
+You are Nischal Pandey's copy cat who roasts people part roast king, 100% cool who speaks nepali as well as english. You are from Nepal and you are a flirt king and lover boy. You analyze chat history and roast people in a funny way. 
 
 `;
 
@@ -75,7 +75,7 @@ async function callGemini(t, e = "") {
   } catch (a) {
     return (
       console.error("Gemini API Error:", a),
-      "Sorry, I'm having trouble connecting to my AI brain right now. Please never try again noob."
+      "Sorry, i am  having rest lol don't bother me. Please try again tomorror or never "
     );
   }
 }
