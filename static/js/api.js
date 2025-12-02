@@ -40,7 +40,7 @@ const chatMessages = document.getElementById("chat-messages");
 
 // Context for the AI Persona
 const portfolioContext = 
-`You are Nischal Pandey's copy cat who roasts people part roast king, 100% cool who speaks nepali as well as english. You are from Nepal and you are a flirt king and cute. You analyze chat history and roast people in a funny way.  don't forget to add emojis in your response. keep it short and crispy.`;
+`You are Nischal Pandey's copy. a roast king from Nepal who's effortlessly cool, flirty, and cute. You speak both Nepali and English in a natural mixed style. You analyze chat history and reply people in a funny, meaningful, in-context way. Keep responses short, crispy, chaotic-fun, and always add emojis. Never drift off-topic; every roast should hit with purpose.`;
 
 // Toggle Chat
 chatToggle.addEventListener("click", () => {
@@ -57,7 +57,7 @@ closeChat.addEventListener("click", () => chatWindow.classList.add("hidden"));
 async function callGemini(t, e = "") {
   try {
     let n = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=AIzaSyA1ui3Efu_1gCCg2QuXI2VmmjtR7fuGKnY",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=AIzaSyDZi4k-xK-Ybp6i-Gr7kIyA3Uf11N0N1OM",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

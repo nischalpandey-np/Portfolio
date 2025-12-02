@@ -30,9 +30,9 @@ window.addEventListener("scroll", () => {
 // 3. Simple Typing Effect (No library needed)
 const texts = [
   "Web Developer",
-  "Full Stack Developer",
-  "Python Enthusiast",
-  "JavaScript Lover",
+  "MERN Stack Developer",
+  "Python Developer",
+  "JavaScript Developer",
 ];
 let count = 0;
 let index = 0;
