@@ -1,830 +1,484 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nischal Pandey | Full Stack Developer</title>
-    <meta
-      name="description"
-      content="Portfolio of Nischal Pandey, a Web Developer specializing in Python, JavaScript, and Modern Web Technologies."
-    />
 
-    <!-- favicon -->
-    <link rel="icon" href="static/img/favicon2.png" type="image/x-icon" />
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nischal Pandey | Full Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Nischal Pandey, a Web Developer specializing in Python, JavaScript, and Modern Web Technologies." />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- favicon -->
+  <link rel="icon" href="static/img/favicon.ico" type="image/x-icon" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- css  -->
-    <link rel="stylesheet" href="static/css/styles.css" />
-  </head>
-  <body
-    class="bg-dark text-slate-300 antialiased selection:bg-primary selection:text-white overflow-x-hidden"
-  >
-    <!-- Background Gradients -->
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-      <div
-        class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"
-      ></div>
-      <div
-        class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"
-      ></div>
-      <div
-        class="absolute -bottom-32 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-4000"
-      ></div>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- css  -->
+  <link rel="stylesheet" href="static/css/styles.css" />
+</head>
+
+<body class="bg-dark text-slate-300 antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+  <!-- Background Gradients -->
+  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div
+      class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob">
     </div>
+    <div
+      class="absolute top-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000">
+    </div>
+    <div
+      class="absolute -bottom-32 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-4000">
+    </div>
+  </div>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
-      <div class="container mx-auto px-6 flex justify-between items-center">
-        <a
-          href="#"
-          class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 tracking-tight"
-          >NP</a
-        >
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="#"
+        class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 tracking-tight">NP</a>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a
-            href="#home"
-            class="text-sm font-medium hover:text-white transition-colors"
-            >Home</a
-          >
-          <a
-            href="about.html"
-            class="text-sm font-medium hover:text-white transition-colors"
-            >About</a
-          >
-          <a
-            href="#skills"
-            class="text-sm font-medium hover:text-white transition-colors"
-            >Skills</a
-          >
-          <a
-            href="#projects"
-            class="text-sm font-medium hover:text-white transition-colors"
-            >Projects</a
-          >
-          <a
-            href="#playground"
-            class="text-sm font-medium text-secondary hover:text-pink-400 transition-colors"
-            ><i class="fas fa-sparkles mr-1"></i> AI Playground</a
-          >
-          <a
-            href="#education"
-            class="text-sm font-medium hover:text-white transition-colors"
-            >Education</a
-          >
-         <a
-            href="#Contact"
-            class="text-sm font-medium hover:text-white transition-colors"
-            >Contact me</a
-        </div>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#home" class="text-sm font-medium hover:text-white transition-colors">Home</a>
+        <a href="about.html" class="text-sm font-medium hover:text-white transition-colors">About</a>
+        <a href="#skills" class="text-sm font-medium hover:text-white transition-colors">Skills</a>
+        <a href="#projects" class="text-sm font-medium hover:text-white transition-colors">Projects</a>
+
+        <a href="#education" class="text-sm font-medium hover:text-white transition-colors">Education</a>
+        <a href="#Contact" class="text-sm font-medium hover:text-white transition-colors">Contact me</a </div>
 
         <!-- Mobile Menu Button -->
-        <button
-          id="mobile-menu-btn"
-          class="md:hidden text-white focus:outline-none"
-        >
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
 
       <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="hidden absolute top-full left-0 w-full bg-dark/95 backdrop-blur-xl border-b border-white/10 md:hidden"
-      >
+      <div id="mobile-menu"
+        class="hidden absolute top-full left-0 w-full bg-dark/95 backdrop-blur-xl border-b border-white/10 md:hidden">
         <div class="flex flex-col p-6 space-y-4">
           <a href="#home" class="text-slate-300 hover:text-white">Home</a>
           <a href="#skills" class="text-slate-300 hover:text-white">Skills</a>
-          <a href="#projects" class="text-slate-300 hover:text-white"
-            >Projects</a
-          >
-          <a href="#playground" class="text-secondary hover:text-pink-400"
-            ><i class="fas fa-sparkles mr-1"></i> AI Playground</a
-          >
-          <a href="#education" class="text-slate-300 hover:text-white"
-            >Education</a
-          >
+          <a href="#projects" class="text-slate-300 hover:text-white">Projects</a>
+          <a href="#playground" class="text-secondary hover:text-pink-400"><i class="fas fa-sparkles mr-1"></i> AI
+            Playground</a>
+          <a href="#education" class="text-slate-300 hover:text-white">Education</a>
           <a href="#contact" class="text-primary font-semibold">Contact Me</a>
         </div>
       </div>
-    </nav>
+  </nav>
 
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="min-h-screen flex items-center justify-center relative pt-20"
-    >
-      <div class="container mx-auto px-6 text-center z-10">
-        <div class="reveal">
-          <span
-            class="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wider mb-6"
-            >WELCOME TO MY PORTFOLIO</span
-          >
-          <h1
-            class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight"
-          >
-            Hi, I'm
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-secondary"
-              >Nischal Pandey</span
-            >
-          </h1>
-          <p
-            class="text-xl md:text-2xl text-slate-400 mb-8 h-8 font-light flex justify-center items-center gap-2"
-          >
-            I am a
-            <span
-              id="typing-text"
-              class="text-white font-normal typing-cursor"
-            ></span>
-          </p>
-          <div
-            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <a
-              href="#projects"
-              class="px-8 py-3.5 rounded-full bg-primary hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-1"
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              class="px-8 py-3.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium backdrop-blur-sm transition-all hover:-translate-y-1"
-            >
-              Contact Me
-            </a>
-          </div>
-        </div>
-
-        <!-- Social Links (Floating) -->
-        <div class="mt-16 flex justify-center gap-6 reveal delay-200">
-          <a
-            href="https://github.com/nischalpandey-np"
-            target="_blank"
-            class="text-slate-400 hover:text-white text-2xl transition-colors transform hover:scale-110"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/nischalpandey"
-            target="_blank"
-            class="text-slate-400 hover:text-blue-400 text-2xl transition-colors transform hover:scale-110"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a
-            href="mailto:nischalpandey0204@gmail.com"
-            class="text-slate-400 hover:text-red-400 text-2xl transition-colors transform hover:scale-110"
-            ><i class="fas fa-envelope"></i
-          ></a>
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+    <div class="container mx-auto px-6 text-center z-10">
+      <div class="reveal">
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wider mb-6">WELCOME
+          TO MY PORTFOLIO</span>
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
+          Hi, I'm
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-secondary">Nischal
+            Pandey</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-400 mb-8 h-8 font-light flex justify-center items-center gap-2">
+          I am a
+          <span id="typing-text" class="text-white font-normal typing-cursor"></span>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#projects"
+            class="px-8 py-3.5 rounded-full bg-primary hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-1">
+            View Projects
+          </a>
+          <a href="#contact"
+            class="px-8 py-3.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white font-medium backdrop-blur-sm transition-all hover:-translate-y-1">
+            Contact Me
+          </a>
         </div>
       </div>
 
-      <!-- Scroll Down Indicator -->
-      <a
-        href="#skills"
-        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500 hover:text-white transition-colors"
-      >
-        <i class="fas fa-chevron-down text-xl"></i>
-      </a>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 relative">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16 reveal">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Technical Expertise
-          </h2>
-          <p class="text-slate-400 max-w-2xl mx-auto">
-            My stack includes the latest technologies for building robust and
-            scalable applications.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          <!-- Skill Items -->
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fab fa-python text-4xl text-yellow-300 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">Python</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fab fa-js text-4xl text-yellow-400 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">JavaScript</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fab fa-react text-4xl text-cyan-400 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">React</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fab fa-node text-4xl text-green-500 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">Node.js</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fas fa-database text-4xl text-green-400 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">MongoDB</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fas fa-server text-4xl text-gray-400 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">Express</span>
-          </div>
-          <!-- Row 2 -->
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fab fa-html5 text-4xl text-orange-500 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">HTML5</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fab fa-css3-alt text-4xl text-blue-500 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">CSS3</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fas fa-layer-group text-4xl text-teal-400 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">Django</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fas fa-flask text-4xl text-white group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">Flask</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fas fa-database text-4xl text-blue-400 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">MySQL</span>
-          </div>
-          <div
-            class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group"
-          >
-            <i
-              class="fab fa-git-alt text-4xl text-red-500 group-hover:scale-110 transition-transform"
-            ></i>
-            <span class="font-medium text-slate-200">Git</span>
-          </div>
-        </div>
+      <!-- Social Links (Floating) -->
+      <div class="mt-16 flex justify-center gap-6 reveal delay-200">
+        <a href="https://github.com/nischalpandey-np" target="_blank"
+          class="text-slate-400 hover:text-white text-2xl transition-colors transform hover:scale-110"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nischalpandey" target="_blank"
+          class="text-slate-400 hover:text-blue-400 text-2xl transition-colors transform hover:scale-110"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="mailto:nischalpandey0204@gmail.com"
+          class="text-slate-400 hover:text-red-400 text-2xl transition-colors transform hover:scale-110"><i
+            class="fas fa-envelope"></i></a>
       </div>
-    </section>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 bg-dark/50">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16 reveal">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Featured Projects
-          </h2>
-          <p class="text-slate-400">
-            Some things I've built with love and coffee.
-          </p>
-        </div>
+    <!-- Scroll Down Indicator -->
+    <a href="#skills"
+      class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-500 hover:text-white transition-colors">
+      <i class="fas fa-chevron-down text-xl"></i>
+    </a>
+  </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project 1 -->
-          <div
-            class="reveal glass-card rounded-2xl overflow-hidden group hover:border-primary/40 transition-all duration-300"
-          >
-            <div class="h-48 overflow-hidden relative">
-              <img
-                src="static/img/project1.webp"
-                onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80'"
-                alt="Digi Bistro"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div
-                class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4"
-              >
-                <a
-                  href="https://github.com/nischalpandey-np/Digi-Bistro"
-                  target="_blank"
-                  class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white"
-                  ><i class="fab fa-github text-xl"></i
-                ></a>
-                <a
-                  href="https://nischalpandey07.pythonanywhere.com/"
-                  target="_blank"
-                  class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white"
-                  ><i class="fas fa-external-link-alt text-xl"></i
-                ></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">Digi Bistro</h3>
-              <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                Full-stack restaurant ordering system with authentication, menu
-                browsing, and order tracking.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary border border-primary/20"
-                  >Python</span
-                >
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20"
-                  >Flask</span
-                >
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20"
-                  >MySQL</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div
-            class="reveal glass-card rounded-2xl overflow-hidden group hover:border-primary/40 transition-all duration-300"
-          >
-            <div class="h-48 overflow-hidden relative">
-              <img
-                src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="GPA Calculator"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div
-                class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4"
-              >
-                <a
-                  href="https://github.com/nischalpandey-np/neb-gpa-calculator"
-                  target="_blank"
-                  class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white"
-                  ><i class="fab fa-github text-xl"></i
-                ></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">
-                NEB GPA Calculator
-              </h3>
-              <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                Specialized GPA calculator for Nepal's +2 curriculum. Calculates
-                precise GPA based on NEB grading logic.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-yellow-400/10 text-yellow-400 border border-yellow-400/20"
-                  >JavaScript</span
-                >
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-orange-500/10 text-orange-400 border border-orange-500/20"
-                  >HTML5</span
-                >
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20"
-                  >CSS3</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div
-            class="reveal glass-card rounded-2xl overflow-hidden group hover:border-primary/40 transition-all duration-300"
-          >
-            <div class="h-48 overflow-hidden relative">
-              <img
-                src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="JS Mini Projects"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div
-                class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4"
-              >
-                <a
-                  href="https://github.com/nischalpandey-np/js-mini-projects"
-                  target="_blank"
-                  class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white"
-                  ><i class="fab fa-github text-xl"></i
-                ></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">
-                JS Mini Projects
-              </h3>
-              <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-                A collection of interactive DOM manipulation tools, including
-                Todo Lists, Calculators, and more.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-yellow-400/10 text-yellow-400 border border-yellow-400/20"
-                  >Vanilla JS</span
-                >
-                <span
-                  class="px-2 py-1 text-xs rounded-md bg-pink-500/10 text-pink-400 border border-pink-500/20"
-                  >DOM</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✨ AI Playground Section (NEW) -->
-    <section id="playground" class="py-24 relative overflow-hidden">
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-dark to-primary/5 z-0"
-      ></div>
-      <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-16 reveal">
-          <span
-            class="inline-block py-1 px-3 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-semibold tracking-wider mb-4 animate-pulse"
-            >POWERED BY GEMINI 2.0 FLASH</span
-          >
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            ✨ AI Project Brainstormer
-          </h2>
-          <p class="text-slate-400 max-w-2xl mx-auto">
-            Stuck on what to build next? Select a stack and domain, and let my
-            AI suggest a cool project idea.
-          </p>
-        </div>
-
-        <div class="max-w-3xl mx-auto glass-card p-8 rounded-2xl reveal">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div>
-              <label class="block text-sm font-medium text-slate-300 mb-2"
-                >Tech Stack</label
-              >
-              <select
-                id="ai-stack"
-                class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
-              >
-                <option value="Python & Flask">Python & Flask</option>
-                <option value="React & Node.js">React & Node.js</option>
-                <option value="HTML, CSS & JS">HTML, CSS & Vanilla JS</option>
-                <option value="Django & PostgreSQL">Django & PostgreSQL</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-slate-300 mb-2"
-                >Industry / Domain</label
-              >
-              <select
-                id="ai-domain"
-                class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"
-              >
-                <option value="E-Commerce">E-Commerce</option>
-                <option value="Education">Education</option>
-                <option value="Health & Fitness">Health & Fitness</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Productivity">Productivity</option>
-              </select>
-            </div>
-          </div>
-
-          <button
-            onclick="generateProjectIdea()"
-            id="ai-generate-btn"
-            class="w-full py-3 rounded-lg bg-gradient-to-r from-secondary to-purple-600 text-white font-bold hover:opacity-90 transition-all shadow-lg shadow-purple-500/20 flex justify-center items-center gap-2"
-          >
-            <span>✨ Generate Idea</span>
-          </button>
-
-          <!-- AI Output Area -->
-          <div id="ai-output" class="mt-6 hidden">
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-              <h4
-                class="text-lg font-bold text-white mb-2 flex items-center gap-2"
-              >
-                <i class="fas fa-lightbulb text-yellow-400"></i> AI Suggestion:
-              </h4>
-              <p
-                id="ai-result-text"
-                class="text-slate-300 leading-relaxed text-sm"
-              ></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Resume Section -->
-    <section id="education" class="py-24">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <!-- Timeline -->
-          <div class="reveal">
-            <h2
-              class="text-3xl font-bold text-white mb-8 flex items-center gap-3"
-            >
-              <i class="fas fa-graduation-cap text-primary"></i> Education
-            </h2>
-            <div class="border-l-2 border-slate-700 ml-3 space-y-12">
-              <!-- Item 1 -->
-              <div class="relative pl-8">
-                <div
-                  class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-dark"
-                ></div>
-                <h3 class="text-xl font-bold text-white">
-                  High School Graduated
-                </h3>
-                <span class="text-sm text-primary font-medium block mb-2"
-                  >Physical Science (STEM)</span
-                >
-                <p class="text-slate-400 text-sm">
-                  Relevant Coursework: Computer Science, Physics, Chemistry,
-                  Mathematics.
-                </p>
-              </div>
-
-              <!-- Item 2 -->
-              <div class="relative pl-8">
-                <div
-                  class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary ring-4 ring-dark"
-                ></div>
-                <h3 class="text-xl font-bold text-white">
-                  Harvard University (CS50)
-                </h3>
-                <span class="text-sm text-secondary font-medium block mb-2"
-                  >Introduction to Programming</span
-                >
-                <p class="text-slate-400 text-sm">
-                  Intensive introduction to computer science and the art of
-                  programming.
-                </p>
-              </div>
-
-              <!-- Item 3 -->
-              <div class="relative pl-8">
-                <div
-                  class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-dark"
-                ></div>
-                <h3 class="text-xl font-bold text-white">IBM Certification</h3>
-                <span class="text-sm text-blue-400 font-medium block mb-2"
-                  >AI Applications with Flask</span
-                >
-                <p class="text-slate-400 text-sm">
-                  Building and deploying AI-powered web applications.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Resume Download Box -->
-          <div class="reveal">
-            <div
-              class="glass-card p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center relative overflow-hidden group"
-            >
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-              ></div>
-
-              <i
-                class="fas fa-file-alt text-6xl text-slate-600 mb-6 group-hover:text-primary transition-colors duration-300"
-              ></i>
-
-              <h3 class="text-2xl font-bold text-white mb-4">
-                Looking for the full picture?
-              </h3>
-
-              <p class="text-slate-400 mb-8 max-w-sm">
-                Download my detailed resume to see my complete work history and
-                qualifications.
-              </p>
-
-              <div class="flex gap-4">
-                <a
-                  href="static/resume.pdf"
-                  download
-                  class="px-6 py-3 rounded-xl bg-white text-dark font-bold hover:bg-slate-200 transition-colors flex items-center gap-2"
-                >
-                  <i class="fas fa-download"></i> Download PDF
-                </a>
-
-                <a
-                  href="static/resume.pdf"
-                  target="_blank"
-                  class="px-6 py-3 rounded-xl border border-slate-600 text-white hover:border-white hover:bg-white/5 transition-all flex items-center gap-2"
-                >
-                  <i class="fas fa-eye"></i> View
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-dark/50">
-      <div class="container mx-auto px-6 max-w-4xl">
-        <div class="text-center mb-16 reveal">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Let's Work Together
-          </h2>
-          <p class="text-slate-400">
-            Have a project in mind? Send me a message.
-          </p>
-        </div>
-
-        <div class="glass-card p-8 md:p-12 rounded-2xl reveal">
-          <form
-            action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405"
-            method="POST"
-            class="space-y-6"
-          >
-            <!-- Config -->
-            <input
-              type="hidden"
-              name="_next"
-              value="https://www.nischalp.com.np/thankyou.html"
-            />
-            <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Portfolio Contact"
-            />
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm font-medium text-slate-400 mb-2"
-                  >Name</label
-                >
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-slate-600"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-400 mb-2"
-                  >Email</label
-                >
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-slate-600"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-sm font-medium text-slate-400 mb-2"
-                >Message</label
-              >
-              <textarea
-                name="message"
-                rows="4"
-                required
-                class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-slate-600"
-                placeholder="Tell me about your project..."
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold hover:opacity-90 transition-opacity shadow-lg shadow-primary/20"
-            >
-              Send Message <i class="fas fa-paper-plane ml-2"></i>
-            </button>
-          </form>
-
-          <div
-            class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
-          >
-            <div class="flex items-center gap-3 text-slate-400">
-              <i class="fas fa-envelope text-primary"></i>
-              <span>nischalpandey0204@gmail.com</span>
-            </div>
-            <div class="flex items-center gap-3 text-slate-400">
-              <i class="fas fa-map-marker-alt text-primary"></i>
-              <span>Nepal</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 border-t border-white/5 text-center">
-      <p class="text-slate-500 text-sm">
-        &copy; <span id="year"></span> Nischal Pandey. All rights reserved.
-      </p>
-    </footer>
-
-    <!-- ✨ Chat Floating Button -->
-    <button
-      id="chat-toggle"
-      class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white shadow-2xl hover:scale-110 transition-transform"
-    >
-      <i class="fas fa-comment-dots text-2xl"></i>
-    </button>
-
-    <!-- ✨ Chat Window -->
-    <div
-      id="chat-window"
-      class="fixed bottom-24 right-6 w-80 md:w-96 h-[500px] z-50 glass-card rounded-2xl flex flex-col hidden border border-white/10 shadow-2xl overflow-hidden"
-    >
-      <!-- Header -->
-      <div
-        class="p-4 bg-primary/20 border-b border-white/10 flex justify-between items-center"
-      >
-        <div class="flex items-center gap-2">
-          <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-          <span class="font-bold text-white">Chat with AI Nischal</span>
-        </div>
-        <button id="close-chat" class="text-slate-400 hover:text-white">
-          <i class="fas fa-times"></i>
-        </button>
+  <!-- Skills Section -->
+  <section id="skills" class="py-24 relative">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Technical Expertise
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          My stack includes the latest technologies for building robust and
+          scalable applications.
+        </p>
       </div>
 
-      <!-- Messages -->
-      <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4">
-        <!-- Intro Message -->
-        <div class="flex gap-3">
-          <div
-            class="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex-shrink-0 flex items-center justify-center text-xs font-bold text-white"
-          >
-            AI
-          </div>
-          <div
-            class="bg-white/10 p-3 rounded-2xl rounded-tl-none text-sm text-slate-200"
-          >
-            Hello! I'm Nischal's AI assistant. Ask me anything about his skills,
-            projects, or experience or personal life🤪! ✨
-          </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <!-- Skill Items -->
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fab fa-python text-4xl text-yellow-300 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">Python</span>
         </div>
-      </div>
-
-      <!-- Input -->
-      <div class="p-4 bg-dark/30 border-t border-white/10">
-        <div class="flex gap-2">
-          <input
-            type="text"
-            id="chat-input"
-            placeholder="Ask me something..."
-            class="flex-1 bg-dark/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary"
-          />
-          <button
-            id="send-msg-btn"
-            class="p-2 rounded-lg bg-primary text-white hover:bg-indigo-500 transition-colors"
-          >
-            <i class="fas fa-paper-plane"></i>
-          </button>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fab fa-js text-4xl text-yellow-400 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">JavaScript</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fab fa-react text-4xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">React</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fab fa-node text-4xl text-green-500 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">Node.js</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fas fa-database text-4xl text-green-400 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">MongoDB</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fas fa-server text-4xl text-gray-400 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">Express</span>
+        </div>
+        <!-- Row 2 -->
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fab fa-html5 text-4xl text-orange-500 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">HTML5</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fab fa-css3-alt text-4xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">CSS3</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fas fa-layer-group text-4xl text-teal-400 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">Django</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fas fa-flask text-4xl text-white group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">Flask</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fas fa-database text-4xl text-blue-400 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">MySQL</span>
+        </div>
+        <div
+          class="reveal glass-card p-6 rounded-xl flex flex-col items-center justify-center gap-4 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 group">
+          <i class="fab fa-git-alt text-4xl text-red-500 group-hover:scale-110 transition-transform"></i>
+          <span class="font-medium text-slate-200">Git</span>
         </div>
       </div>
     </div>
-    <script src="static/js/tailwind.js"></script>
-    <script src="static/js/script.js"></script>
-    <script src="static/js/api.js"></script>
-  </body>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 bg-dark/50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Featured Projects
+        </h2>
+        <p class="text-slate-400">
+          Some things I've built with love and coffee.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div
+          class="reveal glass-card rounded-2xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img src="static/img/project1.webp"
+              onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80'"
+              alt="Digi Bistro"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4">
+              <a href="https://github.com/nischalpandey-np/Digi-Bistro" target="_blank"
+                class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white"><i
+                  class="fab fa-github text-xl"></i></a>
+              <a href="https://nischalpandey07.pythonanywhere.com/" target="_blank"
+                class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white"><i
+                  class="fas fa-external-link-alt text-xl"></i></a>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Digi Bistro</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+              Full-stack restaurant ordering system with authentication, menu
+              browsing, and order tracking.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary border border-primary/20">Python</span>
+              <span
+                class="px-2 py-1 text-xs rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20">Flask</span>
+              <span
+                class="px-2 py-1 text-xs rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+<div
+  class="reveal glass-card rounded-2xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+  <div class="h-48 overflow-hidden relative">
+    <img
+      src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop"
+      alt="Automated Chat Reply Bot"
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    <div
+      class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4">
+      <a href="https://github.com/nischalpandey-np/chatBot.git" target="_blank"
+        class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white">
+        <i class="fab fa-github text-xl"></i>
+      </a>
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-white mb-2">
+      Automated Chat Reply Bot
+    </h3>
+    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+      Desktop automation bot that reads chat text, sends it to Gemini, and replies automatically with AI-generated messages.
+      Includes loop prevention, global hotkey, and full automation workflow.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <span
+        class="px-2 py-1 text-xs rounded-md bg-green-400/10 text-green-400 border border-green-400/20">Python</span>
+      <span
+        class="px-2 py-1 text-xs rounded-md bg-blue-400/10 text-blue-400 border border-blue-400/20">Gemini API</span>
+      <span
+        class="px-2 py-1 text-xs rounded-md bg-purple-400/10 text-purple-400 border border-purple-400/20">PyAutoGUI</span>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Project 3 -->
+        <div
+          class="reveal glass-card rounded-2xl overflow-hidden group hover:border-primary/40 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="JS Mini Projects"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4">
+              <a href="https://github.com/nischalpandey-np/js-mini-projects" target="_blank"
+                class="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:scale-110 transition-all backdrop-blur-sm text-white"><i
+                  class="fab fa-github text-xl"></i></a>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">
+              JS Mini Projects
+            </h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+              A collection of interactive DOM manipulation tools, including
+              Todo Lists, Calculators, and more.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2 py-1 text-xs rounded-md bg-yellow-400/10 text-yellow-400 border border-yellow-400/20">Vanilla
+                JS</span>
+              <span
+                class="px-2 py-1 text-xs rounded-md bg-pink-500/10 text-pink-400 border border-pink-500/20">DOM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Resume Section -->
+  <section id="education" class="py-24">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Timeline -->
+        <div class="reveal">
+          <h2 class="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+            <i class="fas fa-graduation-cap text-primary"></i> Education
+          </h2>
+          <div class="border-l-2 border-slate-700 ml-3 space-y-12">
+            <!-- Item 1 -->
+            <div class="relative pl-8">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-dark"></div>
+              <h3 class="text-xl font-bold text-white">
+                High School Graduated
+              </h3>
+              <span class="text-sm text-primary font-medium block mb-2">Physical Science (STEM)</span>
+              <p class="text-slate-400 text-sm">
+                Relevant Coursework: Computer Science, Physics, Chemistry,
+                Mathematics.
+              </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="relative pl-8">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-secondary ring-4 ring-dark"></div>
+              <h3 class="text-xl font-bold text-white">
+                Harvard University (CS50)
+              </h3>
+              <span class="text-sm text-secondary font-medium block mb-2">Introduction to Programming</span>
+              <p class="text-slate-400 text-sm">
+                Intensive introduction to computer science and the art of
+                programming.
+              </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="relative pl-8">
+              <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-dark"></div>
+              <h3 class="text-xl font-bold text-white">IBM Certification</h3>
+              <span class="text-sm text-blue-400 font-medium block mb-2">AI Applications with Flask</span>
+              <p class="text-slate-400 text-sm">
+                Building and deploying AI-powered web applications.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resume Download Box -->
+        <div class="reveal">
+          <div
+            class="glass-card p-8 rounded-2xl h-full flex flex-col justify-center items-center text-center relative overflow-hidden group">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            </div>
+
+            <i
+              class="fas fa-file-alt text-6xl text-slate-600 mb-6 group-hover:text-primary transition-colors duration-300"></i>
+
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Looking for the full picture?
+            </h3>
+
+            <p class="text-slate-400 mb-8 max-w-sm">
+              Download my detailed resume to see my complete work history and
+              qualifications.
+            </p>
+
+            <div class="flex gap-4">
+              <a href="static/resume.pdf" download
+                class="px-6 py-3 rounded-xl bg-white text-dark font-bold hover:bg-slate-200 transition-colors flex items-center gap-2">
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+
+              <a href="static/resume.pdf" target="_blank"
+                class="px-6 py-3 rounded-xl border border-slate-600 text-white hover:border-white hover:bg-white/5 transition-all flex items-center gap-2">
+                <i class="fas fa-eye"></i> View
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-dark/50">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Let's Work Together
+        </h2>
+        <p class="text-slate-400">
+          Have a project in mind? Send me a message.
+        </p>
+      </div>
+
+      <div class="glass-card p-8 md:p-12 rounded-2xl reveal">
+        <form action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405" method="POST" class="space-y-6">
+          <!-- Config -->
+          <input type="hidden" name="_next" value="none" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New Portfolio Contact" />
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-slate-400 mb-2">Name</label>
+              <input type="text" name="name" required
+                class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-slate-600"
+                placeholder="John Doe" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-slate-400 mb-2">Email</label>
+              <input type="email" name="email" required
+                class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-slate-600"
+                placeholder="john@example.com" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-slate-400 mb-2">Message</label>
+            <textarea name="message" rows="4" required
+              class="w-full bg-dark/50 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder-slate-600"
+              placeholder="Tell me about your project..."></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-bold hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
+            Send Message <i class="fas fa-paper-plane ml-2"></i>
+          </button>
+        </form>
+
+        <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div class="flex items-center gap-3 text-slate-400">
+            <i class="fas fa-envelope text-primary"></i>
+            <span>nischalpandey0204@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-3 text-slate-400">
+            <i class="fas fa-map-marker-alt text-primary"></i>
+            <span>Nepal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/5 text-center">
+    <p class="text-slate-500 text-sm">
+      &copy; <span id="year"></span> Nischal Pandey. All rights reserved.
+    </p>
+  </footer>
+
+  <script src="static/js/tailwind.js"></script>
+  <script src="static/js/script.js"></script>
+</body>
+
 </html>
