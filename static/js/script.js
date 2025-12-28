@@ -50,9 +50,12 @@ const initTypingEffect = () => {
     // High-impact professional titles
     const texts = [
         "MERN Stack Developer",
-        "Python Backend Expert",
-        "React UI/UX Specialist",
-        "Jr. Full Stack Developer"
+        "Python Backend Developer (Django)",
+        "Programmer",
+        "Web developer",
+        "Coder",
+        "Freelancer"
+        
     ];
     
     let textIndex = 0;
