@@ -42,23 +42,23 @@ const initNavbarEffect = () => {
         }
     });
 };
-
-// 3. Typing Effect
+// 3. Professional Typing Effect
 const initTypingEffect = () => {
     const element = document.getElementById("typing-text");
     if (!element) return;
 
+    // High-impact professional titles
     const texts = [
-        "Full Stack Developer",
-        "Python Enthusiast",
-        "Problem Solver",
-        "Tech Explorer"
+        "MERN Stack Developer",
+        "Python Backend Expert",
+        "React UI/UX Specialist",
+        "Jr. Full Stack Developer"
     ];
     
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 100;
+    let typeSpeed = 80; // Snappier typing speed
 
     const type = () => {
         const currentText = texts[textIndex];
@@ -66,20 +66,21 @@ const initTypingEffect = () => {
         if (isDeleting) {
             element.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50; 
+            typeSpeed = 40; // Faster deleting (standard UX practice)
         } else {
             element.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 100;
+            typeSpeed = 80;
         }
 
+        // Logic for pausing at the end of a word or switching words
         if (!isDeleting && charIndex === currentText.length) {
             isDeleting = true;
-            typeSpeed = 2000; // Pause at end
+            typeSpeed = 2500; // Hold the completed title for 2.5s so recruiters can read it
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
-            typeSpeed = 500; // Pause before new word
+            typeSpeed = 300; // Small pause before starting the next word
         }
 
         setTimeout(type, typeSpeed);

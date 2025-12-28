@@ -561,3 +561,14 @@ input::placeholder, textarea::placeholder { color: #475569; }
 }
 .reveal.active { opacity: 1; transform: translateY(0); }
 .delay-200 { transition-delay: 0.2s; }
+.typing-cursor::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+    color: var(--color-primary); /* Uses your indigo color for the cursor */
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
