@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbarEffect();
     initTypingEffect();
     initScrollReveal();
-    initActiveScrollSpy(); // New Feature: Highlights nav based on scroll
-    initContactForm();     // New Feature: AJAX Form submission
+    initActiveScrollSpy();
+    initContactForm();
     updateYear();
 });
 
@@ -36,11 +36,9 @@ const initNavbarEffect = () => {
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 20) {
-            navbar.classList.add("glass-nav", "py-2");
-            navbar.classList.remove("py-4");
+            navbar.classList.add("glass-nav");
         } else {
-            navbar.classList.remove("glass-nav", "py-2");
-            navbar.classList.add("py-4");
+            navbar.classList.remove("glass-nav");
         }
     });
 };
@@ -68,11 +66,11 @@ const initTypingEffect = () => {
         if (isDeleting) {
             element.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 50; // Delete faster
+            typeSpeed = 50; 
         } else {
             element.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 100; // Type normal
+            typeSpeed = 100;
         }
 
         if (!isDeleting && charIndex === currentText.length) {
@@ -106,27 +104,25 @@ const initScrollReveal = () => {
     revealElements.forEach((el) => revealObserver.observe(el));
 };
 
-// 5. Active Scroll Spy (Senior Dev Feature)
+// 5. Active Scroll Spy
 const initActiveScrollSpy = () => {
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("#navbar a[href^='#']"); // Select desktop links
+    const navLinks = document.querySelectorAll(".nav-desktop a");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Remove active class from all links
-                navLinks.forEach(link => link.classList.remove("text-primary", "font-bold"));
-                navLinks.forEach(link => link.classList.add("text-slate-300")); // Reset color
-
-                // Add active class to current link
-                const activeLink = document.querySelector(`#navbar a[href="#${entry.target.id}"]`);
+                // Reset all links
+                navLinks.forEach(link => link.classList.remove("active"));
+                
+                // Set active link
+                const activeLink = document.querySelector(`.nav-desktop a[href="#${entry.target.id}"]`);
                 if (activeLink) {
-                    activeLink.classList.remove("text-slate-300");
-                    activeLink.classList.add("text-primary", "font-bold");
+                    activeLink.classList.add("active");
                 }
             }
         });
-    }, { threshold: 0.5 }); // Trigger when 50% of section is visible
+    }, { threshold: 0.5 });
 
     sections.forEach(section => observer.observe(section));
 };
@@ -137,7 +133,7 @@ const updateYear = () => {
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 };
 
-// 7. AJAX Form Submission (Better UX)
+// 7. AJAX Form Submission
 const initContactForm = () => {
     const form = document.querySelector("form");
     if (!form) return;
@@ -164,27 +160,23 @@ const initContactForm = () => {
                 // Success State
                 form.reset();
                 btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-                btn.classList.remove("from-primary", "to-secondary");
-                btn.classList.add("bg-green-500");
+                btn.classList.add("btn--success");
                 
                 setTimeout(() => {
                     btn.innerHTML = originalBtnText;
                     btn.disabled = false;
-                    btn.classList.add("from-primary", "to-secondary");
-                    btn.classList.remove("bg-green-500");
+                    btn.classList.remove("btn--success");
                 }, 3000);
             } else {
                 throw new Error("Failed to send");
             }
         } catch (error) {
             btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error. Try again.';
-            btn.classList.remove("from-primary", "to-secondary");
-            btn.classList.add("bg-red-500");
+            btn.classList.add("btn--error");
             setTimeout(() => {
                 btn.innerHTML = originalBtnText;
                 btn.disabled = false;
-                btn.classList.add("from-primary", "to-secondary");
-                btn.classList.remove("bg-red-500");
+                btn.classList.remove("btn--error");
             }, 3000);
         }
     });

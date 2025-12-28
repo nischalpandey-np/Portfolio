@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Ensure Google can crawl CSS/JS to verify mobile-friendliness
+Allow: /static/css/
+Allow: /static/js/
+Allow: /static/img/
+
+# Point to the sitemap (CRITICAL for SEO)
+Sitemap: https://nischalp.com.np/sitemap.xml
