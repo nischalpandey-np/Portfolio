@@ -75,7 +75,10 @@ img { max-width: 100%; display: block; }
 .hidden { display: none !important; }
 
 /* Flex Utilities */
-.flex-center { display: flex; justify-content: center; items-align: center; }
+.flex-center { 
+  display: flex;
+   justify-content: center; 
+   align-items: center; }
 
 /* =========================================
    3. Background Animations (Blobs)
@@ -140,6 +143,7 @@ img { max-width: 100%; display: block; }
     font-weight: 700;
     background: linear-gradient(to right, #ffffff, #94a3b8);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     letter-spacing: -0.05em;
 }
@@ -218,6 +222,7 @@ img { max-width: 100%; display: block; }
 .text-gradient {
     background: linear-gradient(to right, var(--color-primary), #c084fc, var(--color-secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
