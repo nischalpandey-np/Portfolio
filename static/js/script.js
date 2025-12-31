@@ -53,7 +53,6 @@ const initTypingEffect = () => {
         "Python Backend Developer (Django)",
         "Programmer",
         "Web developer",
-        "Coder",
         "Freelancer"
         
     ];
@@ -185,3 +184,82 @@ const initContactForm = () => {
         }
     });
 };
+
+// 8. Projects dynamically
+
+const projects = [
+    {
+        title: "Digi Bistro",
+        desc: "Full-stack restaurant ordering system with authentication, menu browsing, and order tracking.",
+        img: "static/img/project1.webp",
+        github: "https://github.com/nischalpandey-np/Digi-Bistro",
+        demo: "https://nischalpandey07.pythonanywhere.com/",
+        tags: ["Python", "Flask", "MySQL"],
+        tagColors: ["tag--primary", "tag--secondary", "tag--blue"]
+    },
+    {
+        title: "Automated Chat Bot",
+        desc: "Desktop automation bot that reads chat text, sends it to Gemini AI, and replies automatically. Includes loop prevention and hotkeys.",
+        img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop",
+        github: "https://github.com/nischalpandey-np/chatBot.git",
+        demo: null,
+        tags: ["Python", "Gemini API", "PyAutoGUI"],
+        tagColors: ["tag--green", "tag--blue", "tag--purple"]
+    },
+    {
+        title: "Flowpad",
+        desc: "A Kanban-style task board built with Vanilla JavaScript featuring drag-and-drop, localStorage persistence, and clean UI interactions.",
+        img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        github: "https://github.com/nischalpandey-np/flowpad",
+        demo: "https://todobynischal.netlify.app/",
+        tags: ["Vanilla JS", "DOM", "localStorage"],
+        tagColors: ["tag--yellow", "tag--pink", "tag--blue"]
+    },
+    {
+        title: "Weather App",
+        desc: "A lightweight weather application built using Vanilla JavaScript that fetches real-time weather data from the OpenWeatherMap API. It leverages the Fetch API with async/await, dynamically updates the DOM, handles invalid city errors, and displays condition-based weather icons with a clean, responsive UI.",
+        img: "https://images.unsplash.com/photo-1705077296278-d82dd5c8662f?q=80&w=809&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        github: "https://github.com/nischalpandey-np/Weather",
+        demo: "https://weatherbynischal.netlify.app/",
+        tags: ["Vanilla JavaScript", "Fetch API", "Async / Await", "DOM Manipulation"],
+        tagColors: ["tag--yellow", "tag--pink", "tag--blue", "tag--green"]
+    },
+    {
+        title: "Basic Calculator",
+        desc: "A lightweight calculator application built using Vanilla JavaScript that performs simple calculation using (DMAS) and supports chain calculation.",
+        img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        github: "https://github.com/nischalpandey-np/7basicProject",
+        demo: "https://calculatorbynischal.netlify.app/",
+        tags: ["Vanilla JavaScript", "REGEX", "DOM Manipulation"],
+        tagColors: ["tag--yellow", "tag--pink", "tag--blue", "tag--green"]
+    }
+];
+
+const projectsGrid = document.getElementById("projects-grid");
+projects.forEach(project => {
+  const article = document.createElement("article");
+  article.className = "reveal glass-card project-card group";
+
+  article.innerHTML = `
+    <div class="project-image-wrapper">
+      <img src="${project.img}" loading="lazy" alt="${project.title}" class="project-image"/>
+      <div class="project-overlay">
+        <a href="${project.github}" target="_blank" rel="noopener noreferrer" aria-label="View Code" class="overlay-btn">
+          <i class="fab fa-github"></i>
+        </a>
+        ${project.demo ? `<a href="${project.demo}" target="_blank" rel="noopener noreferrer" aria-label="Live Demo" class="overlay-btn">
+          <i class="fas fa-external-link-alt"></i>
+        </a>` : ""}
+      </div>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">${project.title}</h3>
+      <p class="project-desc">${project.desc}</p>
+      <div class="tags">
+        ${project.tags.map((tag, i) => `<span class="tag ${project.tagColors[i]}">${tag}</span>`).join("")}
+      </div>
+    </div>
+  `;
+
+  projectsGrid.appendChild(article);
+});
