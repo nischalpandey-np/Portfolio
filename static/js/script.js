@@ -48,14 +48,13 @@ const initTypingEffect = () => {
     if (!element) return;
 
     // High-impact professional titles
-    const texts = [
-        "MERN Stack Developer",
-        "Python Backend Developer (Django)",
-        "Programmer",
-        "Web developer",
-        "Freelancer"
-        
-    ];
+  const texts = [
+  "Frontend Developer",
+  "React.js Developer",
+  "MERN Focused Developer",
+  "Independent Web Consultant"
+];
+
     
     let textIndex = 0;
     let charIndex = 0;
@@ -188,24 +187,6 @@ const initContactForm = () => {
 // 8. Projects dynamically
 
 const projects = [
-    {
-        title: "Digi Bistro",
-        desc: "Full-stack restaurant ordering system with authentication, menu browsing, and order tracking.",
-        img: "static/img/project1.webp",
-        github: "https://github.com/nischalpandey-np/Digi-Bistro",
-        demo: "https://nischalpandey07.pythonanywhere.com/",
-        tags: ["Python", "Flask", "MySQL"],
-        tagColors: ["tag--primary", "tag--secondary", "tag--blue"]
-    },
-    {
-        title: "Automated Chat Bot",
-        desc: "Desktop automation bot that reads chat text, sends it to Gemini AI, and replies automatically. Includes loop prevention and hotkeys.",
-        img: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop",
-        github: "https://github.com/nischalpandey-np/chatBot.git",
-        demo: null,
-        tags: ["Python", "Gemini API", "PyAutoGUI"],
-        tagColors: ["tag--green", "tag--blue", "tag--purple"]
-    },
     {
         title: "Flowpad",
         desc: "A Kanban-style task board built with Vanilla JavaScript featuring drag-and-drop, localStorage persistence, and clean UI interactions.",
