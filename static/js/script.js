@@ -192,7 +192,7 @@ const projects = [
     desc: "A sleek React & JavaScript application that lets you search for movies via API and add your favorites to a personalized watchlist. Discover, save, and track movies effortlessly!",
     img: "static/img/unnamed.webp",
     github: "https://github.com/nischalpandey-np/movieWatchlist",
-    demo: "",
+    demo: "https://moviewatchlistbynischal.netlify.app/",
     tags: ["JavaScript", "React", "API Integration", "Watchlist App"],
     tagColors: ["tag--yellow", "tag--pink", "tag--blue", "tag--green"]
 }
