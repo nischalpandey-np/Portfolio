@@ -190,7 +190,7 @@ const projects = [
   {
     title: "Movie Search App 🎬",
     desc: "A sleek React & JavaScript application that lets you search for movies via API and add your favorites to a personalized watchlist. Discover, save, and track movies effortlessly!",
-    img: "https://images.unsplash.com/photo-1601758123927-2c6ebd0e6f4e?q=80&w=870&auto=format&fit=crop",
+    img: "static/img/unnamed.webp",
     github: "https://github.com/nischalpandey-np/movieWatchlist",
     demo: "",
     tags: ["JavaScript", "React", "API Integration", "Watchlist App"],
