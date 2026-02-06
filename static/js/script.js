@@ -187,15 +187,16 @@ const initContactForm = () => {
 // 8. Projects dynamically
 
 const projects = [
-    {
-        title: "Flowpad",
-        desc: "A Kanban-style task board built with Vanilla JavaScript featuring drag-and-drop, localStorage persistence, and clean UI interactions.",
-        img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        github: "https://github.com/nischalpandey-np/flowpad",
-        demo: "https://todobynischal.netlify.app/",
-        tags: ["Vanilla JS", "DOM", "localStorage"],
-        tagColors: ["tag--yellow", "tag--pink", "tag--blue"]
-    },
+  {
+    title: "Movie Search App 🎬",
+    desc: "A sleek React & JavaScript application that lets you search for movies via API and add your favorites to a personalized watchlist. Discover, save, and track movies effortlessly!",
+    img: "https://images.unsplash.com/photo-1601758123927-2c6ebd0e6f4e?q=80&w=870&auto=format&fit=crop",
+    github: "https://github.com/nischalpandey-np/movieWatchlist",
+    demo: "",
+    tags: ["JavaScript", "React", "API Integration", "Watchlist App"],
+    tagColors: ["tag--yellow", "tag--pink", "tag--blue", "tag--green"]
+}
+,
     {
         title: "Weather App",
         desc: "A lightweight weather application built using Vanilla JavaScript that fetches real-time weather data from the OpenWeatherMap API. It leverages the Fetch API with async/await, dynamically updates the DOM, handles invalid city errors, and displays condition-based weather icons with a clean, responsive UI.",
@@ -206,14 +207,15 @@ const projects = [
         tagColors: ["tag--yellow", "tag--pink", "tag--blue", "tag--green"]
     },
     {
-        title: "Basic Calculator",
-        desc: "A lightweight calculator application built using Vanilla JavaScript that performs simple calculation using (DMAS) and supports chain calculation.",
-        img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        github: "https://github.com/nischalpandey-np/7basicProject",
-        demo: "https://calculatorbynischal.netlify.app/",
-        tags: ["Vanilla JavaScript", "REGEX", "DOM Manipulation"],
-        tagColors: ["tag--yellow", "tag--pink", "tag--blue", "tag--green"]
-    }
+        title: "Flowpad",
+        desc: "A Kanban-style task board built with Vanilla JavaScript featuring drag-and-drop, localStorage persistence, and clean UI interactions.",
+        img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        github: "https://github.com/nischalpandey-np/flowpad",
+        demo: "https://todobynischal.netlify.app/",
+        tags: ["Vanilla JS", "DOM", "localStorage"],
+        tagColors: ["tag--yellow", "tag--pink", "tag--blue"]
+    },
+   
 ];
 
 const projectsGrid = document.getElementById("projects-grid");
