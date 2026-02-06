@@ -472,6 +472,7 @@ img { max-width: 100%; display: block; }
     opacity: 0;
     transition: opacity 0.3s;
 }
+.card-bg-glow { pointer-events: none; }
 .resume-card:hover .card-bg-glow { opacity: 1; }
 
 .resume-icon { font-size: 3.75rem; color: #475569; margin-bottom: 1.5rem; transition: color 0.3s; }
