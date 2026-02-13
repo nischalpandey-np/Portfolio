@@ -12,14 +12,14 @@
     --color-text: #cbd5e1;       /* Slate 300 */
     --color-text-light: #e2e8f0; /* Slate 200 */
     --color-white: #ffffff;
-    
+
     /* Functional Colors */
     --bg-input: rgba(15, 23, 42, 0.5);
     --border-input: #334155;
-    
+
     /* Typography */
     --font-family: 'Inter', sans-serif;
-    
+
     /* Layout */
     --container-width: 1200px;
     --section-spacing: 6rem;
@@ -75,9 +75,9 @@ img { max-width: 100%; display: block; }
 .hidden { display: none !important; }
 
 /* Flex Utilities */
-.flex-center { 
+.flex-center {
   display: flex;
-   justify-content: center; 
+   justify-content: center;
    align-items: center; }
 
 /* =========================================
