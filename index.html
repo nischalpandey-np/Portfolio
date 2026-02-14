@@ -93,7 +93,7 @@
           <a href="#projects" class="mobile-link">Projects</a>
           <a href="#experience" class="mobile-link">Experience</a>
           <a href="#education" class="mobile-link">Education</a>
-          <a href="#contact" class="mobile-link highlight">Contact</a>
+          <a href="#contact" class="mobile-link">Contact</a>
         </nav>
       </div>
     </header>
@@ -101,7 +101,7 @@
     <main id="main-content">
       <section id="home" class="hero-section">
         <div class="container hero-content">
-          <div class="reveal">
+          <div class="reveal reveal--zoom">
             <span class="badge">FULL STACK DEVELOPER</span>
             <h1 class="hero-title">
               Nischal <span class="text-gradient">Pandey</span>
@@ -127,7 +127,7 @@
             </div>
           </div>
 
-          <div class="social-links reveal delay-200">
+          <div class="social-links reveal reveal--right delay-200">
             <a
               href="https://github.com/nischalpandey-np"
               target="_blank"
@@ -163,36 +163,120 @@
         </div>
       </section>
 
-      <section id="about" class="section section--alt-bg">
+      <section id="about" class="section section--alt-bg about-stage">
+        <div class="about-float about-float--one" data-depth="24" aria-hidden="true">
+          UI Systems
+        </div>
+        <div class="about-float about-float--two" data-depth="16" aria-hidden="true">
+          Scale + Speed
+        </div>
+        <div class="about-float about-float--three" data-depth="20" aria-hidden="true">
+          Product Impact
+        </div>
+
         <div class="container">
-          <div class="section-header reveal">
+          <div class="section-header reveal reveal--up">
             <h2 class="section-title">About Me</h2>
             <p class="section-desc">
-              Based in Kathmandu, Bagmati Province, Nepal. I enjoy turning
-              complex requirements into fast, accessible products with clean
-              architecture and maintainable code.
+              I build web products that feel sharp, fast, and memorable so
+              users stay longer and teams ship with confidence.
             </p>
           </div>
 
-          <div class="about-grid">
-            <article class="glass-card about-card reveal">
-              <h3 class="about-title">Professional Summary</h3>
-              <p>
-                I specialize in full-stack JavaScript with modern React
-                workflows, robust API integration, and optimized frontend UX. I
-                focus on reliability, scalability, and measurable improvements
-                in load performance.
+          <div class="about-progress" aria-hidden="true">
+            <span class="about-progress-fill"></span>
+          </div>
+
+          <div class="about-layout">
+            <article class="glass-card about-spotlight reveal reveal--flip">
+              <div class="about-spotlight-glow" aria-hidden="true"></div>
+              <p class="about-kicker">Product-Minded Engineer</p>
+              <h3 class="about-headline">
+                I turn complex ideas into clean, high-converting interfaces
+                people actually enjoy using.
+              </h3>
+              <p class="about-copy">
+                Based in Kathmandu, I combine frontend craft, backend
+                reliability, and performance tuning to deliver experiences that
+                feel premium on both mobile and desktop.
               </p>
+              <div class="about-chip-row">
+                <span class="about-chip">
+                  <i class="fas fa-bolt"></i> Fast UX
+                </span>
+                <span class="about-chip">
+                  <i class="fas fa-cubes"></i> Reusable Systems
+                </span>
+                <span class="about-chip">
+                  <i class="fas fa-shield-alt"></i> Stable Delivery
+                </span>
+              </div>
             </article>
 
-            <article class="glass-card about-card reveal delay-200">
-              <h3 class="about-title">Current Focus</h3>
-              <ul class="about-list">
-                <li>Building production-ready web applications</li>
-                <li>Contributing to open-source projects on GitHub</li>
-                <li>Strengthening system design and AI application skills</li>
-                <li>Seeking strong Full Stack internship opportunities</li>
-              </ul>
+            <div class="about-side">
+              <article class="glass-card about-card about-card--stack reveal reveal--right delay-150">
+                <h3 class="about-title">What I Bring</h3>
+                <ul class="about-list about-list--icon">
+                  <li>
+                    <i class="fas fa-layer-group"></i>
+                    <span>Scalable component architecture with clean folder structure</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-gauge-high"></i>
+                    <span>Performance-first frontend decisions that reduce friction</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-code-branch"></i>
+                    <span>Practical collaboration from prototype to production</span>
+                  </li>
+                </ul>
+              </article>
+
+              <article class="glass-card about-card about-card--ticker reveal reveal--right delay-250">
+                <h3 class="about-title">Current Focus</h3>
+                <p class="about-mini-copy">
+                  Shipping robust MERN applications, improving system design,
+                  and integrating AI where it adds real product value.
+                </p>
+                <div class="about-marquee" aria-label="Current focus areas">
+                  <div class="about-marquee-track">
+                    <span>MERN</span>
+                    <span>System Design</span>
+                    <span>AI Workflows</span>
+                    <span>Frontend Motion</span>
+                    <span>Open Source</span>
+                    <span>MERN</span>
+                    <span>System Design</span>
+                    <span>AI Workflows</span>
+                    <span>Frontend Motion</span>
+                    <span>Open Source</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="about-proof">
+            <article class="about-proof-card glass-card reveal reveal--up delay-150">
+              <h4>Built For Speed</h4>
+              <p>
+                Lean bundles, optimized rendering, and smooth interactions that
+                keep users engaged.
+              </p>
+            </article>
+            <article class="about-proof-card glass-card reveal reveal--zoom delay-250">
+              <h4>Built For Clarity</h4>
+              <p>
+                Readable codebases and predictable patterns that teams can
+                extend confidently.
+              </p>
+            </article>
+            <article class="about-proof-card glass-card reveal reveal--up delay-300">
+              <h4>Built For Results</h4>
+              <p>
+                Product-first implementation focused on real-world reliability
+                and user trust.
+              </p>
             </article>
           </div>
         </div>
@@ -307,7 +391,7 @@
       <section id="education" class="section section--alt-bg">
         <div class="container">
           <div class="education-grid">
-            <div class="reveal">
+            <div class="reveal reveal--left">
               <h2 class="section-title icon-title">
                 <i class="fas fa-graduation-cap highlight-icon"></i>
                 Education
@@ -327,7 +411,7 @@
               </div>
             </div>
 
-            <div class="reveal">
+            <div class="reveal reveal--right">
               <div class="glass-card resume-card">
                 <div class="card-bg-glow"></div>
                 <i class="fas fa-file-alt resume-icon"></i>
@@ -364,7 +448,7 @@
             </p>
           </div>
 
-          <div class="glass-card contact-card reveal">
+          <div class="glass-card contact-card reveal reveal--up">
             <form
               action="https://formsubmit.co/a29691b7a35f2e7fa5ddc458e3f82405"
               method="POST"
