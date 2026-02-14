@@ -49,6 +49,12 @@ const initMobileMenu = () => {
       button.focus();
     }
   });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 900) {
+      closeMenu();
+    }
+  });
 };
 
 const initNavbarEffect = () => {
@@ -141,7 +147,7 @@ const initScrollReveal = () => {
 
 const initActiveScrollSpy = () => {
   const sections = Array.from(document.querySelectorAll("main section[id]"));
-  const navLinks = Array.from(document.querySelectorAll(".nav-link"));
+  const navLinks = Array.from(document.querySelectorAll(".nav-link, .mobile-link"));
   if (!sections.length || !navLinks.length) return;
 
   const updateActive = (id) => {
@@ -169,6 +175,7 @@ const initActiveScrollSpy = () => {
   );
 
   sections.forEach((section) => observer.observe(section));
+  updateActive(sections[0].id);
 };
 
 const initContactForm = () => {
