@@ -1,15 +1,15 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Nischal Pandey, a Full Stack Developer specializing in Python, JavaScript, React, and Modern Web Technologies. View projects and contact details."
+      content="Portfolio of Nischal Pandey, Full Stack Developer focused on MERN stack, scalable web apps, and modern frontend engineering."
     />
     <meta
       name="keywords"
-      content="Nischal Pandey, MERN Stack Developer, Python Developer, Web Developer Nepal, Portfolio, React, Django"
+      content="Nischal Pandey, Full Stack Developer, MERN, React, Node.js, Express, MongoDB, Portfolio"
     />
     <meta name="author" content="Nischal Pandey" />
     <meta name="theme-color" content="#0f172a" />
@@ -19,42 +19,38 @@
     <meta property="og:title" content="Nischal Pandey | Full Stack Developer" />
     <meta
       property="og:description"
-      content="Check out my portfolio featuring Mern-stack projects in Python, MERN, and AI."
+      content="Full Stack Developer specializing in MERN, responsive interfaces, and performant web applications."
     />
     <meta property="og:image" content="static/img/preview-card.png" />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:title"
-      content="Nischal Pandey | MERN Stack Developer"
-    />
+    <meta property="twitter:title" content="Nischal Pandey | Full Stack Developer" />
     <meta
       property="twitter:description"
-      content="Check out my portfolio featuring full-stack projects in Python, MERN, and AI."
+      content="Explore projects, skills, and experience in modern full-stack web development."
     />
 
     <title>Nischal Pandey | Full Stack Developer</title>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <link rel="stylesheet" href="static/css/styles.css" />
-
     <script src="static/js/script.js" defer></script>
   </head>
 
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <div class="background-blobs" aria-hidden="true">
       <div class="blob blob--1"></div>
       <div class="blob blob--2"></div>
@@ -63,15 +59,17 @@
 
     <header id="navbar" class="navbar">
       <div class="container navbar__container">
-        <a href="#" class="logo">NP</a>
+        <a href="#home" class="logo" aria-label="Go to home">NP</a>
 
-        <nav class="nav-desktop">
+        <nav class="nav-desktop" aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#contact" class="nav-link">Contact Me</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
         </nav>
 
@@ -80,38 +78,52 @@
           class="mobile-menu-btn"
           aria-label="Toggle mobile menu"
           aria-expanded="false"
+          aria-controls="mobile-menu"
+          type="button"
         >
-          <i class="fas fa-bars"></i>
+          <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
       </div>
 
       <div id="mobile-menu" class="mobile-menu hidden">
-        <nav>
+        <nav aria-label="Mobile navigation">
           <a href="#home" class="mobile-link">Home</a>
+          <a href="#about" class="mobile-link">About</a>
           <a href="#skills" class="mobile-link">Skills</a>
           <a href="#projects" class="mobile-link">Projects</a>
+          <a href="#experience" class="mobile-link">Experience</a>
           <a href="#education" class="mobile-link">Education</a>
-          <a href="#contact" class="mobile-link highlight">Contact Me</a>
+          <a href="#contact" class="mobile-link highlight">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <!-- Hero section  -->
+    <main id="main-content">
       <section id="home" class="hero-section">
         <div class="container hero-content">
           <div class="reveal">
-            <span class="badge">WELCOME TO MY PORTFOLIO</span>
+            <span class="badge">FULL STACK DEVELOPER</span>
             <h1 class="hero-title">
-              Hi, I'm <span class="text-gradient">Nischal Pandey</span>
+              Nischal <span class="text-gradient">Pandey</span>
             </h1>
             <h2 class="hero-subtitle">
-              I am a <span id="typing-text" class="typing-cursor"></span>
+              I build <span id="typing-text" class="typing-cursor"></span>
             </h2>
+            <p class="hero-intro">
+              Full Stack Developer specializing in the MERN stack, focused on
+              responsive, secure, and performance-driven web applications.
+            </p>
 
             <div class="hero-buttons">
               <a href="#projects" class="btn btn--primary">View Projects</a>
-              <a href="#contact" class="btn btn--outline">Contact Me</a>
+              <a
+                href="static/Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--outline"
+              >
+                View Resume
+              </a>
             </div>
           </div>
 
@@ -119,6 +131,7 @@
             <a
               href="https://github.com/nischalpandey-np"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="GitHub Profile"
               class="social-icon"
             >
@@ -127,6 +140,7 @@
             <a
               href="https://www.linkedin.com/in/nischalpandey"
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn Profile"
               class="social-icon"
             >
@@ -143,142 +157,195 @@
         </div>
 
         <div class="scroll-indicator">
-          <a href="#skills" aria-label="Scroll down">
+          <a href="#about" aria-label="Scroll down">
             <i class="fas fa-chevron-down"></i>
           </a>
         </div>
       </section>
-      <!-- Skills section  -->
+
+      <section id="about" class="section section--alt-bg">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-desc">
+              Based in Kathmandu, Bagmati Province, Nepal. I enjoy turning
+              complex requirements into fast, accessible products with clean
+              architecture and maintainable code.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <article class="glass-card about-card reveal">
+              <h3 class="about-title">Professional Summary</h3>
+              <p>
+                I specialize in full-stack JavaScript with modern React
+                workflows, robust API integration, and optimized frontend UX. I
+                focus on reliability, scalability, and measurable improvements
+                in load performance.
+              </p>
+            </article>
+
+            <article class="glass-card about-card reveal delay-200">
+              <h3 class="about-title">Current Focus</h3>
+              <ul class="about-list">
+                <li>Building production-ready web applications</li>
+                <li>Contributing to open-source projects on GitHub</li>
+                <li>Strengthening system design and AI application skills</li>
+                <li>Seeking strong Full Stack internship opportunities</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="skills" class="section">
         <div class="container">
           <div class="section-header reveal">
-            <h2 class="section-title">Technical Expertise</h2>
+            <h2 class="section-title">Skills</h2>
             <p class="section-desc">
-              My stack includes the latest technologies for building robust and
-              scalable applications.
+              Current stack and tooling used for production-focused development.
             </p>
           </div>
 
           <div class="skills-grid">
-            <div class="reveal glass-card skill-card group">
+            <div class="reveal glass-card skill-card">
+              <i class="fab fa-js skill-icon color-js"></i>
+              <span class="skill-name">JavaScript (ES6+)</span>
+            </div>
+            <div class="reveal glass-card skill-card">
               <i class="fab fa-python skill-icon color-python"></i>
               <span class="skill-name">Python</span>
             </div>
-            <div class="reveal glass-card skill-card group">
-              <i class="fab fa-js skill-icon color-js"></i>
-              <span class="skill-name">JavaScript</span>
+            <div class="reveal glass-card skill-card">
+              <i class="fas fa-code skill-icon color-light"></i>
+              <span class="skill-name">C</span>
             </div>
-            <div class="reveal glass-card skill-card group">
+            <div class="reveal glass-card skill-card">
               <i class="fab fa-react skill-icon color-react"></i>
               <span class="skill-name">React</span>
             </div>
-            <div class="reveal glass-card skill-card group">
+            <div class="reveal glass-card skill-card">
+              <i class="fas fa-wind skill-icon color-tailwind"></i>
+              <span class="skill-name">Tailwind CSS</span>
+            </div>
+            <div class="reveal glass-card skill-card">
               <i class="fab fa-node skill-icon color-node"></i>
               <span class="skill-name">Node.js</span>
             </div>
-            <div class="reveal glass-card skill-card group">
-              <i class="fas fa-database skill-icon color-mongo"></i>
+            <div class="reveal glass-card skill-card">
+              <i class="fas fa-server skill-icon color-express"></i>
+              <span class="skill-name">Express.js</span>
+            </div>
+            <div class="reveal glass-card skill-card">
+              <i class="fas fa-leaf skill-icon color-mongo"></i>
               <span class="skill-name">MongoDB</span>
             </div>
-            <div class="reveal glass-card skill-card group">
-              <i class="fab fa-html5 skill-icon color-html"></i>
-              <span class="skill-name">HTML5</span>
-            </div>
-            <div class="reveal glass-card skill-card group">
-              <i class="fab fa-css3-alt skill-icon color-css"></i>
-              <span class="skill-name">CSS3</span>
-            </div>
-            <div class="reveal glass-card skill-card group">
-              <i class="fas fa-flask skill-icon color-flask"></i>
-              <span class="skill-name">Flask</span>
-            </div>
-            <div class="reveal glass-card skill-card group">
+            <div class="reveal glass-card skill-card">
               <i class="fas fa-database skill-icon color-mysql"></i>
               <span class="skill-name">MySQL</span>
             </div>
-            <div class="reveal glass-card skill-card group">
+            <div class="reveal glass-card skill-card">
               <i class="fab fa-git-alt skill-icon color-git"></i>
-              <span class="skill-name">Git</span>
+              <span class="skill-name">Git/GitHub</span>
+            </div>
+            <div class="reveal glass-card skill-card">
+              <i class="fas fa-cloud skill-icon color-cloud"></i>
+              <span class="skill-name">Vercel/Railway/Render</span>
+            </div>
+            <div class="reveal glass-card skill-card">
+              <i class="fas fa-laptop-code skill-icon color-light"></i>
+              <span class="skill-name">VS Code</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
       <section id="projects" class="section section--alt-bg">
         <div class="container">
           <div class="section-header reveal">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <p class="section-desc">
-              Some things I've built with Passion and coffee.
+              Selected work focused on product quality, UX, and practical
+              engineering.
             </p>
           </div>
           <div class="projects-grid" id="projects-grid">
-            <!-- Project cards will be injected here by JS -->
+            <!-- Project cards rendered by JavaScript -->
           </div>
+          <noscript>
+            <p class="noscript-note">
+              JavaScript is disabled. Please use
+              <a href="https://github.com/nischalpandey-np" target="_blank" rel="noopener noreferrer">GitHub</a>
+              to view project source code.
+            </p>
+          </noscript>
         </div>
       </section>
 
-      <!-- Education Section  -->
-      <section id="education" class="section">
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-desc">Hands-on development in production settings.</p>
+          </div>
+
+          <article class="glass-card experience-card reveal">
+            <div class="experience-head">
+              <h3>Freelance Frontend Developer</h3>
+              <span>Self-Employed | July 2025 - Present</span>
+            </div>
+            <ul class="experience-list">
+              <li>Built and deployed production-ready web applications.</li>
+              <li>Configured custom domains and deployment workflows.</li>
+              <li>Contributed to open-source projects on GitHub.</li>
+              <li>Shipped multiple live projects with responsive UI quality.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="section section--alt-bg">
         <div class="container">
           <div class="education-grid">
             <div class="reveal">
               <h2 class="section-title icon-title">
-                <i class="fas fa-graduation-cap highlight-icon"></i> Education
+                <i class="fas fa-graduation-cap highlight-icon"></i>
+                Education
               </h2>
               <div class="timeline">
                 <div class="timeline-item">
                   <div class="timeline-dot dot--primary"></div>
-                  <h3 class="timeline-title">High School Diploma</h3>
-                  <span class="timeline-subtitle sub--primary"
-                    >Physical Science (STEM)</span
-                  >
+                  <h3 class="timeline-title">B.Sc. CSIT</h3>
+                  <span class="timeline-subtitle">
+                    Metropolitan College, Kathmandu
+                  </span>
                   <p class="timeline-text">
-                    Relevant Coursework: Computer Science, Physics, Chemistry,
-                    Mathematics.
-                  </p>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="timeline-dot dot--secondary"></div>
-                  <h3 class="timeline-title">Harvard University (CS50)</h3>
-                  <span class="timeline-subtitle sub--secondary"
-                    >Introduction to Programming</span
-                  >
-                  <p class="timeline-text">
-                    Intensive introduction to computer science and the art of
-                    programming.
-                  </p>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="timeline-dot dot--blue"></div>
-                  <h3 class="timeline-title">IBM Certification</h3>
-                  <span class="timeline-subtitle sub--blue"
-                    >AI Applications with Flask</span
-                  >
-                  <p class="timeline-text">
-                    Building and deploying AI-powered web applications.
+                    Relevant coursework: Data Structures, Database Systems, Web
+                    Technologies, Operating Systems, Software Engineering.
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="reveal">
-              <div class="glass-card resume-card group">
+              <div class="glass-card resume-card">
                 <div class="card-bg-glow"></div>
                 <i class="fas fa-file-alt resume-icon"></i>
-                <h3 class="resume-title">Looking for the full picture?</h3>
+                <h3 class="resume-title">Resume</h3>
                 <p class="resume-text">
-                  Download my detailed resume to see my complete work history
-                  and qualifications.
+                  Download the latest resume for full education, certifications,
+                  and project details.
                 </p>
                 <div class="resume-actions">
-                  <a href="static/frontend%20Resume.pdf" download class="btn btn--light">
-                    <i class="fas fa-download"></i> Download PDF
+                  <a href="static/Resume.pdf" download class="btn btn--light">
+                    <i class="fas fa-download"></i> Download
                   </a>
-                  <a href="static/frontend%20Resume.pdf" target="_blank" class="btn btn--outline-light">
+                  <a
+                    href="static/Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn--outline-light"
+                  >
                     <i class="fas fa-eye"></i> View
                   </a>
                 </div>
@@ -287,13 +354,13 @@
           </div>
         </div>
       </section>
-      <!-- Contact section  -->
-      <section id="contact" class="section section--alt-bg">
+
+      <section id="contact" class="section">
         <div class="container container--narrow">
           <div class="section-header reveal">
-            <h2 class="section-title">Let's Work Together</h2>
+            <h2 class="section-title">Contact</h2>
             <p class="section-desc">
-              Have a project in mind? Send me a message or Leave a feedback.
+              Have a project or internship opportunity? Let us connect.
             </p>
           </div>
 
@@ -305,22 +372,12 @@
             >
               <input type="hidden" name="_next" value="none" />
               <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_subject"
-                value="New Portfolio Contact"
-              />
+              <input type="hidden" name="_subject" value="New Portfolio Contact" />
 
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Eg.Nischal Pandey"
-                  />
+                  <input type="text" id="name" name="name" required placeholder="Your name" />
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
@@ -329,7 +386,7 @@
                     id="email"
                     name="email"
                     required
-                    placeholder="nischal@example.com"
+                    placeholder="you@example.com"
                   />
                 </div>
               </div>
@@ -341,7 +398,7 @@
                   name="message"
                   rows="4"
                   required
-                  placeholder="What's on your mind .."
+                  placeholder="Tell me about your project"
                 ></textarea>
               </div>
 
@@ -357,14 +414,14 @@
               </div>
               <div class="contact-info">
                 <i class="fas fa-map-marker-alt highlight-icon"></i>
-                <span>Nepal</span>
+                <span>Kathmandu, Nepal</span>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <!-- Footer  -->
+
     <footer class="footer">
       <p>&copy; <span id="year"></span> Nischal Pandey. All rights reserved.</p>
     </footer>
