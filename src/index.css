@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── Base Reset ──────────────────────────────────────────────── */
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Enforce ultra-smooth theme transitions globally across all elements */
+*,
+*::before,
+*::after {
+  transition: background-color 0.7s ease-in-out, border-color 0.7s ease-in-out,
+    color 0.7s ease-in-out;
+}
+
+body {
+  /* Set base background transition for light/dark mode toggling */
+  transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+  margin: 0;
+}
+
+/* Hide native cursor only on desktop where custom cursor is active */
+@media (min-width: 640px) {
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* ─── Design Tokens ───────────────────────────────────────────── */
+@theme {
+  /* Brand */
+  --color-primary: #5044e5;
+  --color-primary-dark: #4338ca;
+
+  /* Additional UI Colors for brutalist layout */
+  --color-dark-bg: #09090b;
+  --color-dark-surface: #18181b;
+  --color-dark-border: #27272a;
+
+  --color-light-bg: #fafafa;
+  --color-light-surface: #ffffff;
+  --color-light-border: #e4e4e7;
+
+  /* Motion */
+  --animate-duration-fast: 150ms;
+  --animate-duration-base: 200ms;
+  --animate-duration-slow: 300ms;
+}
+
+/* ─── Focus Ring (accessibility) ─────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #5044e5;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Selection Colour ───────────────────────────────────────── */
+::selection {
+  background-color: #5044e5;
+  color: white;
+}
+
+/* ─── Scrollbar (Webkit) ─────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #5044e550;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5044e5;
+}
+
+/* ─── Utility Classes ────────────────────────────────────────── */
+
+/* A sleek dot grid background */
+.bg-grid-pattern {
+  background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.dark .bg-grid-pattern {
+  background-image: radial-gradient(#27272a 1px, transparent 1px);
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.dark .glass-panel {
+  background: rgba(24, 24, 27, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Text outline effect for brutalist typography */
+.text-outline {
+  -webkit-text-stroke: 1px #a1a1aa;
+  color: transparent;
+}
+.dark .text-outline {
+  -webkit-text-stroke: 1px #52525b;
+}
+
+/* Hover outline fill transition */
+.text-outline-hover {
+  transition: all 0.3s ease;
+}
+.text-outline-hover:hover {
+  -webkit-text-stroke: 1px transparent;
+  color: #5044e5;
+}
+
+/* Hide scrollbar for marquee */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure images scale nicely on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

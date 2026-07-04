@@ -1,0 +1,9 @@
+<svg width="180" height="32" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: N-shape mark using brand colors -->
+  <path d="M4 28V4H9.5L20.5 20V4H26V28H20.5L9.5 12V28H4Z" fill="#5044E5"/>
+  <circle cx="38" cy="16" r="2.5" fill="#5044E5" opacity="0.4"/>
+  <!-- Wordmark: Nischal -->
+  <text x="48" y="22" font-family="Manrope, -apple-system, sans-serif" font-size="16" font-weight="700" letter-spacing="-0.5" fill="#0f172a">Nischal</text>
+  <!-- Wordmark: Pandey -->
+  <text x="120" y="22" font-family="Manrope, -apple-system, sans-serif" font-size="16" font-weight="400" letter-spacing="-0.3" fill="#5044E5">Pandey</text>
+</svg>
