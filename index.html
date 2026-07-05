@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -7,24 +7,64 @@
 
     <!-- Primary Meta -->
     <title>Nischal Pandey — Full Stack Developer</title>
-    <meta name="description" content="Full Stack Developer based in Kathmandu, Nepal. Building fast, scalable, and cinematic web applications with React, Node.js, and MongoDB." />
+    <meta
+      name="description"
+      content="Full Stack Developer based in Kathmandu, Nepal. Building fast, scalable, and cinematic web applications with React, Node.js, and MongoDB."
+    />
     <meta name="author" content="Nischal Pandey" />
-    <meta name="keywords" content="Nischal Pandey, Full Stack Developer, React Developer, Node.js, Portfolio, Kathmandu, Nepal, Web Developer" />
+    <meta
+      name="keywords"
+      content="Nischal Pandey, Full Stack Developer, React Developer, Node.js, Portfolio, Kathmandu, Nepal, Web Developer"
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Nischal Pandey — Full Stack Developer" />
-    <meta property="og:description" content="Full Stack Developer building fast, scalable, and cinematic web applications." />
+    <meta
+      property="og:description"
+      content="Full Stack Developer building fast, scalable, and cinematic web applications."
+    />
     <meta property="og:url" content="https://nischalpandey.dev" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nischal Pandey — Full Stack Developer" />
-    <meta name="twitter:description" content="Full Stack Developer building fast, scalable, and cinematic web applications." />
+    <meta
+      name="twitter:title"
+      content="Nischal Pandey — Full Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Full Stack Developer building fast, scalable, and cinematic web applications."
+    />
     <meta name="twitter:creator" content="@nischalpandey" />
 
     <!-- Theme -->
     <meta name="theme-color" content="#5044E5" />
+    <script>
+      // Capture runtime errors and promise rejections so they are visible during debugging
+      window.addEventListener("error", function (e) {
+        try {
+          console.error("Captured error:", e.error || e.message || e);
+        } catch {}
+        try {
+          alert(
+            "Runtime error: " +
+              (e.error?.message || e.message || "see console"),
+          );
+        } catch {}
+      });
+      window.addEventListener("unhandledrejection", function (e) {
+        try {
+          console.error("Unhandled rejection:", e.reason);
+        } catch {}
+        try {
+          alert(
+            "Unhandled promise rejection: " +
+              (e.reason?.message || e.reason || "see console"),
+          );
+        } catch {}
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
