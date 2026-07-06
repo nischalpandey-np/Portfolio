@@ -7,9 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node ./scripts/copyCname.cjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build && node ./scripts/copyCname.cjs",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

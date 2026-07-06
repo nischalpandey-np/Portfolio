@@ -30,7 +30,7 @@ const ContactUs = () => {
       } else {
         toast.error(data.message || "Something went wrong. Please try again.");
       }
-    } catch (error) {
+    } catch {
       toast.error("Unable to send message. Please check your connection.");
     } finally {
       setIsSubmitting(false);
