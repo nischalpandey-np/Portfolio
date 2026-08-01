@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 const Experience = () => {
   const experienceData = [
     {
-      role: " Frontend Developer",
+      role: "Frontend Developer",
       company: "Rahu Doom Pvt Ltd",
       period: "May 2026 - Present",
       type: "work",
       description:
-        "Built and deployed production-ready web applications, configured custom domains, and contributed to open-source projects.",
+        "Spearheading the development of production-ready web applications and enterprise platforms. Architecting scalable frontend solutions using modern web technologies, optimizing performance, and collaborating closely with cross-functional teams to deliver exceptional user experiences.",
     },
     {
       role: "B.Sc. CSIT",

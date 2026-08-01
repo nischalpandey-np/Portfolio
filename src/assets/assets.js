@@ -5,7 +5,6 @@ import group_profile from './group_profile.png'
 import bgImage1 from './bgImage1.png'
 import bgImage2 from './bgImage2.png'
 import hero_img from './hero_img.png'
-import ads_icon from './ads_icon.svg'
 import content_icon from './content_icon.svg'
 import marketing_icon from './marketing_icon.svg'
 import social_icon from './social_icon.svg'
@@ -32,7 +31,6 @@ const assets = {
   bgImage1,
   bgImage2,
   hero_img,
-  ads_icon,
   content_icon,
   marketing_icon,
   social_icon,

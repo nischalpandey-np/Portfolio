@@ -49,7 +49,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="text-[13vw] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-[0.9] font-black uppercase tracking-tighter"
           >
-            FRONTEND
+            MERN STACK
           </motion.h1>
           <motion.h1
             initial={{ opacity: 0, x: 40 }}
@@ -69,8 +69,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mt-12 border-t border-gray-200 dark:border-gray-800 pt-8"
         >
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-md leading-relaxed font-medium">
-            Crafting cinematic interfaces, scalable architecture, and bold
-            digital experiences from Kathmandu, Nepal.
+            Engineering high-performance web applications and enterprise platforms. Specialized in the MERN stack and modern full-stack development from Kathmandu, Nepal.
           </p>
 
           <a
