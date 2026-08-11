@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import assets from "../assets/assets";
+import { motion } from "motion/react";
 
 const ThemeToggleBtn = ({ theme, setTheme }) => {
   useEffect(() => {
@@ -21,7 +22,8 @@ const ThemeToggleBtn = ({ theme, setTheme }) => {
 
   return (
     <div>
-      <button
+      <motion.button
+        whileTap={{ scale: 0.8 }}
         aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
         className="flex items-center justify-center size-9 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
       >
@@ -40,7 +42,7 @@ const ThemeToggleBtn = ({ theme, setTheme }) => {
             alt="Switch to dark mode"
           />
         )}
-      </button>
+      </motion.button>
     </div>
   );
 };
