@@ -45,6 +45,14 @@ const techStack = [
   { name: "Express", color: "#888888", bg: "#88888815", border: "#88888830", emoji: "⚡" },
 ];
 
+/**
+ * Skills Section Component
+ * 
+ * Displays technical skills in an infinite scrolling marquee layout.
+ * Features two rows moving in opposite directions with interactive gradient hover states.
+ * 
+ * @returns {JSX.Element} The infinite marquee skills section
+ */
 const Skills = () => {
   const coreSkills = [
     "JavaScript", "TypeScript", "React", "Node.js", "MongoDB", "Tailwind CSS", "Next.js", "Express"

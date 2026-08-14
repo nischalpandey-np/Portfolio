@@ -40,6 +40,14 @@ const typeConfig = {
   },
 };
 
+/**
+ * Experience & Education Section Component
+ * 
+ * Displays a vertical timeline of professional experience and education history.
+ * Includes interactive hover effects, gradient text animations, and animated entry via framer-motion.
+ * 
+ * @returns {JSX.Element} The experience timeline section
+ */
 const Experience = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 

@@ -9,6 +9,15 @@ const sections = [
   { id: "contact-us", label: "Contact" },
 ];
 
+/**
+ * Section Navigation Dots Component
+ * 
+ * Renders a fixed vertical navigation bar on the right side of the screen.
+ * Automatically tracks which section is currently in view using IntersectionObserver
+ * and allows clicking dots to smoothly scroll to specific sections.
+ * 
+ * @returns {JSX.Element} The interactive navigation dots
+ */
 const SectionDots = () => {
   const [active, setActive] = useState("hero");
 

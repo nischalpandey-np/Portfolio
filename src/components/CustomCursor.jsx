@@ -1,6 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useSpring, useMotionValue } from "motion/react";
 
+/**
+ * Custom Cursor Component
+ * 
+ * Replaces the default browser cursor with a custom animated dot and ring.
+ * Features a trailing spring animation and hover state changes for interactive elements.
+ * 
+ * @returns {JSX.Element | null} The animated cursor, or null on touch devices
+ */
 const CustomCursor = () => {
   const [hoverState, setHoverState] = useState(null); // 'link', 'project', 'send', null
   const cursorX = useMotionValue(-100);

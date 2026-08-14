@@ -10,6 +10,17 @@ const navLinks = [
   { label: "Experience", href: "#experience", num: "04" },
 ];
 
+/**
+ * Navigation Bar Component
+ * 
+ * Responsive top navigation bar. Features a blurred background on scroll,
+ * interactive nav links that highlight based on current section, and a mobile sliding menu.
+ * 
+ * @param {Object} props
+ * @param {string} props.theme
+ * @param {Function} props.setTheme
+ * @returns {JSX.Element} The main navigation bar
+ */
 const NavBar = ({ theme, setTheme }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");

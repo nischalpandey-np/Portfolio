@@ -430,6 +430,15 @@ const MobileCard = ({ work, index }) => {
 };
 
 /* ─── Main Component ─────────────────────────────────────────────── */
+/**
+ * Projects Section Component
+ * 
+ * Showcase of featured portfolio projects with a horizontal sticky scroll effect
+ * on desktop, and a vertical list on mobile. Each project displays tags, an image,
+ * and external links.
+ * 
+ * @returns {JSX.Element} The projects showcase section
+ */
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 

@@ -13,6 +13,15 @@ import SectionDots from "./components/SectionDots";
 import "./index.css";
 import { Toaster } from "react-hot-toast";
 
+/**
+ * Main Application Component
+ * 
+ * Serves as the root layout wrapper and entry point for the portfolio.
+ * Handles global state such as the active theme (dark/light) and initial loading screen.
+ * Orchestrates all main page sections (Hero, Projects, Skills, etc.) and global overlays (Cursor, Toaster).
+ *
+ * @returns {JSX.Element} The rendered root application component
+ */
 const App = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",

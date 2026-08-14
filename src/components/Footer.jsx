@@ -93,6 +93,14 @@ const socialLinks = [
   },
 ];
 
+/**
+ * Footer Component
+ * 
+ * Displays the page footer including copyright information, quick links, and social links.
+ * Includes a real-time clock component (NepalClock) and smooth scroll-to-top functionality.
+ * 
+ * @returns {JSX.Element} The rendered footer section
+ */
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 

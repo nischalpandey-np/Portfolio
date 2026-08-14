@@ -24,6 +24,14 @@ const useCounter = (target, ms, start) => {
 const NAME = "NISCHAL";
 const ROLE = "Full Stack Developer";
 
+/**
+ * Loader Component
+ * 
+ * A full-screen cinematic loading sequence displayed when the app first mounts.
+ * Features animated typography and progress bar simulating initialization.
+ * 
+ * @returns {JSX.Element} The animated loading overlay
+ */
 const Loader = ({ onComplete }) => {
   const [phase, setPhase] = useState("enter"); // enter → count → exit
   const [exiting, setExiting] = useState(false);

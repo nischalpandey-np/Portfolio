@@ -2,6 +2,17 @@ import { useEffect } from "react";
 import assets from "../assets/assets";
 import { motion } from "motion/react";
 
+/**
+ * Theme Toggle Button Component
+ * 
+ * A sliding switch that toggles the application between light and dark modes.
+ * Displays animated sun/moon icons based on the active state.
+ * 
+ * @param {Object} props
+ * @param {string} props.theme - The current theme ('light' or 'dark')
+ * @param {Function} props.setTheme - State setter for the theme
+ * @returns {JSX.Element} The theme toggle button
+ */
 const ThemeToggleBtn = ({ theme, setTheme }) => {
   useEffect(() => {
     const prefersDarkMode = window.matchMedia(

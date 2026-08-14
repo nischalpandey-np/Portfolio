@@ -69,6 +69,14 @@ const socialLinks = [
   { label: "Twitter", href: "https://twitter.com/nischalpandey", icon: "𝕏" },
 ];
 
+/**
+ * Contact Us Section Component
+ * 
+ * Renders a contact form integrated with Web3Forms API to send emails directly.
+ * Features floating label inputs, validation, animated submission state, and social links.
+ * 
+ * @returns {JSX.Element} The contact section
+ */
 const ContactUs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 

@@ -1,5 +1,17 @@
 import { motion } from "motion/react";
 
+/**
+ * Reusable Section Title Component
+ * 
+ * Standardized typography layout for section headers.
+ * Includes a decorative accent dot and an optional description.
+ * 
+ * @param {Object} props
+ * @param {string} props.title - The main large heading
+ * @param {string} [props.desc] - Optional description text
+ * @param {string} [props.description] - Optional description text (alternative prop)
+ * @returns {JSX.Element} The rendered title block
+ */
 const Title = ({ title, desc, description }) => {
   const subtitle = desc || description;
 

@@ -51,6 +51,15 @@ const StatItem = ({ value, label }) => {
   );
 };
 
+/**
+ * Hero Section Component
+ * 
+ * The primary landing viewport for the portfolio.
+ * Features an animated profile picture, dynamically cycling text roles, statistics counters,
+ * and prominent calls-to-action (Download CV, Contact).
+ * 
+ * @returns {JSX.Element} The hero section
+ */
 const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
 

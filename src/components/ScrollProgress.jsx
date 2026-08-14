@@ -1,5 +1,13 @@
-import { useScroll, useSpring, motion } from "motion/react";
+import { motion, useScroll, useSpring } from "motion/react";
 
+/**
+ * Scroll Progress Indicator
+ * 
+ * Renders a fixed progress bar at the top of the viewport that tracks
+ * the user's vertical scroll percentage down the page.
+ * 
+ * @returns {JSX.Element} The animated scroll progress bar
+ */
 const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
