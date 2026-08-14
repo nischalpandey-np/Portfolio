@@ -21,7 +21,7 @@ const MarqueeRow = ({ items, reverse = false }) => (
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "";
                 e.currentTarget.style.webkitBackgroundClip = "";
-                e.currentTarget.style.webkitTextFillColor = "";
+                e.currentTarget.style.webkitTextFillColor = "inherit";
               }}
             >
               {skill}

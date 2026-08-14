@@ -135,14 +135,15 @@ const Hero = () => {
             </AnimatePresence>
           </div>
 
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            aria-hidden="true"
             className="text-[13vw] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] leading-[0.9] font-black uppercase tracking-tighter text-outline text-outline-hover cursor-default text-right sm:text-left"
           >
             DEVELOPER
-          </motion.h1>
+          </motion.div>
         </div>
 
         {/* ── Stats Row ─────────────────────────────────────────── */}

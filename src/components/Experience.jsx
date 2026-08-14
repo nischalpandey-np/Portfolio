@@ -1,5 +1,6 @@
 import Title from "./Title";
 import { motion } from "motion/react";
+import { useState } from "react";
 
 const experienceData = [
   {
@@ -40,6 +41,8 @@ const typeConfig = {
 };
 
 const Experience = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   return (
     <motion.div
       initial="hidden"
@@ -73,6 +76,8 @@ const Experience = () => {
                 }}
                 viewport={{ once: true, margin: "-50px" }}
                 className="relative group pb-12 last:pb-0"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
                 {/* Timeline dot */}
                 <div className="absolute -left-[2.2rem] md:-left-[2.75rem] top-1.5 flex items-center justify-center">
@@ -97,7 +102,15 @@ const Experience = () => {
                       </span>
 
                       {/* Role */}
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight text-gray-900 dark:text-white group-hover/card:gradient-text transition-all duration-300">
+                      <h3
+                        className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tight transition-all duration-300"
+                        style={hoveredIndex === index ? {
+                          background: "linear-gradient(135deg, #5044e5 0%, #7c3aed 55%, #a855f7 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        } : { color: "inherit" }}
+                      >
                         {item.role}
                       </h3>
 

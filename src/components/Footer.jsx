@@ -1,4 +1,3 @@
-import assets from "../assets/assets";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
