@@ -3,10 +3,10 @@ import { motion, useSpring, useMotionValue } from "motion/react";
 
 /**
  * Custom Cursor Component
- * 
+ *
  * Replaces the default browser cursor with a custom animated dot and ring.
  * Features a trailing spring animation and hover state changes for interactive elements.
- * 
+ *
  * @returns {JSX.Element | null} The animated cursor, or null on touch devices
  */
 const CustomCursor = () => {
@@ -31,21 +31,25 @@ const CustomCursor = () => {
     let timeout;
     const handleMouseOver = (e) => {
       if (timeout) clearTimeout(timeout);
-      
+
       // Debounce the state update slightly to avoid rapid re-renders
       timeout = setTimeout(() => {
         const target = e.target;
         let newState = null;
-        
-        if (target.closest('.card-3d')) {
-          newState = 'project';
-        } else if (target.closest('#contact-submit-btn')) {
-          newState = 'send';
-        } else if (target.closest('a') || target.tagName === 'A' || target.closest('button')) {
-          newState = 'link';
+
+        if (target.closest(".card-3d")) {
+          newState = "project";
+        } else if (target.closest("#contact-submit-btn")) {
+          newState = "send";
+        } else if (
+          target.closest("a") ||
+          target.tagName === "A" ||
+          target.closest("button")
+        ) {
+          newState = "link";
         }
 
-        setHoverState((prev) => prev !== newState ? newState : prev);
+        setHoverState((prev) => (prev !== newState ? newState : prev));
       }, 10);
     };
 
@@ -62,10 +66,14 @@ const CustomCursor = () => {
   // Labels for specific states
   const getLabel = () => {
     switch (hoverState) {
-      case 'project': return 'VIEW';
-      case 'send': return 'SEND';
-      case 'link': return ''; // Using small dot for normal links
-      default: return '';
+      case "project":
+        return "VIEW";
+      case "send":
+        return "SEND";
+      case "link":
+        return ""; // Using small dot for normal links
+      default:
+        return "";
     }
   };
 
@@ -76,31 +84,33 @@ const CustomCursor = () => {
     default: {
       width: 32,
       height: 32,
-      backgroundColor: "transparent",
-      border: "1.5px solid #5044E5",
-      opacity: 0.5
+      backgroundColor: "rgba(80,68,229,0.06)",
+      border: "1.5px solid transparent",
+      boxShadow: "0 6px 20px -8px rgba(80,68,229,0.25)",
+      opacity: 0.9,
     },
     link: {
       width: 48,
       height: 48,
-      backgroundColor: "rgba(80, 68, 229, 0.1)",
-      border: "1.5px solid #5044E5",
-      opacity: 1
+      backgroundColor: "rgba(80, 68, 229, 0.08)",
+      border: "1.5px solid transparent",
+      boxShadow: "0 8px 30px -12px rgba(80,68,229,0.35)",
+      opacity: 1,
     },
     project: {
       width: 64,
       height: 64,
-      backgroundColor: "rgba(80, 68, 229, 0.9)",
+      backgroundColor: "rgba(80, 68, 229, 0.95)",
       border: "0px solid transparent",
-      opacity: 1
+      opacity: 1,
     },
     send: {
       width: 64,
       height: 64,
-      backgroundColor: "rgba(124, 58, 237, 0.9)",
+      backgroundColor: "rgba(124, 58, 237, 0.95)",
       border: "0px solid transparent",
-      opacity: 1
-    }
+      opacity: 1,
+    },
   };
 
   return (
@@ -135,12 +145,14 @@ const CustomCursor = () => {
           y: cursorY,
           translateX: "-50%",
           translateY: "-50%",
-          width: 8,
-          height: 8,
+          width: 12,
+          height: 12,
+          background: "linear-gradient(90deg,#5044e5,#7c3aed)",
+          boxShadow: "0 6px 18px -6px rgba(124,58,237,0.45)",
         }}
         animate={{
-          opacity: (hoverState === 'project' || hoverState === 'send') ? 0 : 1,
-          scale: hoverState === 'link' ? 0 : 1
+          opacity: hoverState === "project" || hoverState === "send" ? 0 : 1,
+          scale: hoverState === "link" ? 0 : 1,
         }}
         transition={{ duration: 0.15 }}
       />

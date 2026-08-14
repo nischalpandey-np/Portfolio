@@ -16,10 +16,13 @@ const StatItem = ({ value, label }) => {
           const target = parseInt(value);
           let startTimestamp = null;
           const duration = 1500;
-          
+
           const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const progress = Math.min(
+              (timestamp - startTimestamp) / duration,
+              1,
+            );
             // easeOutQuad
             const easeProgress = progress * (2 - progress);
             setCount(Math.floor(easeProgress * target));
@@ -32,7 +35,7 @@ const StatItem = ({ value, label }) => {
           window.requestAnimationFrame(step);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -53,11 +56,11 @@ const StatItem = ({ value, label }) => {
 
 /**
  * Hero Section Component
- * 
+ *
  * The primary landing viewport for the portfolio.
  * Features an animated profile picture, dynamically cycling text roles, statistics counters,
  * and prominent calls-to-action (Download CV, Contact).
- * 
+ *
  * @returns {JSX.Element} The hero section
  */
 const Hero = () => {
@@ -76,9 +79,18 @@ const Hero = () => {
       className="relative flex flex-col justify-start sm:justify-center min-h-[100svh] sm:min-h-[90vh] px-4 sm:px-12 lg:px-24 xl:px-40 pt-24 sm:pt-0 pb-24 sm:pb-0 overflow-hidden"
     >
       {/* ── Background Elements (Optimized) ───────────────────── */}
-      <div className="absolute top-1/4 -right-1/4 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" style={{ animation: "aurora-a 20s ease-in-out infinite alternate" }} />
-      <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" style={{ animation: "aurora-b 25s ease-in-out infinite alternate" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] pointer-events-none" style={{ animation: "aurora-c 18s ease-in-out infinite alternate" }} />
+      <div
+        className="absolute top-1/4 -right-1/4 w-[700px] h-[700px] bg-primary/10 rounded-full blur-[140px] pointer-events-none"
+        style={{ animation: "aurora-a 20s ease-in-out infinite alternate" }}
+      />
+      <div
+        className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none"
+        style={{ animation: "aurora-b 25s ease-in-out infinite alternate" }}
+      />
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] pointer-events-none"
+        style={{ animation: "aurora-c 18s ease-in-out infinite alternate" }}
+      />
 
       <div className="relative z-10 max-w-6xl w-full mx-auto flex flex-col gap-8">
         {/* ── Top Bar / Availability ────────────────────────────── */}
@@ -86,7 +98,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="flex items-center gap-4"
+          className="flex items-center gap-4 mt-4"
         >
           {/* Floating Avatar with glow ring */}
           <div className="relative animate-float">
@@ -167,7 +179,9 @@ const Hero = () => {
           <StatItem value="1" label="Year Exp" />
           <div className="w-px h-10 bg-gray-200 dark:bg-gray-800" />
           <div className="flex flex-col items-start">
-            <span className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">🏔️</span>
+            <span className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">
+              🏔️
+            </span>
             <span className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-600 mt-1">
               Nepal
             </span>
@@ -183,8 +197,8 @@ const Hero = () => {
         >
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-md leading-relaxed font-medium">
             Engineering high-performance web applications and enterprise
-            platforms. Specialized in the MERN stack — building products
-            that scale.
+            platforms. Specialized in the MERN stack — building products that
+            scale.
           </p>
 
           <div className="flex items-center gap-3">
@@ -195,7 +209,9 @@ const Hero = () => {
               style={{ "--mouse-x": "50%", "--mouse-y": "50%" }}
             >
               View Work
-              <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">→</span>
+              <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">
+                →
+              </span>
             </motion.a>
             <motion.a
               whileTap={{ scale: 0.95 }}
@@ -220,7 +236,13 @@ const Hero = () => {
         </span>
         <div className="animate-bounce-soft text-gray-400 dark:text-gray-600">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path
+              d="M8 3v10M4 9l4 4 4-4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </div>
       </motion.div>

@@ -21,15 +21,16 @@ const useCounter = (target, ms, start) => {
   return val;
 };
 
-const NAME = "NISCHAL";
+const FIRST = "NISCHAL";
+const LAST = "PANDEY";
 const ROLE = "Full Stack Developer";
 
 /**
  * Loader Component
- * 
+ *
  * A full-screen cinematic loading sequence displayed when the app first mounts.
  * Features animated typography and progress bar simulating initialization.
- * 
+ *
  * @returns {JSX.Element} The animated loading overlay
  */
 const Loader = ({ onComplete }) => {
@@ -76,7 +77,14 @@ const Loader = ({ onComplete }) => {
               fill="url(#lg)"
             />
             <defs>
-              <linearGradient id="lg" x1="2" y1="2" x2="23" y2="24" gradientUnits="userSpaceOnUse">
+              <linearGradient
+                id="lg"
+                x1="2"
+                y1="2"
+                x2="23"
+                y2="24"
+                gradientUnits="userSpaceOnUse"
+              >
                 <stop stopColor="#5044E5" />
                 <stop offset="1" stopColor="#7C3AED" />
               </linearGradient>
@@ -84,10 +92,10 @@ const Loader = ({ onComplete }) => {
           </svg>
         </motion.div>
 
-        {/* Name — letter-by-letter reveal */}
+        {/* Name — first name reveal in gradient, last name as white */}
         <div className="flex flex-col items-center gap-3">
           <div className="flex gap-[0.06em] overflow-hidden">
-            {NAME.split("").map((char, i) => (
+            {FIRST.split("").map((char, i) => (
               <motion.span
                 key={i}
                 initial={{ y: "110%", opacity: 0 }}
@@ -97,17 +105,26 @@ const Loader = ({ onComplete }) => {
                   delay: 0.08 + i * 0.055,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="text-5xl sm:text-7xl font-black uppercase tracking-[0.12em] text-white leading-none"
+                className="text-5xl sm:text-7xl font-black uppercase tracking-[0.12em] gradient-text leading-none"
               >
                 {char}
               </motion.span>
             ))}
           </div>
 
-          <motion.p
+          <motion.span
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.65, ease: "easeOut" }}
+            className="text-5xl sm:text-7xl font-black uppercase tracking-[0.12em] text-white leading-none"
+          >
+            {LAST}
+          </motion.span>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.75, ease: "easeOut" }}
             className="text-xs sm:text-sm font-bold uppercase tracking-[0.35em] text-white/30"
           >
             {ROLE}
