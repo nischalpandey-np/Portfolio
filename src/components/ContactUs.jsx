@@ -63,11 +63,11 @@ const CopyButton = ({ value, label }) => {
   );
 };
 
-const socialLinks = [
-  { label: "GitHub", href: "https://github.com/nischalpandey-np", icon: "🐙" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/nischal-pandey", icon: "💼" },
-  { label: "Twitter", href: "https://twitter.com/nischalpandey", icon: "𝕏" },
-];
+// const socialLinks = [
+//   { label: "GitHub", href: "https://github.com/nischalpandey-np" },
+//   { label: "LinkedIn", href: "https://linkedin.com/in/nischal-pandey"},
+//   { label: "Twitter", href: "https://twitter.com/nischalpandey" },
+// ];
 
 /**
  * Contact Us Section Component
@@ -84,7 +84,7 @@ const ContactUs = () => {
     event.preventDefault();
     setIsSubmitting(true);
     const formData = new FormData(event.target);
-    formData.append("access_key", "fa9cf859-a5b6-4c9b-a820-646734f3ecac");
+    formData.append("access_key", "42431651-69af-4cc4-8686-589b955df2d3");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -156,11 +156,11 @@ const ContactUs = () => {
             viewport={{ once: true }}
             className="flex flex-wrap gap-3 mt-8"
           >
-            <CopyButton value="nischalpandeynp@gmail.com" label="Copy Email" />
+            <CopyButton value="fsd.nischal@gmail.com" label="fsd.nischal@gmail.com" />
           </motion.div>
 
           {/* Social Links */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45, ease: "easeOut" }}
@@ -176,13 +176,13 @@ const ContactUs = () => {
                 rel="noreferrer"
                 className="flex items-center gap-2 border border-gray-200 dark:border-gray-800 hover:border-primary/40 hover:bg-primary/5 px-4 py-2.5 rounded-full transition-all duration-300 group"
               >
-                <span className="text-base">{s.icon}</span>
+                
                 <span className="text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-400 group-hover:text-primary transition-colors">
                   {s.label}
                 </span>
               </motion.a>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Right Side: Form */}
