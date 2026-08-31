@@ -1,65 +1,74 @@
-import { useState, useEffect } from "react";
-import NavBar from "./components/NavBar";
-import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Experience from "./components/Experience";
-import ContactUs from "./components/ContactUs";
-import Footer from "./components/Footer";
-import CustomCursor from "./components/CustomCursor";
-import ScrollProgress from "./components/ScrollProgress";
-import Loader from "./components/Loader";
-import SectionDots from "./components/SectionDots";
+import { useState, useCallback } from "react";
+import TVStage from "./components/TVStage";
+import PaintApp from "./components/PaintApp";
+import GalleryWindow from "./components/GalleryWindow";
+import SideRail from "./components/SideRail";
+import Taskbar from "./components/Taskbar";
 import "./index.css";
-import { Toaster } from "react-hot-toast";
 
-/**
- * Main Application Component
- * 
- * Serves as the root layout wrapper and entry point for the portfolio.
- * Handles global state such as the active theme (dark/light) and initial loading screen.
- * Orchestrates all main page sections (Hero, Projects, Skills, etc.) and global overlays (Cursor, Toaster).
- *
- * @returns {JSX.Element} The rendered root application component
- */
 const App = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
-  );
-  const [loading, setLoading] = useState(true);
+  // null = idle/screensaver, 0-4 = channel index, string = game
+  const [activeChannel, setActiveChannel] = useState(null);
+  const [showPaint, setShowPaint]         = useState(false);
+  const [showGallery, setShowGallery]     = useState(false);
+  const [tvOn, setTvOn]                   = useState(false); // TV off by default
 
-  // Initialize theme on root
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+  const handleChannelSelect = useCallback((idxOrUpdater) => {
+    if (typeof idxOrUpdater === "function") {
+      setActiveChannel(idxOrUpdater);
     } else {
-      document.documentElement.classList.remove("dark");
+      setActiveChannel(idxOrUpdater);
     }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, []);
+
+  const handleTvToggle = useCallback(() => {
+    setTvOn(prev => !prev);
+    if (tvOn) {
+      // Turning off — reset channel
+      setActiveChannel(null);
+    }
+  }, [tvOn]);
 
   return (
-    <>
-      {loading && <Loader onComplete={() => setLoading(false)} />}
-      
-      {!loading && (
-        <div className="animate-in fade-in duration-1000">
-          <ScrollProgress />
-          <SectionDots />
-          <div className="bg-[#fafafa] dark:bg-[#09090b] bg-grid-pattern relative overflow-hidden min-h-screen antialiased text-gray-900 dark:text-gray-100 transition-colors duration-700 ease-in-out">
-            <CustomCursor />
-            <Toaster />
-            <NavBar theme={theme} setTheme={setTheme} />
-            <Hero />
-            <Skills />
-            <Projects />
-            <Experience />
-            <ContactUs />
-            <Footer theme={theme} />
-          </div>
-        </div>
+    <div className="xp-desktop">
+      {/* ── CRT TV (center stage) ─────────────────────────── */}
+      <TVStage
+        activeChannel={activeChannel}
+        onChannelChange={handleChannelSelect}
+        tvOn={tvOn}
+        onTvToggle={handleTvToggle}
+      />
+
+      {/* ── FABs: Paint & Gallery ─────────────────────────── */}
+      <div className="fab-group">
+        <button className="fab-btn" title="Open Paint" onClick={() => setShowPaint(true)}>🎨</button>
+        <button className="fab-btn" title="Visitor Gallery" onClick={() => setShowGallery(true)}>🖼️</button>
+      </div>
+
+      {/* ── Side Rail ─────────────────────────────────────── */}
+      <SideRail onMailClick={() => { window.location.href = "mailto:nischalpandey00@gmail.com"; }} />
+
+      {/* ── Paint App ─────────────────────────────────────── */}
+      {showPaint && (
+        <PaintApp
+          onClose={() => setShowPaint(false)}
+          onSave={() => { setTimeout(() => { setShowPaint(false); setShowGallery(true); }, 1200); }}
+        />
       )}
-    </>
+
+      {/* ── Gallery Window ────────────────────────────────── */}
+      {showGallery && <GalleryWindow onClose={() => setShowGallery(false)} />}
+
+      {/* ── XP Taskbar (with Start Menu) ──────────────────── */}
+      <Taskbar
+        activeChannel={activeChannel}
+        onChannelSelect={handleChannelSelect}
+        onOpenPaint={() => setShowPaint(true)}
+        onOpenGallery={() => setShowGallery(true)}
+        onOpenMinesweeper={() => handleChannelSelect("minesweeper")}
+        onOpenSnake={() => handleChannelSelect("snake")}
+      />
+    </div>
   );
 };
 
