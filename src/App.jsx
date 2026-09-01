@@ -9,9 +9,9 @@ import "./index.css";
 const App = () => {
   // null = idle/screensaver, 0-4 = channel index, string = game
   const [activeChannel, setActiveChannel] = useState(null);
-  const [showPaint, setShowPaint]         = useState(false);
-  const [showGallery, setShowGallery]     = useState(false);
-  const [tvOn, setTvOn]                   = useState(false); // TV off by default
+  const [showPaint, setShowPaint] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
+  const [tvOn, setTvOn] = useState(false); // TV off by default
 
   const handleChannelSelect = useCallback((idxOrUpdater) => {
     if (typeof idxOrUpdater === "function") {
@@ -22,7 +22,7 @@ const App = () => {
   }, []);
 
   const handleTvToggle = useCallback(() => {
-    setTvOn(prev => !prev);
+    setTvOn((prev) => !prev);
     if (tvOn) {
       // Turning off — reset channel
       setActiveChannel(null);
@@ -41,18 +41,39 @@ const App = () => {
 
       {/* ── FABs: Paint & Gallery ─────────────────────────── */}
       <div className="fab-group">
-        <button className="fab-btn" title="Open Paint" onClick={() => setShowPaint(true)}>🎨</button>
-        <button className="fab-btn" title="Visitor Gallery" onClick={() => setShowGallery(true)}>🖼️</button>
+        <button
+          className="fab-btn"
+          title="Open Paint"
+          onClick={() => setShowPaint(true)}
+        >
+          🎨
+        </button>
+        <button
+          className="fab-btn"
+          title="Visitor Gallery"
+          onClick={() => setShowGallery(true)}
+        >
+          🖼️
+        </button>
       </div>
 
       {/* ── Side Rail ─────────────────────────────────────── */}
-      <SideRail onMailClick={() => { window.location.href = "mailto:nischalpandey00@gmail.com"; }} />
+      <SideRail
+        onMailClick={() => {
+          window.location.href = "mailto:fsd.nischal@gmail.com";
+        }}
+      />
 
       {/* ── Paint App ─────────────────────────────────────── */}
       {showPaint && (
         <PaintApp
           onClose={() => setShowPaint(false)}
-          onSave={() => { setTimeout(() => { setShowPaint(false); setShowGallery(true); }, 1200); }}
+          onSave={() => {
+            setTimeout(() => {
+              setShowPaint(false);
+              setShowGallery(true);
+            }, 1200);
+          }}
         />
       )}
 
