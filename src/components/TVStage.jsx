@@ -421,26 +421,40 @@ const TVStage = ({ activeChannel, onChannelChange, tvOn, onTvToggle }) => {
     return <Ch />;
   };
 
+  // Detect mobile for layout decisions
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+
   return (
-    <div style={{
-      position:"absolute", top:"50%", left:"50%",
-      transform:"translate(-50%, -55%)",
-      width:"min(1100px, 93vw)", zIndex:100, userSelect:"none",
+    <div className="tv-stage-root" style={{
+      position:"absolute",
+      top: isMobile ? "50%" : "50%",
+      left:"50%",
+      transform: isMobile ? "translate(-50%, -47%)" : "translate(-50%, -55%)",
+      width: isMobile ? "98vw" : "min(1100px, 90vw)",
+      zIndex:100, userSelect:"none",
     }}>
       {/* TV Shell + Power Button */}
       <div ref={tvRef} style={{ position:"relative", width:"100%" }}>
         <TVShell />
 
-        {/* ── Power Button — right side of TV frame ── */}
+        {/* ── Power Button — right side on desktop, below TV on mobile ── */}
         <button
           onClick={onTvToggle}
           title={tvOn ? "Turn TV Off" : "Turn TV On"}
+          className="tv-power-btn"
           style={{
             position:"absolute",
-            right:"-56px",
-            top:"50%",
-            transform:"translateY(-50%)",
-            width:44, height:44,
+            ...(isMobile ? {
+              bottom:"-54px",
+              right:"50%",
+              transform:"translateX(50%)",
+            } : {
+              right:"-56px",
+              top:"50%",
+              transform:"translateY(-50%)",
+            }),
+            width: isMobile ? 48 : 44,
+            height: isMobile ? 48 : 44,
             borderRadius:"50%",
             background: tvOn
               ? "radial-gradient(circle at 35% 30%, #66bb6a, #1b5e20)"
@@ -453,9 +467,14 @@ const TVStage = ({ activeChannel, onChannelChange, tvOn, onTvToggle }) => {
               : "0 0 0 2px rgba(255,255,255,0.05), inset 0 2px 5px rgba(0,0,0,0.6)",
             transition:"all 0.35s ease",
             display:"flex", alignItems:"center", justifyContent:"center",
+            zIndex:10,
           }}
-          onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-50%) scale(1.13)"; }}
-          onMouseLeave={e => { e.currentTarget.style.transform = "translateY(-50%) scale(1)"; }}
+          onMouseEnter={e => {
+            if (!isMobile) e.currentTarget.style.transform = "translateY(-50%) scale(1.13)";
+          }}
+          onMouseLeave={e => {
+            if (!isMobile) e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+          }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke={tvOn ? "#fff" : "#888"} strokeWidth="2.5" strokeLinecap="round">
@@ -503,22 +522,30 @@ const TVStage = ({ activeChannel, onChannelChange, tvOn, onTvToggle }) => {
         </div>
       </div>
 
-      {/* ── Channel pills — visible only when TV is on and booted ── */}
+      {/* ── Channel pills — only when TV is on and booted ── */}
       {tvOn && bootPhase === "on" && (
-        <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:6,marginTop:18,flexWrap:"wrap"}}>
+        <div style={{
+          display:"flex", alignItems:"center", justifyContent:"center",
+          gap: isMobile ? 8 : 6,
+          marginTop: isMobile ? 62 : 18,
+          flexWrap:"wrap",
+          padding: isMobile ? "0 4px" : 0,
+        }}>
           {CHANNELS.map((c, i) => {
             const on = i === activeChannel;
             return (
               <button key={c.id} onClick={() => onChannelChange(i)} style={{
-                padding: on?"6px 18px":"6px 13px",
+                padding: isMobile ? (on?"10px 20px":"8px 16px") : (on?"6px 18px":"6px 13px"),
                 background: on?"rgba(255,255,255,0.93)":"rgba(255,255,255,0.05)",
                 border:"1px solid", borderColor: on?"#fff":"rgba(255,255,255,0.1)",
                 borderRadius:100, color: on?"#0a0a0f":"rgba(255,255,255,0.45)",
-                fontSize:12, fontWeight: on?600:400,
+                fontSize: isMobile ? 13 : 12,
+                fontWeight: on?600:400,
                 fontFamily:"system-ui,sans-serif", cursor:"pointer",
                 letterSpacing:0.3, whiteSpace:"nowrap",
                 transition:"all 0.2s cubic-bezier(0.4,0,0.2,1)",
                 boxShadow: on?"0 2px 12px rgba(255,255,255,0.22)":"none",
+                minHeight: isMobile ? 40 : "auto",
               }}
               onMouseEnter={e=>{ if(!on){e.currentTarget.style.color="#fff";e.currentTarget.style.borderColor="rgba(255,255,255,0.3)";e.currentTarget.style.background="rgba(255,255,255,0.1)";}}}
               onMouseLeave={e=>{ if(!on){e.currentTarget.style.color="rgba(255,255,255,0.45)";e.currentTarget.style.borderColor="rgba(255,255,255,0.1)";e.currentTarget.style.background="rgba(255,255,255,0.05)";}}}
@@ -528,8 +555,8 @@ const TVStage = ({ activeChannel, onChannelChange, tvOn, onTvToggle }) => {
         </div>
       )}
 
-      {/* Idle hint */}
-      {tvOn && bootPhase === "on" && activeChannel === null && (
+      {/* Idle hint — desktop only */}
+      {!isMobile && tvOn && bootPhase === "on" && activeChannel === null && (
         <p style={{textAlign:"center",margin:"10px 0 0",fontSize:11,color:"rgba(255,255,255,0.22)",fontFamily:"system-ui,sans-serif",letterSpacing:2}}>
           SCROLL TO SWITCH CHANNELS
         </p>
@@ -537,8 +564,13 @@ const TVStage = ({ activeChannel, onChannelChange, tvOn, onTvToggle }) => {
 
       {/* Off hint */}
       {!tvOn && (
-        <p style={{textAlign:"center",margin:"14px 0 0",fontSize:11,color:"rgba(255,255,255,0.18)",fontFamily:"system-ui,sans-serif",letterSpacing:2}}>
-          PRESS ⏻ TO TURN ON
+        <p style={{
+          textAlign:"center",
+          margin: isMobile ? "62px 0 0" : "14px 0 0",
+          fontSize:11, color:"rgba(255,255,255,0.18)",
+          fontFamily:"system-ui,sans-serif", letterSpacing:2,
+        }}>
+          TAP ⏻ TO TURN ON
         </p>
       )}
     </div>
@@ -546,3 +578,4 @@ const TVStage = ({ activeChannel, onChannelChange, tvOn, onTvToggle }) => {
 };
 
 export default TVStage;
+
