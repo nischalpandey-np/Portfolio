@@ -1,0 +1,438 @@
+/* ── Television ────────────────────────────────────────────── */
+.tv {
+  position: relative;
+}
+
+.tv__set {
+  position: relative;
+}
+
+.tv__shell {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 28px 32px rgb(0 0 0 / 0.55)) drop-shadow(0 2px 3px rgb(0 0 0 / 0.4));
+}
+
+/* Screen + knobs are positioned in percentages of the SVG viewBox
+   (320 × 180), so they track the artwork at any size without JS. */
+.tv__screen {
+  position: absolute;
+  left: 10.625%;
+  top: 23.333%;
+  width: 67.5%;
+  height: 55.556%;
+  border-radius: 4.2% / 9%;
+  overflow: hidden;
+  background: #050506;
+  container-type: size;
+  isolation: isolate;
+}
+
+.tv__knob {
+  position: absolute;
+  left: 82.5%;
+  width: 6.25%;
+  height: 11.111%;
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.tv__knob--up {
+  top: 28.889%;
+}
+
+.tv__knob--down {
+  top: 44.444%;
+}
+
+.tv__knob:hover {
+  background: rgb(255 255 255 / 0.22);
+}
+
+.tv__knob:focus-visible {
+  outline-offset: 1px;
+  border-radius: 50%;
+}
+
+/* Control row under the set */
+.tv__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.tv__channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tv__power {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--fg);
+  background: transparent;
+  color: var(--fg-3);
+  transition:
+    background-color var(--dur-2) var(--ease-out),
+    color var(--dur-2) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out);
+}
+
+.tv__power:hover {
+  background: var(--bg-2);
+}
+
+.tv__power[aria-pressed="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgb(255 91 36 / 0.16);
+}
+
+.tv__power svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.channel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-s);
+  background: transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--fg-2);
+  transition:
+    border-color var(--dur-2) var(--ease-out),
+    background-color var(--dur-2) var(--ease-out),
+    color var(--dur-2) var(--ease-out);
+}
+
+.channel-btn .mono {
+  font-size: var(--step--2);
+  color: var(--fg-3);
+}
+
+.channel-btn:hover {
+  border-color: var(--fg);
+  color: var(--fg);
+}
+
+.channel-btn[aria-pressed="true"] {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
+}
+
+.channel-btn[aria-pressed="true"] .mono {
+  color: var(--accent);
+}
+
+.channel-btn--quiet {
+  border-style: dashed;
+}
+
+.tv__controls-sep {
+  width: 1px;
+  height: 1.5rem;
+  background: var(--rule);
+  margin-inline: var(--space-1);
+}
+
+.tv__note {
+  margin-top: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--fg-3);
+}
+
+.tv__note .link-btn {
+  color: var(--fg);
+}
+
+@media (max-width: 30rem) {
+  .tv__controls-sep {
+    display: none;
+  }
+
+  /* Three equal channel buttons on one row; numbers drop out to make room */
+  .tv__channels {
+    flex: 1 1 100%;
+    order: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tv__channels .channel-btn {
+    justify-content: center;
+    padding-inline: var(--space-2);
+    font-size: var(--step--1);
+  }
+
+  .tv__channels .channel-btn .mono {
+    display: none;
+  }
+}
+
+/* ── On-screen content ─────────────────────────────────────── */
+.screen-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.screen-fx {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 2px, rgb(0 0 0 / 0.14) 2px 3px),
+    radial-gradient(ellipse at center, transparent 58%, rgb(0 0 0 / 0.55) 100%);
+}
+
+.screen-osd {
+  position: absolute;
+  top: 5cqh;
+  right: 3.5cqw;
+  z-index: 25;
+  font-family: var(--font-screen);
+  font-size: clamp(14px, 6.5cqh, 30px);
+  line-height: 1;
+  color: var(--phosphor);
+  text-shadow: 0 0 6px rgb(0 255 136 / 0.6);
+  pointer-events: none;
+}
+
+.screen-static {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background-color: #777;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: tv-static 0.18s steps(2, end) infinite;
+}
+
+/* One-off blip between showreel frames */
+.screen-static--blip {
+  animation: tv-static 0.18s steps(2, end) infinite, blip-out 0.22s linear forwards;
+}
+
+@keyframes blip-out {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes tv-static {
+  0% { background-position: 0 0; }
+  50% { background-position: -50px 40px; }
+  100% { background-position: 40px -50px; }
+}
+
+.screen-off {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #050506;
+}
+
+.screen-off__line {
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  box-shadow: 0 0 12px 5px rgb(255 255 255 / 0.6);
+  animation: tv-off 0.45s var(--ease-out) forwards;
+}
+
+@keyframes tv-off {
+  0%, 35% { transform: scale(1, 1); opacity: 1; }
+  70% { transform: scale(0.04, 1); opacity: 0.9; }
+  100% { transform: scale(0.001, 0.001); opacity: 0; }
+}
+
+.screen-boot {
+  position: absolute;
+  inset: 0;
+  background: #050506;
+  overflow: hidden;
+}
+
+.screen-boot__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: #fff;
+  box-shadow: 0 0 14px 5px rgb(255 255 255 / 0.85), 0 0 40px 10px rgb(180 210 255 / 0.4);
+  animation: tv-boot 0.7s var(--ease-out) forwards;
+}
+
+@keyframes tv-boot {
+  0% { transform: scaleY(1); opacity: 1; }
+  50% { transform: scaleY(60); opacity: 1; }
+  100% { transform: scaleY(400); opacity: 0; }
+}
+
+/* Showreel channel */
+.reel {
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.reel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(0.9) contrast(1.05);
+}
+
+.reel__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 25;
+  padding: 14cqh 4cqw 5cqh;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.88), transparent);
+  font-family: var(--font-screen);
+  line-height: 1;
+}
+
+.reel__count {
+  display: block;
+  font-size: clamp(13px, 6cqh, 26px);
+  color: var(--phosphor);
+  text-shadow: 0 0 6px rgb(0 255 136 / 0.5);
+}
+
+.reel__title {
+  display: block;
+  margin-top: 1.5cqh;
+  font-size: clamp(18px, 11cqh, 52px);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgb(255 255 255 / 0.35);
+}
+
+.reel:hover .reel__title,
+.reel:focus-visible .reel__title {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
+}
+
+.reel:focus-visible {
+  outline: 3px solid var(--phosphor);
+  outline-offset: -3px;
+  border-radius: inherit;
+}
+
+/* Game title card (on small screens, or before playing) */
+.screen-card {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 3cqh;
+  padding: 6cqh 6cqw;
+  background: #07070b;
+  color: #fff;
+  font-family: var(--font-screen);
+  text-align: center;
+}
+
+.screen-card__title {
+  font-size: clamp(20px, 14cqh, 60px);
+  line-height: 1;
+  color: var(--phosphor);
+  text-shadow: 0 0 10px rgb(0 255 136 / 0.5);
+  text-transform: uppercase;
+}
+
+.screen-card__text {
+  font-size: clamp(14px, 7cqh, 26px);
+  line-height: 1.1;
+  color: rgb(255 255 255 / 0.75);
+}
+
+.screen-btn {
+  position: relative;
+  z-index: 26;
+  font-family: var(--font-screen);
+  font-size: clamp(16px, 7.5cqh, 28px);
+  line-height: 1;
+  padding: 0.35em 0.8em;
+  min-height: 2.5rem;
+  border: 2px solid var(--phosphor);
+  border-radius: var(--radius-s);
+  background: rgb(0 255 136 / 0.08);
+  color: var(--phosphor);
+  text-transform: uppercase;
+}
+
+.screen-btn:hover {
+  background: var(--phosphor);
+  color: #000;
+}
+
+.screen-btn:focus-visible {
+  outline: 2px solid #fff;
+}
+
+.screen-expand {
+  position: absolute;
+  right: 3cqw;
+  bottom: 4cqh;
+  z-index: 26;
+  font-family: var(--font-screen);
+  font-size: clamp(14px, 6cqh, 22px);
+  line-height: 1;
+  padding: 0.3em 0.6em;
+  border: 1px solid rgb(0 255 136 / 0.6);
+  border-radius: var(--radius-s);
+  background: rgb(0 0 0 / 0.7);
+  color: var(--phosphor);
+}
+
+.screen-expand:hover {
+  background: var(--phosphor);
+  color: #000;
+}
+
+.screen-game {
+  position: absolute;
+  inset: 0;
+  padding: 3cqh 3cqw;
+}
+
+/* ── Scale-to-fit wrapper for fixed-size games ─────────────── */
+.fit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fit__inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max-content;
+  transform-origin: center center;
+}
+

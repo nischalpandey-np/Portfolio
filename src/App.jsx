@@ -1,95 +1,49 @@
-import { useState, useCallback } from "react";
-import TVStage from "./components/TVStage";
-import PaintApp from "./components/PaintApp";
-import GalleryWindow from "./components/GalleryWindow";
-import SideRail from "./components/SideRail";
-import Taskbar from "./components/Taskbar";
+import { lazy, Suspense, useCallback, useState } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Intro from "./components/Intro";
+import Work from "./components/Work";
+import Capabilities from "./components/Capabilities";
+import About from "./components/About";
+import Playground from "./components/Playground";
+import Contact from "./components/Contact";
+import { useRevealOnScroll, useSmoothScroll } from "./lib/motion";
 import "./index.css";
 
+// Everything that opens in a window is loaded on demand.
+const PaintApp = lazy(() => import("./components/PaintApp"));
+const GalleryWindow = lazy(() => import("./components/GalleryWindow"));
+const GameWindow = lazy(() => import("./components/GameWindow"));
+
 const App = () => {
-  // null = idle/screensaver, 0-4 = channel index, string = game
-  const [activeChannel, setActiveChannel] = useState(null);
-  const [showPaint, setShowPaint] = useState(false);
-  const [showGallery, setShowGallery] = useState(false);
-  const [tvOn, setTvOn] = useState(false); // TV off by default
-
-  const handleChannelSelect = useCallback((idxOrUpdater) => {
-    if (typeof idxOrUpdater === "function") {
-      setActiveChannel(idxOrUpdater);
-    } else {
-      setActiveChannel(idxOrUpdater);
-    }
-  }, []);
-
-  const handleTvToggle = useCallback(() => {
-    setTvOn((prev) => !prev);
-    if (tvOn) {
-      // Turning off — reset channel
-      setActiveChannel(null);
-    }
-  }, [tvOn]);
+  // null | "paint" | "gallery" | "snake" | "mines" — one window at a time.
+  const [openWindow, setOpenWindow] = useState(null);
+  const close = useCallback(() => setOpenWindow(null), []);
+  useSmoothScroll();
+  useRevealOnScroll();
 
   return (
-    <div className="xp-desktop">
-      {/* ── CRT TV (center stage) ─────────────────────────── */}
-      <TVStage
-        activeChannel={activeChannel}
-        onChannelChange={handleChannelSelect}
-        tvOn={tvOn}
-        onTvToggle={handleTvToggle}
-      />
+    <>
+      <a className="skip-link" href="#work">
+        Skip to the work
+      </a>
+      <Header />
+      <main>
+        <Hero />
+        <Intro />
+        <Work />
+        <Capabilities />
+        <About onOpenWindow={setOpenWindow} />
+        <Playground onOpenWindow={setOpenWindow} />
+      </main>
+      <Contact />
 
-      {/* ── FABs: Paint & Gallery ─────────────────────────── */}
-      <div className="fab-group">
-        <button
-          className="fab-btn"
-          title="Open Paint"
-          onClick={() => setShowPaint(true)}
-        >
-          🎨
-        </button>
-        <button
-          className="fab-btn"
-          title="Visitor Gallery"
-          onClick={() => setShowGallery(true)}
-        >
-          🖼️
-        </button>
-      </div>
-
-      {/* ── Side Rail ─────────────────────────────────────── */}
-      <SideRail
-        onMailClick={() => {
-          window.location.href = "mailto:fsd.nischal@gmail.com";
-        }}
-      />
-
-      {/* ── Paint App ─────────────────────────────────────── */}
-      {showPaint && (
-        <PaintApp
-          onClose={() => setShowPaint(false)}
-          onSave={() => {
-            setTimeout(() => {
-              setShowPaint(false);
-              setShowGallery(true);
-            }, 1200);
-          }}
-        />
-      )}
-
-      {/* ── Gallery Window ────────────────────────────────── */}
-      {showGallery && <GalleryWindow onClose={() => setShowGallery(false)} />}
-
-      {/* ── XP Taskbar (with Start Menu) ──────────────────── */}
-      <Taskbar
-        activeChannel={activeChannel}
-        onChannelSelect={handleChannelSelect}
-        onOpenPaint={() => setShowPaint(true)}
-        onOpenGallery={() => setShowGallery(true)}
-        onOpenMinesweeper={() => handleChannelSelect("minesweeper")}
-        onOpenSnake={() => handleChannelSelect("snake")}
-      />
-    </div>
+      <Suspense fallback={null}>
+        {openWindow === "paint" && <PaintApp onClose={close} onSaved={() => setOpenWindow("gallery")} />}
+        {openWindow === "gallery" && <GalleryWindow onClose={close} onOpenPaint={() => setOpenWindow("paint")} />}
+        {(openWindow === "snake" || openWindow === "mines") && <GameWindow game={openWindow} onClose={close} />}
+      </Suspense>
+    </>
   );
 };
 
