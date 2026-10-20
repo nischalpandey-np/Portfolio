@@ -1,0 +1,1 @@
+function e(e,t){try{let n=window.localStorage.getItem(e);return n==null?t:JSON.parse(n)}catch{return t}}function t(e,t){try{return window.localStorage.setItem(e,JSON.stringify(t)),!0}catch{return!1}}var n=`np_gallery`;export{e as n,t as r,n as t};
